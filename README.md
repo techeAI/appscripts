@@ -9,4 +9,4 @@ wget -qO setup_homarr.sh https://github.com/techeAI/appscripts/blob/main/dashboa
 
 
 
-################# DASHBOARD #################
+##################### DASHBOARD #######################
