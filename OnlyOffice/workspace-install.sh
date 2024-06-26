@@ -1,6 +1,6 @@
 #!/bin/bash
 apt install sudo curl wget -y 2> /dev/null
-wget -O install.sh  https://openteche.s3.amazonaws.com/TecheOS/OnlyOffice/install.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/OnlyOffice/install.sh -o install.sh
 
 if [ ! -x /usr/bin/docker ];  then
 				echo "Installing docker.."
