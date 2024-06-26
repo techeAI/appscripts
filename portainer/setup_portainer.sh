@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O portainer.sh  https://openteche.s3.amazonaws.com/TecheOS/portainer/portainer.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/portainer.sh -o portainer.sh
 update_basedir() {
         echo ""
     echo ""
