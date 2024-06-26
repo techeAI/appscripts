@@ -116,12 +116,4 @@ curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/mydesktop/se
 
 
 
-########################### NextCloud-OnlyOffice #############################
-
-
-mkdir nextcloud-onlyoffice && cd nextcloud-onlyoffice
-
-apt install curl -y
-
-curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/nextcloud-onlyoffice/nextcloud-onlyoffice.sh -o nextcloud-onlyoffice.sh && bash nextcloud-onlyoffice.sh
 
