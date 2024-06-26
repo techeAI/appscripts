@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O mydesktop.sh  https://openteche.s3.amazonaws.com/TecheOS/mydesktop/mydesktop.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mydesktop/mydesktop.sh -o mydesktop.sh
 update_basedir() {
     echo ""
     echo ""
