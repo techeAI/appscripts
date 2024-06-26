@@ -165,3 +165,12 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/setup_handbrake.sh -o setup_handbrake.sh && bash setup_handbrake.sh
 
+
+
+########################### OnlyOffice-Workspace #############################
+
+mkdir onlyoffice-workspace && cd onlyoffice-workspace
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/OnlyOffice/workspace-install.sh -o workspace-install.sh && bash workspace-install.sh -ims false
