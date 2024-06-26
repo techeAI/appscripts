@@ -67,6 +67,6 @@ mkdir shinobi && cd shinobi
 
 apt install curl -y
 
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/setup_shinobi.sh && bash setup_shinobi.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/setup_shinobi.sh -o setup_shinobi.sh && bash setup_shinobi.sh
 
 
