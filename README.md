@@ -46,3 +46,15 @@ apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/syncthing/setup_syncthing.sh -o setup_syncthing.sh && bash setup_syncthing.sh
 
+
+
+
+
+########################### SuiteCRM #############################
+
+mkdir suitecrm && cd suitecrm
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
+
