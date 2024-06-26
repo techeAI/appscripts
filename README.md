@@ -1,7 +1,6 @@
-################# DASHBOARD #################
+################# Installing DASHBOARD #################
 
 
-              Installing Dashboard.
 
 Run below command in bash shell.
 
