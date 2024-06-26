@@ -116,4 +116,12 @@ curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/mydesktop/se
 
 
 
+########################### Jitsi #############################
+
+mkdir jitsi && cd jitsi
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/jitsi/jitsi.sh -o jitsi.sh && bash jitsi.sh
+
 
