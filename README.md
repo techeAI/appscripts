@@ -70,3 +70,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/setup_shinobi.sh -o setup_shinobi.sh && bash setup_shinobi.sh
 
 
+
+
+
+########################### Portainer #############################
+
+mkdir portainer && cd portainer
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/setup_portainer.sh -o setup_portainer.sh && bash setup_portainer.sh
+
