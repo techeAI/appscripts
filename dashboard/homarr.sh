@@ -2,7 +2,7 @@
 				
 				apt install sudo curl wget  -y 2> /dev/null
 				BASE_DIR=changebasedir/homarr
-				wget -qO default.json https://openteche.s3.amazonaws.com/TecheOS/homarr/default.json
+				wget -qO default.json https://github.com/techeAI/appscripts/blob/main/dashboard/default.json
 			if [ ! -x /usr/bin/docker ]; then
 				echo "Installing docker.."
 				sleep 3
