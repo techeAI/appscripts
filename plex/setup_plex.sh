@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O plex.sh  https://openteche.s3.amazonaws.com/TecheOS/plex/plex.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/plex/plex.sh -o plex.sh
 update_basedir() {
 
     echo ""
