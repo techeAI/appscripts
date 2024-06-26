@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O syncthing.sh  https://openteche.s3.amazonaws.com/TecheOS/syncthing/syncthing.sh
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/syncthing/syncthing.sh -o syncthing.sh
 update_basedir() {
         echo ""
     echo ""
