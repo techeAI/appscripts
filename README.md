@@ -1,4 +1,4 @@
-################# Installing DASHBOARD #################
+####################### Installing DASHBOARD #######################
 
 Run below command in bash shell.
 
@@ -11,7 +11,9 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/set
 
 
 
-##################### Zabbix #######################
+
+
+########################### Zabbix #############################
 
 mkdir zabbix && cd zabbix
 
