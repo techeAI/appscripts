@@ -1,0 +1,33 @@
+version: '2'
+services:
+  mariadb:
+    image: docker.io/bitnami/mariadb:11.3
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+    volumes:
+      - '${MARIADB_VOLUME}:/bitnami/mariadb'
+  suitecrm:
+    image: docker.io/bitnami/suitecrm:8
+    restart: unless-stopped
+    ports:
+      - '${SUITECRM_PORT_HTTP}:8080'
+      - '${SUITECRM_PORT_HTTPS}:8443'
+    environment:
+      - SUITECRM_DATABASE_HOST=mariadb
+      - SUITECRM_DATABASE_PORT_NUMBER=3306
+      - SUITECRM_DATABASE_USER=${SUITECRM_DATABASE_USER}
+      - SUITECRM_DATABASE_NAME=${SUITECRM_DATABASE_NAME}
+      - SUITECRM_DATABASE_PASSWORD=${SUITECRM_DATABASE_PASSWORD}
+    volumes:
+      - '${SUITECRM_VOLUME}:/bitnami/suitecrm'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+    driver: local
+  suitecrm_data:
+    driver: local
