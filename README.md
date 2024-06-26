@@ -145,3 +145,13 @@ curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calco
 
 bash -c "$(curl -L https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/install-paperless-ngx.sh)"
 
+
+
+########################### Antivirus (ClamAV) #############################
+
+mkdir clam && cd clamav
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/antivirus/clam.sh -o clam.sh && bash clam.sh
+
