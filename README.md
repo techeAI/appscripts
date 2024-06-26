@@ -58,3 +58,15 @@ apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
+
+
+
+########################### Shinobi #############################
+
+mkdir shinobi && cd shinobi
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/setup_shinobi.sh && bash setup_shinobi.sh
+
+

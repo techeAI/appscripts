@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O shinobi.sh  https://openteche.s3.amazonaws.com/TecheOS/shinobi/shinobi.sh
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/shinobi.sh -o shinobi.sh
 update_basedir() {
         echo ""
     echo ""
