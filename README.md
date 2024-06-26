@@ -23,3 +23,11 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/zabbix/zabbix
 
 
 
+########################### Urbackup #############################
+
+mkdir Urbackup && cd Urbackup
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/urbackup/setup_urbackup.sh -o setup_urbackup.sh && bash setup_urbackup.sh
+

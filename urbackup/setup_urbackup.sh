@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O urbackup.sh  https://openteche.s3.amazonaws.com/TecheOS/urbackup/urbackup.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/urbackup/urbackup.sh -o urbackup.sh
 update_basedir() {
         echo ""
     echo ""
