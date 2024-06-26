@@ -1,0 +1,34 @@
+#!/bin/bash
+wget -O mydesktop.sh  https://openteche.s3.amazonaws.com/TecheOS/mydesktop/mydesktop.sh
+update_basedir() {
+    read -p "Enter the Base directory path: " new_basedir
+    echo $new_basedir > /etc/basedir
+
+    # Replace "changebasedir" in install.sh with the new path
+    sed -i "s|changebasedir|$new_basedir|g" ./mydesktop.sh
+
+    echo "Base directory updated successfully in mydesktop.sh."
+}
+
+# Check if /etc/basedir file exists
+if [ -e "/etc/basedir" ]; then
+    # Read the current basedir from the file
+    current_basedir=$(cat "/etc/basedir")
+
+    # Ask the user if they want to proceed with the current basedir
+    read -p "Base directory found in /etc/basedir: $current_basedir. Do you want to proceed with this? (y/n): " choice
+
+
+    if [ "$choice" = "y" ]; then
+        # User does not want to proceed with the current basedir, update it
+     sed -i "s|changebasedir|$current_basedir|g" ./mydesktop.sh
+        else
+        # User does not want to proceed with the current basedir, update it
+        update_basedir
+    fi
+else
+update_basedir
+ fi
+
+bash mydesktop.sh
+

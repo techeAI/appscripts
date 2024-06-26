@@ -1,0 +1,36 @@
+#!/bin/bash
+BASE_DIR=changebasedir
+apt install sudo curl wget -y 2> /dev/null
+sudo apt install xrdp -y 2> /dev/null
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 3
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock
+else
+echo "Docker is already installed."
+sleep 2
+fi
+
+if sudo docker ps --format '{{.Names}}' | grep -q "myDESKTOP"; then
+echo "The container 'myDESKTOP' is already running. Skipping installation."
+sleep 2
+else
+echo "Setting up myDESKTOP service..."
+wget -O myDESKTOP_config.zip https://openteche.s3.amazonaws.com/TecheOS/mydesktop/myDESKTOP_config.zip
+sudo unzip -q myDESKTOP_config.zip
+sudo mv myDESKTOP_config $BASE_DIR
+sudo rm -rf myDESKTOP_config.zip
+local_ip=$(ip route get 1 | awk '{print $7}')
+sudo sed -i "s/chanegip/$local_ip/g" $BASE_DIR/myDESKTOP_config/guacamole/noauth-config.xml
+sudo docker run --name=myDESKTOP -p 8201:8080 -v $BASE_DIR/myDESKTOP_config:/config -d --restart unless-stopped oznu/guacamole
+
+echo "!!!!!! ############################################### !!!!!!!"
+echo " "
+echo "Service can be accessed at URL http://$local_ip:8201"
+sleep 5
+fi
