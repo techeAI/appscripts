@@ -81,3 +81,14 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/setup_portainer.sh -o setup_portainer.sh && bash setup_portainer.sh
 
+
+
+
+########################### Plex #############################
+
+mkdir plex && cd plex
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/plex/setup_plex.sh -o setup_plex.sh && bash setup_plex.sh
+
