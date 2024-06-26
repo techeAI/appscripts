@@ -23,6 +23,9 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/zabbix/zabbix
 
 
 
+
+
+
 ########################### Urbackup #############################
 
 mkdir Urbackup && cd Urbackup
