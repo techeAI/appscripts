@@ -14,7 +14,7 @@ echo "Docker is already installed."
 sleep 2
 fi
 apt install docker-compose -y
-wget -qO docker-compose.yaml https://openteche.s3.amazonaws.com/TecheOS/suitecrm/docker-compose.yaml
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/docker-compose.yaml -o docker-compose.yaml
 # Function to get user input with a default value
 get_user_input() {
     local prompt="$1"
