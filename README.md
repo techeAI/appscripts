@@ -4,7 +4,7 @@
 
 Run below command in bash shell.
 
-wget -qO setup_homarr.sh https://github.com/techeAI/appscripts/blob/main/dashboard/setup_homarr.sh
+wget -qO setup_homarr.sh https://github.com/techeAI/appscripts/blob/main/dashboard/setup_homarr.sh && bash  setup_homarr.sh
 
 
 
