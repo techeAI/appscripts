@@ -1,6 +1,6 @@
 #!/bin/bash
 apt install sudo curl docker-compose -y 2> /dev/null
-wget -O docker-compose.yml  https://openteche.s3.amazonaws.com/TecheOS/pihole/docker-compose.yml
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/pihole/docker-compose.yml -o docker-compose.yml
 update_basedir() {
         echo ""
     echo ""
