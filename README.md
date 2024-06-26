@@ -103,3 +103,14 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/pihole/setup_pihole.sh -o setup_pihole.sh && bash setup_pihole.sh
 
+
+
+
+########################### myDesktop #############################
+
+mkdir myDesktop && cd myDesktop
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/mydesktop/setup_mydesktop.sh -o setup_mydesktop.sh && bash setup_mydesktop.sh
+
