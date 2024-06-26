@@ -1,10 +1,10 @@
 ################# Installing DASHBOARD #################
 
-
-
 Run below command in bash shell.
 
-wget -qO setup_homarr.sh https://github.com/techeAI/appscripts/blob/main/dashboard/setup_homarr.sh && bash  setup_homarr.sh
+mkdir dashboard && cd dashbaord
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/setup_homarr.sh -o setup_homarr.sh && bash setup_homarr.sh
 
 
 
