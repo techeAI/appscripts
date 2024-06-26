@@ -21,7 +21,7 @@ echo "The container 'myDESKTOP' is already running. Skipping installation."
 sleep 2
 else
 echo "Setting up myDESKTOP service..."
-wget -O myDESKTOP_config.zip https://openteche.s3.amazonaws.com/TecheOS/mydesktop/myDESKTOP_config.zip
+curl -L  -o myDESKTOP_config.zip https://github.com/techeAI/appscripts/raw/main/mydesktop/myDESKTOP_config.zip
 sudo unzip -q  myDESKTOP_config.zip
 sudo mkdir -p $BASE_DIR 2> /dev/null
 sudo mv myDESKTOP_config/ $BASE_DIR
