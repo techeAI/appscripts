@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -qO handbrake.sh https://openteche.s3.amazonaws.com/TecheOS/handbrake/handbrake.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/handbrake.sh -o handbrake.sh
 update_basedir() {
     echo ""
     echo ""
