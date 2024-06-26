@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -qO homarr.sh https://github.com/techeAI/appscripts/blob/main/dashboard/homarr.sh 
+wget -qO homarr.sh https://raw.githubusercontent.com/techeAI/appscripts/blob/main/dashboard/homarr.sh 
 update_basedir() {
         echo ""
     echo ""
