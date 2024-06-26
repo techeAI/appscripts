@@ -138,7 +138,10 @@ curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calco
 
 
 
+
+
 ########################### Paperless-NGX #############################
 
-curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calcom.sh -o calcom.sh && bash calcom.sh
+
+bash -c "$(curl -L https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/install-paperless-ngx.sh)"
 
