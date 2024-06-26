@@ -11,4 +11,9 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/set
 
 
 
-##################### DASHBOARD #######################
+##################### Zabbix #######################
+
+mkdir zabbix && cd zabbix
+
+apt install curl -y
+
