@@ -135,3 +135,10 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calcom.sh -o calcom.sh && bash calcom.sh
 
+
+
+
+########################### Paperless-NGX #############################
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calcom.sh -o calcom.sh && bash calcom.sh
+
