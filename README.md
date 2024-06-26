@@ -92,3 +92,14 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/plex/setup_plex.sh -o setup_plex.sh && bash setup_plex.sh
 
+
+
+
+########################### Pihole #############################
+
+mkdir pihole && cd pihole
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/pihole/setup_pihole.sh -o setup_pihole.sh && bash setup_pihole.sh
+
