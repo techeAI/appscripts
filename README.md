@@ -125,3 +125,13 @@ apt install curl -y
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/jitsi/jitsi.sh -o jitsi.sh && bash jitsi.sh
 
 
+
+
+########################### Calcom #############################
+
+mkdir calcom && cd calcom
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/calcom/calcom.sh -o calcom.sh && bash calcom.sh
+
