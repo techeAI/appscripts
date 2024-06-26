@@ -17,3 +17,7 @@ mkdir zabbix && cd zabbix
 
 apt install curl -y
 
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/zabbix/zabbix-docker.sh -o zabbix-docker.sh && bash zabbix-docker.sh
+
+
+
