@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/blob/main/dashboard/homarr.sh -o homarr.sh
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/homarr.sh -o homarr.sh
 update_basedir() {
         echo ""
     echo ""

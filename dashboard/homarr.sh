@@ -2,7 +2,7 @@
 				
 				apt install sudo curl wget  -y 2> /dev/null
 				BASE_DIR=changebasedir/homarr
-				curl -sL https://raw.githubusercontent.com/techeAI/appscripts/blob/main/dashboard/default.json -o default.json
+				curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/default.json -o default.json
 			if [ ! -x /usr/bin/docker ]; then
 				echo "Installing docker.."
 				sleep 3
