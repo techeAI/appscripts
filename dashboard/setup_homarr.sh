@@ -8,7 +8,7 @@ update_basedir() {
     read -p "Enter the Base directory path: " new_basedir
     echo $new_basedir > /etc/basedir
 
-    # Replace "changebasedir" in install.sh with the new path
+    ## Replace "changebasedir" in install.sh with the new path
     sed -i "s|changebasedir|$new_basedir|g" ./homarr.sh
 
     echo "Base directory updated successfully in install.sh."

@@ -47,4 +47,4 @@
 			echo " "
 			echo "Dashboard can be accessed at the URL http://$local_ip"
 			echo " "
-			sleep 3
+			sleep 4
