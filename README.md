@@ -155,3 +155,13 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/antivirus/clam.sh -o clam.sh && bash clam.sh
 
+
+
+########################### Handbrake #############################
+
+mkdir handbrake && cd handbrake
+
+apt install curl -y
+
+curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/setup_handbrake.sh -o setup_handbrake.sh && bash setup_handbrake.sh
+
