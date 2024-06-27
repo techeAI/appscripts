@@ -203,4 +203,10 @@ For instructions, visit: https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_
 Spinning down disks in PVE (when idle)
 wget -qO setup_spindown.sh https://openteche.s3.amazonaws.com/TecheOS/spin_down_disks/setup_spindown.sh && bash setup_spindown.sh
 
+Enabling IOMMU (For Intel CPU)
 
+wget -qO enable_iommu_1.sh https://svastir-signature.s3.amazonaws.com/openTeche/PVE/enable_iommu_1.sh && bash enable_iommu_1.sh
+
+Run the below script after reboot.
+
+wget -qO enable_iommu_2.sh https://svastir-signature.s3.amazonaws.com/openTeche/PVE/enable_iommu_2.sh && bash enable_iommu_2.sh
