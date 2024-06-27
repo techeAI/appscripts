@@ -174,3 +174,31 @@ mkdir onlyoffice-workspace && cd onlyoffice-workspace
 apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/OnlyOffice/workspace-install.sh -o workspace-install.sh && bash workspace-install.sh -ims false
+
+
+
+
+
+
+########################### Proxmox(PVE) Helper Scripts ###########################
+Visit Website: https://tteck.github.io/Proxmox/
+
+Zamba LXC Toolbox : https://github.com/bashclub/zamba-lxc-toolbox/
+
+Virtualize Everything scripts: https://virtualizeeverything.com/
+
+Virtualize Everything Video: https://www.youtube.com/watch?v=qa2Q7tZVol8/
+
+Linux Containers: https://pve.proxmox.com/wiki/Linux_Container#pct_settings/
+
+Removing Subscription error message from PVE
+
+wget -qO remove_subscription_error.sh https://svastir-signature.s3.amazonaws.com/openTeche/PVE/remove_subscription_error.sh && bash remove_subscription_error.sh
+
+Passthrough Physical Disk to Virtual Machine (VM)
+For instructions, visit: https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)
+
+Spinning down disks in PVE (when idle)
+wget -qO setup_spindown.sh https://openteche.s3.amazonaws.com/TecheOS/spin_down_disks/setup_spindown.sh && bash setup_spindown.sh
+
+
