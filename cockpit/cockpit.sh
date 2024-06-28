@@ -1,4 +1,6 @@
 #!/bin/bash
+#Disable CDROM repo in debian
+sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
 apt update -y > /dev/null 2>&1 
 apt install curl sudo unzip lm-sensors git -y 2> /dev/null
 mkdir -p /usr/share/git/
