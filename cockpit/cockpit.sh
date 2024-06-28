@@ -18,7 +18,10 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-	
+
+#Disable CDROM repo in debian
+sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
+
 if [ $(dpkg-query -W -f='${Status}' cockpit  2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
 			wget -qO   wsdd https://openteche.s3.amazonaws.com/TecheOS/cockpit/wsdd
@@ -160,6 +163,9 @@ install_zfs() {
 			mv /usr/share/cockpit /usr/share/_cockpit
 			ln -snf /usr/share/git/techeos/cockpit /usr/share/cockpit
 			systemctl start cockpit
+			#Allow root user to access cockpit web console
+			sed -i '/^root/ s/^/#/' /etc/cockpit/disallowed-users && systemctl restart cockpit
+
 			local_ip=$(ip route get 1 | awk '{print $7}')
 			echo "!!!!!! ############################################### !!!!!!!"
 			echo " "
