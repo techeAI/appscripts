@@ -3,9 +3,6 @@
 sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
 apt update -y > /dev/null 2>&1 
 apt install curl sudo unzip lm-sensors git -y 2> /dev/null
-mkdir -p /usr/share/git/
-cd /usr/share/git/
-git clone https://github.com/techeAI/techeos.git
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 3
@@ -21,8 +18,6 @@ echo "Docker is already installed."
 sleep 2
 fi
 
-#Disable CDROM repo in debian
-sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
 
 if [ $(dpkg-query -W -f='${Status}' cockpit  2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
