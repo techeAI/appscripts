@@ -177,6 +177,14 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/OnlyOffice/wo
 
 
 
+########################### Cockpit #############################
+
+mkdir cockpit && cd cockpit
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/cockpit.sh -o cockpit.sh && bash cockpit.sh
+
+
 
 
 
