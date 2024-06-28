@@ -24,9 +24,9 @@ sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
 
 if [ $(dpkg-query -W -f='${Status}' cockpit  2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
-			wget -qO   wsdd https://openteche.s3.amazonaws.com/TecheOS/cockpit/wsdd
+			curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd -o wsdd
 
-			wget -qO   wsdd.service  https://openteche.s3.amazonaws.com/TecheOS/cockpit/wsdd.service
+			wget -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd.service -o wsdd.service
 			
 			echo "Installing Cockpit.."
 			apt install sudo unzip -y 2> /dev/null
