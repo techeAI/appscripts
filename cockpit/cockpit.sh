@@ -21,9 +21,9 @@ fi
 
 if [ $(dpkg-query -W -f='${Status}' cockpit  2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
-			curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd -o wsdd
+			curl -L -o wsdd https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd
 
-			wget -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd.service -o wsdd.service
+			curl -L -o wsdd.service https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd.service
 			
 			echo "Installing Cockpit.."
 			apt install sudo unzip -y 2> /dev/null
