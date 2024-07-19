@@ -15,3 +15,18 @@ echo "Docker is already installed."
 sleep 2
 fi
 
+
+# Prompt the user to enter the interface and timezone
+read -p "Enter the interface (put_interface): " interface
+read -p "Enter the timezone (put_timezone): " timezone
+
+# Run the Docker command with the user inputs
+docker run -d --name ipscanner \
+    -e "IFACE=$interface" \
+    -e "TZ=$timezone" \
+    --network="host" \
+    -v /etc/OT/wyl:/data \
+    --restart unless-stopped \
+    aceberg/watchyourlan
+local_ip=$(ip route get 1 | awk '{print $7}')
+echo "Now you can access ipscanner through URL: http://$local_ip:8840" 
