@@ -174,6 +174,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/ipscanner/ipscanner.sh -o ipscanner.sh && bash ipscanner.sh
 
 
+########################### Stirling-pdf #############################
+
+mkdir stirling-pdf && cd stirling-pdf
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-pdf.sh -o stirling-pdf.sh && bash  stirling-pdf.sh
+
 ########################### OnlyOffice-Workspace #############################
 
 mkdir onlyoffice-workspace && cd onlyoffice-workspace
