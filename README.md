@@ -165,6 +165,13 @@ apt install curl -y
 
 curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/setup_handbrake.sh -o setup_handbrake.sh && bash setup_handbrake.sh
 
+########################### IPScanner #############################
+
+mkdir ipscanner && cd ipscanner
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/ipscanner/ipscanner.sh -o ipscanner.sh && bash ipscanner.sh
 
 
 ########################### OnlyOffice-Workspace #############################
