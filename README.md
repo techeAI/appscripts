@@ -202,6 +202,10 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/cockp
 
 
 
+########################### Change URLS according to the domain  #############################
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/changeurls/changeurls.sh -o changeurls.sh && bash changeurls.sh
+
 
 
 ########################### Proxmox(PVE) Helper Scripts ###########################
