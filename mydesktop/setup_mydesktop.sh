@@ -1,38 +1,32 @@
 #!/bin/bash
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mydesktop/mydesktop.sh -o mydesktop.sh
-update_basedir() {
-    echo ""
-    echo ""
-    echo "Base directory is the path for directory in data disk , like /zfsDrive/zfsPool, if you don't have separate data disk, please put the path form OS disk like /etc/OT "
-    echo ""
-    read -p "Enter the Base directory path: " new_basedir
-    echo $new_basedir > /etc/basedir
+BASE_DIR=/mnt/DriveDATA/myDesktop
+apt install sudo curl wget  -y 2> /dev/null
 
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|changebasedir|$new_basedir|g" ./mydesktop.sh
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
 
-    echo "Base directory updated successfully in mydesktop.sh."
-}
-
-# Check if /etc/basedir file exists
-if [ -e "/etc/basedir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/basedir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Base directory found in /etc/basedir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|changebasedir|$current_basedir|g" ./mydesktop.sh
-        else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash mydesktop.sh
-
+if sudo docker ps --format '{{.Names}}' | grep -q "myDESKTOP"; then
+echo "The container 'myDESKTOP' is already running. Skipping installation."
+sleep 2
+else
+echo "Setting up myDESKTOP service..."
+local_ip=$(ip route get 1 | awk '{print $7}')
+sudo mkdir $BASE_DIR
+sudo docker run --name=myDESKTOP -p 8201:8080 -v $BASE_DIR/myDESKTOP_config:/config -d --restart unless-stopped oznu/guacamole
+sudo docker restart myDESKTOP
+echo "!!!!!! ############################################### !!!!!!!"
+echo " "
+echo "Now you can access your device through URL: http://$local_ip:8201"
+sleep 5
+fi
