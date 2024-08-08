@@ -1,38 +1,34 @@
 #!/bin/bash
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/portainer.sh -o portainer.sh
-update_basedir() {
-        echo ""
-    echo ""
-    echo "Base directory is the path for directory in data disk , like /zfsDrive/zfsPool, if you don't have separate data disk, please put the path form OS disk like /etc/OT "
-    echo ""
-    read -p "Enter the Base directory path: " new_basedir
-    echo $new_basedir > /etc/basedir
-
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|changebasedir|$new_basedir|g" ./portainer.sh
-
-    echo "Base directory updated successfully."
-}
-
-# Check if /etc/basedir file exists
-if [ -e "/etc/basedir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/basedir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Base directory found in /etc/basedir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|changebasedir|$current_basedir|g" ./portainer.sh
-        else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+BASE_DIR=/mnt/DriveDATA/portainer
+apt install wget curl sudo -y 2> /dev/null
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 3
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash portainer.sh
 
+
+if sudo docker ps --format '{{.Names}}' | grep -q "portainer"; then
+				echo "The container Portainer is already running. Skipping installation."
+				sleep 2
+			else
+				echo "Setting up Portainer.."
+				sudo mkdir -p $BASE_DIR 2> /dev/null
+				sudo docker run --name=portainer -d --restart unless-stopped  -p 8212:9000  -v /var/run/docker.sock:/var/run/docker.sock  -v $BASE_DIR/portainer_data:/data  portainer/portainer-ce:latest
+local_ip=$(ip route get 1 | awk '{print $7}')
+echo "#########################################################"
+echo "#########################################################"
+echo " "
+echo " "
+echo "login http://$local_ip:8212 to access Portainer and setup."
+sleep 5
+fi
