@@ -1,6 +1,6 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
-
+BASE_DIR=/mnt/DriveDATA/stirling
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 
@@ -15,12 +15,12 @@ echo "Docker is already installed."
 sleep 2
 fi
 
-
+sudo mkdir -p $BASE_DIR
 # Default values
 DEFAULT_PORT="5020"
-DEFAULT_VOLUME1="/etc/OT/Stiring_trainingData:/usr/share/tessdata"
-DEFAULT_VOLUME2="/etc/OT/Stiring_extraConfigs:/configs"
-DEFAULT_VOLUME3="/etc/OT/Stiring_logs:/logs"
+DEFAULT_VOLUME1="$BASE_DIR/Stiring_trainingData:/usr/share/tessdata"
+DEFAULT_VOLUME2="$BASE_DIR/Stiring_extraConfigs:/configs"
+DEFAULT_VOLUME3="$BASE_DIR/Stiring_logs:/logs"
 
 # Function to prompt user for input with a default value
 prompt() {
