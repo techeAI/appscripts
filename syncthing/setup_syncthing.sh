@@ -1,37 +1,33 @@
 #!/bin/bash
-curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/syncthing/syncthing.sh -o syncthing.sh
-update_basedir() {
-        echo ""
-    echo ""
-    echo " "
-    read -p "Enter the directory path which you want to sync, same will be linked to /var/syncthing in Syncthing container: " new_basedir
-    echo $new_basedir > /etc/syncdir
-
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|syncdir|$new_basedir|g" ./syncthing.sh
-
-    echo "Directory path updated successfully in Syncthing.sh."
-}
-
-# Check if /etc/basedir file exists
-if [ -e "/etc/syncdir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/syncdir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Sync directory found in /etc/syncdir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|syncdir|$current_basedir|g" ./syncthing.sh
-        else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+SYNCDIR=/mnt
+apt install wget curl sudo -y 2> /dev/null
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 3
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash syncthing.sh
 
+
+if sudo docker ps --format '{{.Names}}' | grep -q "syncthing"; then
+                                echo "The container 'syncthing' is already running. Skipping installation."
+                                sleep 2
+                        else
+                                echo "Setting up Syncthing.."
+sudo docker run -d --network=host --name=syncthing  -v $SYNCDIR:/var/syncthing  --hostname=my-syncthing  syncthing/syncthing:latest
+local_ip=$(ip route get 1 | awk '{print $7}')
+echo "#########################################################"
+echo "#########################################################"
+echo " "
+echo " "
+echo "login http://$local_ip:8384 to access Syncthing."
+sleep 5
+fi
