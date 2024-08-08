@@ -1,40 +1,34 @@
 #!/bin/bash
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/plex/plex.sh -o plex.sh
-update_basedir() {
-
-    echo ""
-    echo ""
-    echo "Media directory is the path for your media directory, like /mnt/media , where you stored your movies "
-    echo ""
-
-    read -p "Enter the Media directory path, same will be linked to /movies in Plex container: " new_basedir
-    echo $new_basedir > /etc/mediadir
-
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|mediadir|$new_basedir|g" ./plex.sh
-
-    echo "Media directory updated successfully in plex.sh."
-}
-
-# Check if /etc/basedir file exists
-if [ -e "/etc/mediadir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/mediadir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Base directory found in /etc/mediadir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|mediadir|$current_basedir|g" ./plex.sh
-        else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+MEDIA=/mnt/DriveDATA
+apt install wget curl sudo -y 2> /dev/null
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 2
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash plex.sh
 
+
+if sudo docker ps --format '{{.Names}}' | grep -q "plex"; then
+                                echo "The container 'Plex' is already running. Skipping installation."
+                                sleep 2
+                        else
+                                echo "Setting up Plex.."
+sudo mkdir -p $MEDIA 2> /dev/null
+sudo docker run -d --name=plex --net=host -e PUID=1000 -e PGID=1000 -e TZ=Etc/UTC -e VERSION=docker --device=/dev/dri:/dev/dri  -v $MEDIA:/movies --restart unless-stopped  lscr.io/linuxserver/plex:latest				
+local_ip=$(ip route get 1 | awk '{print $7}')
+echo "#########################################################"
+echo "#########################################################"
+echo " "
+echo " "
+echo "login http://$local_ip:32400/web to access Plex."
+sleep 5
+fi
