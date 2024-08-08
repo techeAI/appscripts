@@ -174,6 +174,17 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/ipscanner/ipscanner.sh -o ipscanner.sh && bash ipscanner.sh
 
 
+####################### Installing Whoogle #######################
+
+mkdir whoogle && cd whoogle
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/whoogle/setup_whoogle.sh -o setup_whoogle.sh && bash setup_whoogle.sh
+
+
+
+
 ########################### Stirling-pdf #############################
 
 mkdir stirling-pdf && cd stirling-pdf
