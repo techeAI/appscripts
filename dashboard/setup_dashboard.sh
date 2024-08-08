@@ -39,22 +39,16 @@
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/public.json -o public.json
 								mv default.json $BASE_DIR/teche-dashboard_configs/
 								mv public.json $BASE_DIR/teche-dashboard_configs/
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Biz%20App.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Dashboard.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Diagnostics.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Network.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Services.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Storage.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/System.png
- 
- wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Users.png	
-mv *.png /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/	       	fi
+
+wget -qO $BASE_DIR/teche-dashboard_icons/Biz-App.png https://openteche.s3.amazonaws.com/icons/Biz-App.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Dashboard.png https://openteche.s3.amazonaws.com/icons/Dashboard.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Diagnostics.png https://openteche.s3.amazonaws.com/icons/Diagnostics.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Network.png https://openteche.s3.amazonaws.com/icons/Network.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Services.png https://openteche.s3.amazonaws.com/icons/Services.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Storage.png https://openteche.s3.amazonaws.com/icons/Storage.png
+wget -qO $BASE_DIR/teche-dashboard_icons/System.png https://openteche.s3.amazonaws.com/icons/System.png
+wget -qO $BASE_DIR/teche-dashboard_icons/Users.png https://openteche.s3.amazonaws.com/icons/Users.png
+fi
 				sudo docker restart teche-dashboard
 			local_ip=$(ip route get 1 | awk '{print $7}')
 
