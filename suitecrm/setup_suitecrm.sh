@@ -1,5 +1,6 @@
 #!/bin/bash
 apt install wget curl sudo -y 2> /dev/null
+BASE_DIR=/mnt/DriveDATA
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
@@ -30,13 +31,13 @@ MARIADB_ROOT_PASSWORD=$(get_user_input "Enter MariaDB root password" "rootpasswo
 MARIADB_USER=$(get_user_input "Enter MariaDB user" "bn_suitecrm")
 MARIADB_PASSWORD=$(get_user_input "Enter MariaDB password" "bitnami123")
 MARIADB_DATABASE=$(get_user_input "Enter MariaDB database" "bitnami_suitecrm")
-MARIADB_VOLUME=$(get_user_input "Enter absolute path for MariaDB volume" "/etc/OT/suitecrm/suitecrm_db")
-SUITECRM_PORT_HTTP=$(get_user_input "Enter SuiteCRM HTTP port" "80")
-SUITECRM_PORT_HTTPS=$(get_user_input "Enter SuiteCRM HTTPS port" "443")
+MARIADB_VOLUME=$(get_user_input "Enter absolute path for MariaDB volume" "$BASE_DIR/suitecrm/suitecrm_db")
+SUITECRM_PORT_HTTP=$(get_user_input "Enter SuiteCRM HTTP port" "5010")
+SUITECRM_PORT_HTTPS=$(get_user_input "Enter SuiteCRM HTTPS port" "5011")
 SUITECRM_DATABASE_USER=$(get_user_input "Enter SuiteCRM database user" "bn_suitecrm")
 SUITECRM_DATABASE_PASSWORD=$(get_user_input "Enter SuiteCRM database password" "bitnami123")
 SUITECRM_DATABASE_NAME=$(get_user_input "Enter SuiteCRM database name" "bitnami_suitecrm")
-SUITECRM_VOLUME=$(get_user_input "Enter absolute path for SuiteCRM volume" "/etc/OT/suitecrm/suitecrm_data")
+SUITECRM_VOLUME=$(get_user_input "Enter absolute path for SuiteCRM volume" "$BASE_DIR/suitecrm/suitecrm_data")
 
 # Create directories if they do not exist with appropriate permissions
 mkdir -p "$MARIADB_VOLUME"
