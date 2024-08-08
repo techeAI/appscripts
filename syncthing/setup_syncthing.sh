@@ -22,7 +22,7 @@ if sudo docker ps --format '{{.Names}}' | grep -q "syncthing"; then
                                 sleep 2
                         else
                                 echo "Setting up Syncthing.."
-sudo docker run -d --network=host --name=syncthing  -v $SYNCDIR:/var/syncthing  --hostname=my-syncthing  syncthing/syncthing:latest
+sudo docker run -d --network=host --name=syncthing --restart unless-stopped  -v $SYNCDIR:/var/syncthing  --hostname=my-syncthing  syncthing/syncthing:latest
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
