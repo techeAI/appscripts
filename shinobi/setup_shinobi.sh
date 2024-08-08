@@ -1,37 +1,41 @@
 #!/bin/bash
-curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/shinobi/shinobi.sh -o shinobi.sh
-update_basedir() {
-        echo ""
-    echo ""
-    echo "Base directory is the path for directory in data disk , like /zfsDrive/zfsPool, if you don't have separate data disk, please put the path form OS disk like /etc/OT "
-    echo ""
-    read -p "Enter the Base directory path: " new_basedir
-    echo $new_basedir > /etc/basedir
-
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|changebasedir|$new_basedir|g" ./shinobi.sh
-
-    echo "Base directory updated successfully in shinobi.sh."
-}
-
-# Check if /etc/basedir file exists
-if [ -e "/etc/basedir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/basedir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Base directory found in /etc/basedir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|changebasedir|$current_basedir|g" ./shinobi.sh
-	else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+BASE_DIR=/mnt/DriveDATA
+apt install sudo wget curl -y 2> /dev/null
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 3
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash shinobi.sh
+if sudo docker ps --format '{{.Names}}' | grep -q "Shinobi"; then
+echo "The container 'Shinobi' is already running. Skipping installation."
+sleep 2
+else
+sudo docker run -dt --restart unless-stopped --name='Shinobi' --net=host -v "/dev/shm/Shinobi/streams":'/dev/shm/streams':'rw' -v "$BASE_DIR/Shinobi/config":'/config':'rw' -v "$BASE_DIR/Shinobi/customAutoLoad":'/home/Shinobi/libs/customAutoLoad':'rw' -v "$BASE_DIR/Shinobi/database":'/var/lib/mysql':'rw' -v "$BASE_DIR/Shinobi/videos":'/home/Shinobi/videos':'rw' -v "$BASE_DIR/Shinobi/plugins":'/home/Shinobi/plugins':'rw' -v '/etc/localtime':'/etc/localtime':'ro' registry.gitlab.com/shinobi-systems/shinobi:dev
+echo "Deploying container...Please don't exit."
+sleep 10
+sudo /usr/bin/sed -i 's/localhost/127.0.0.1/g' $BASE_DIR/Shinobi/config/conf.json
+sudo docker restart Shinobi
+
+local_ip=$(ip route get 1 | awk '{print $7}')
+echo "#########################################################"
+echo "#########################################################"
+echo " "
+echo " "
+echo "Default Username: admin@shinobi.video and password: admin "
+sleep 3
+echo "#########################################################"
+echo "#########################################################"
+echo " "
+echo " "
+echo "login http://$local_ip:8080/super from any device to create new admin user."
+sleep 5
+fi
