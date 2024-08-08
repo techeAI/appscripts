@@ -1,6 +1,6 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
-
+BASE_DIR=/mnt/DriveDATA
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 
@@ -17,15 +17,16 @@ fi
 
 
 # Prompt the user to enter the interface and timezone
-read -p "Enter the interface (put_interface): " interface
-read -p "Enter the timezone (put_timezone): " timezone
+ip -o link show | awk -F': ' '{print $2}'
+read -p "Enter the interface you want to scan, (all are listed above): " interface
+read -p "Enter the timezone, like (Asia/Kolkata): " timezone
 
 # Run the Docker command with the user inputs
 docker run -d --name ipscanner \
     -e "IFACE=$interface" \
     -e "TZ=$timezone" \
     --network="host" \
-    -v /etc/OT/wyl:/data \
+    -v $BASE_DIR/ipscanner:/data \
     --restart unless-stopped \
     aceberg/watchyourlan
 local_ip=$(ip route get 1 | awk '{print $7}')
