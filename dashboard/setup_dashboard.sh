@@ -39,26 +39,24 @@
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/public.json -o public.json
 								mv default.json $BASE_DIR/teche-dashboard_configs/
 								mv public.json $BASE_DIR/teche-dashboard_configs/
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/BizApp.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Biz%20App.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Biz%20App.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Dashboard.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Dashboard.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Dashboard.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Diagnostics.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Diagnostics.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Diagnostics.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Network.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Network.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Network.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Services.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Services.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Services.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Storage.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Storage.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Storage.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/System.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/System.png
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/System.png
  
- wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Users.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Users.png	
-	       	fi
+ wget  https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Users.png	
+mv *.png /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/	       	fi
 				sudo docker restart teche-dashboard
-			file_path="$BASE_DIR/teche-dashboard_configs/default.json"
 			local_ip=$(ip route get 1 | awk '{print $7}')
-			sudo sed -i "s/serverip/$local_ip/g" "$file_path"
 
 			echo "######################################################"
 			echo " "
