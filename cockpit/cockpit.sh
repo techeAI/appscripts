@@ -1,28 +1,13 @@
 #!/bin/bash
-#Disable CDROM repo in debian
-sed -i '/cdrom:/s/^/# /' /etc/apt/sources.list
 apt update -y > /dev/null 2>&1 
 apt install curl sudo unzip lm-sensors git -y 2> /dev/null
-if [ ! -x /usr/bin/docker ]; then
-echo "Installing docker.."
-sleep 3
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo usermod -aG docker $USER
-sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
-sudo rm -rf get-docker.sh
-else
-echo "Docker is already installed."
-sleep 2
-fi
 
+dpkg -l | grep -qw cockpit || sudo apt-get install -y cockpit
 
+	
 if [ $(dpkg-query -W -f='${Status}' cockpit  2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
 			curl -L -o wsdd https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd
-
 			curl -L -o wsdd.service https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/wsdd.service
 			
 			echo "Installing Cockpit.."
@@ -40,9 +25,9 @@ else
 			sudo systemctl enable cockpit.socket >  /dev/null 2>&1 || true
 			sudo systemctl restart cockpit >  /dev/null 2>&1 || true
 			sudo systemctl enable cockpit >  /dev/null 2>&1 || true
-                        local_ip=$(ip route get 1 | awk '{print $7}')
-                        echo "Cockpit is already installed and can be accesses at URL https://$local_ip:9090"
-                        sleep 5
+            local_ip=$(ip route get 1 | awk '{print $7}')
+            echo "Cockpit is already installed and can be accesses at URL https://$local_ip:9090"
+            sleep 5
 
 
 fi
@@ -148,26 +133,10 @@ install_zfs() {
            echo "Skipping ZFS installation"
         fi
 
-			#Install Machines
-			sudo apt-get install cockpit-machines -y
-
-			sudo systemctl daemon-reload >  /dev/null 2>&1 || true
-			sudo systemctl restart cockpit.socket >  /dev/null 2>&1 || true
-			sudo systemctl enable cockpit.socket >  /dev/null 2>&1 || true
-			sudo systemctl restart cockpit >  /dev/null 2>&1 || true
-			sudo systemctl enable cockpit >  /dev/null 2>&1 || true
-			systemctl stop cockpit
-			mv /usr/share/cockpit /usr/share/_cockpit
-			ln -snf /usr/share/git/techeos/cockpit /usr/share/cockpit
-			systemctl start cockpit
-			#Allow root user to access cockpit web console
-			sed -i '/^root/ s/^/#/' /etc/cockpit/disallowed-users && systemctl restart cockpit
-
 			local_ip=$(ip route get 1 | awk '{print $7}')
+			sed -i '/^root/ s/^/#/' /etc/cockpit/disallowed-users && systemctl restart cockpit
 			echo "!!!!!! ############################################### !!!!!!!"
 			echo " "
 			echo "Cockpit can be accessed at URL https://$local_ip:9090. Please reboot the system before accessing."
 			sleep 5
-		        rm -rf cockpit.sh
-				sleep 2
-########
+		    sleep 2
