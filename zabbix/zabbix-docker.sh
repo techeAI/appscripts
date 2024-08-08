@@ -1,5 +1,5 @@
 #!/bin/bash
-
+BASE_DIR=/mnt/DriveDATA
 # Install necessary packages
 apt update && apt install sudo curl wget -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
@@ -14,9 +14,9 @@ fi
 # Default values
 DEFAULT_FRONTEND_PORT=8080
 DEFAULT_SERVER_PORT=10051
-DEFAULT_FRONTEND_VOLUME="/etc/OT/Zabbix/frontend_data"
-DEFAULT_SERVER_VOLUME="/etc/OT/Zabbix/server_data"
-DEFAULT_DB_VOLUME="/etc/OT/Zabbix/mariadb_data"
+DEFAULT_FRONTEND_VOLUME="$BASE_DIR/Zabbix/frontend_data"
+DEFAULT_SERVER_VOLUME="$BASE_DIR/Zabbix/server_data"
+DEFAULT_DB_VOLUME="$BASE_DIR/Zabbix/mariadb_data"
 DEFAULT_DB_ROOT_PASSWORD="root_password"
 DEFAULT_DB_NAME="zabbix"
 DEFAULT_DB_USER="zabbix"
