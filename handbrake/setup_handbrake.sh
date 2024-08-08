@@ -26,6 +26,7 @@ sudo mkdir -p $BASE_DIR/handbrake 2> /dev/null
 local_ip=$(ip route get 1 | awk '{print $7}')
 docker run -d \
     --name=handbrake \
+    --restart=unless-stopped
     -p 8214:5800 \
     -v $BASE_DIR/handbrake/cofig:/config:rw \
     -v $BASE_DIR/handbrake/storage:/storage:ro \
