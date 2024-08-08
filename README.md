@@ -6,7 +6,7 @@ mkdir dashboard && cd dashboard
 
 apt install curl -y
 
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/setup_homarr.sh -o setup_homarr.sh && bash setup_homarr.sh
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/setup_dashboard.sh -o setup_dashboard.sh && bash setup_dashboard.sh
 
 
 
