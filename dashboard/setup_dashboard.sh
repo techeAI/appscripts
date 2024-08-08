@@ -33,12 +33,27 @@
                                 echo "Setting up Dashboard..."
 								sudo mkdir -p $BASE_DIR/teche-dashboard_configs
 								sudo mkdir -p $BASE_DIR/teche-dashboard_icons
+								sudo mkdir -p $BASE_DIR/teche-dashboard_data
                                 sudo docker run  --name teche-dashboard  --restart unless-stopped  -p 80:7575  -v $BASE_DIR/teche-dashboard_configs:/app/data/configs  -v /var/run/docker.sock:/var/run/docker.sock -v $BASE_DIR/teche-dashboard_icons:/app/public/icons -v /etc/OT/DASHBOARD/teche-dashboard_data:/data -d docker.io/techeai/techedash:latest
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/default.json -o default.json
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/public.json -o public.json
 								mv default.json $BASE_DIR/teche-dashboard_configs/
 								mv public.json $BASE_DIR/teche-dashboard_configs/
-							
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/BizApp.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Biz%20App.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Dashboard.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Dashboard.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Diagnostics.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Diagnostics.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Network.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Network.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Services.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Services.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Storage.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Storage.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/System.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/System.png
+ 
+ wget -qo /mnt/DriveDATA/DASHBOARD/teche-dashboard_icons/Users.png https://github.com/techeAI/appscripts/blob/34f1a652b58219600d95fff3c29342a5f9252315/dashboard/teche-dashboard_icons/Users.png	
 	       	fi
 				sudo docker restart teche-dashboard
 			file_path="$BASE_DIR/teche-dashboard_configs/default.json"
