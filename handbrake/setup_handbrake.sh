@@ -1,38 +1,50 @@
 #!/bin/bash
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/handbrake.sh -o handbrake.sh
-update_basedir() {
-    echo ""
-    echo ""
-    echo "Base directory is the path for directory in data disk , like /zfsDrive/zfsPool, if you don't have separate data disk, please put the path form OS disk like /etc/OT "
-    echo ""
-    read -p "Enter the Base directory path: " new_basedir
-    echo $new_basedir > /etc/basedir
 
-    # Replace "changebasedir" in install.sh with the new path
-    sed -i "s|changebasedir|$new_basedir|g" ./handbrake.sh
+BASE_DIR=/mnt/DriveDATA
+apt install sudo curl wget   -y 2> /dev/null
 
-    echo "Base directory updated successfully."
-}
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
 
-# Check if /etc/basedir file exists
-if [ -e "/etc/basedir" ]; then
-    # Read the current basedir from the file
-    current_basedir=$(cat "/etc/basedir")
-
-    # Ask the user if they want to proceed with the current basedir
-    read -p "Base directory found in /etc/basedir: $current_basedir. Do you want to proceed with this? (y/n): " choice
-
-
-    if [ "$choice" = "y" ]; then
-        # User does not want to proceed with the current basedir, update it
-     sed -i "s|changebasedir|$current_basedir|g" ./handbrake.sh
-        else
-        # User does not want to proceed with the current basedir, update it
-        update_basedir
-    fi
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
-update_basedir
- fi
+echo "Docker is already installed."
+sleep 2
+fi
 
-bash handbrake.sh
+if sudo docker ps --format '{{.Names}}' | grep -q "handbrake"; then
+echo "The container 'handbrake' is already running. Skipping installation."
+sleep 2
+else
+echo "Setting up handbrake..."
+sudo mkdir -p $BASE_DIR/handbrake 2> /dev/null
+local_ip=$(ip route get 1 | awk '{print $7}')
+docker run -d \
+    --name=handbrake \
+    -p 8214:5800 \
+    -v $BASE_DIR/handbrake/cofig:/config:rw \
+    -v $BASE_DIR/handbrake/storage:/storage:ro \
+    -v $BASE_DIR/handbrake/watch:/watch:rw \
+    -v $BASE_DIR/handbrake/output:/output:rw \
+    jlesage/handbrake:v24.01.2
+echo "!!!!!! ############################################### !!!!!!!"
+echo " "
+echo "Now you can access handbrake at URL: http://$local_ip:8214"
 
+echo " ################ INFO ###############"
+echo " "
+echo "$BASE_DIR/handbrake/cofig: This is where the application stores its configuration, states, log and any files needing persistency. "
+echo " "
+echo "$BASE_DIR/handbrake/storage: This location contains files from your host that need to be accessible to the application."
+echo " "
+echo "$BASE_DIR/handbrake/watch: This is where videos to be automatically converted are located."
+echo " "
+echo "$BASE_DIR/handbrake/output:: This is where automatically converted video files are written."
+
+sleep 5
+fi
