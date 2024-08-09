@@ -231,7 +231,7 @@ apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/docker-compose.yaml -o docker-compose.yaml
 
-####### Change value for "APP_URL", and other credentials in docker-compose.yaml.Then run below command.
+####### Change value for "Mysql root password", and other credentials in docker-compose.yaml.Then run below command.
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
 
