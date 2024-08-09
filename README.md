@@ -222,6 +222,21 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/doc
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/setup_bookstack.sh -o setup_bookstack.sh && bash  setup_bookstack.sh
 
 
+
+#######################  mautic #################################
+
+mkdir mautic && cd mautic
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/docker-compose.yaml -o docker-compose.yaml
+
+####### Change value for "APP_URL", and other credentials in docker-compose.yaml.Then run below command.
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
+
+
+
 ########################### OnlyOffice-Workspace #############################
 
 mkdir onlyoffice-workspace && cd onlyoffice-workspace
