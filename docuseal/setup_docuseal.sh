@@ -22,7 +22,7 @@ if sudo docker ps --format '{{.Names}}' | grep -q "docuseal"; then
                                 sleep 2
                         else
                                 echo "Setting up Docuseal.."
-sudo docker run --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal
+sudo docker run -d --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
