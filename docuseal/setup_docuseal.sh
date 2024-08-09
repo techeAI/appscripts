@@ -1,5 +1,5 @@
 #!/bin/bash
-$BASE_DIR=/mnt/DriveDATA
+BASE_DIR=/mnt/DriveDATA
 apt install wget curl sudo -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
