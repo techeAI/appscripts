@@ -21,5 +21,5 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:8880 to access bookstack."
+echo "login http://$local_ip:8880 to access mautic."
 sleep 5
