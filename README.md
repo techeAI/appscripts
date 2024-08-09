@@ -183,6 +183,13 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/whoogle/setup_whoogle.sh -o setup_whoogle.sh && bash setup_whoogle.sh
 
 
+####################### Installing Docuseal #######################
+
+mkdir docuseal && cd docuseal
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/setup_docuseal.sh -o setup_docuseal.sh && bash setup_docuseal.sh
 
 
 ########################### Stirling-pdf #############################
