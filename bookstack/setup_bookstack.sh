@@ -14,7 +14,6 @@ echo "Docker is already installed."
 sleep 2
 fi
 
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/docker-compose.yaml -o docker-compose.yaml
 
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
