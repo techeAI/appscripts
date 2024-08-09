@@ -14,19 +14,19 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-
+sudo mkdir /mnt/DriveDATA/focalboard && sudo chmod 777 /mnt/DriveDATA/focalboard
 if sudo docker ps --format '{{.Names}}' | grep -q "focalboard"; then
                                 echo "The container 'focalboard' is already running. Skipping installation."
                                 sleep 2
                         else
                                 echo "Setting up focalboard.."
 
-sudo docker run -dit --name focalboard --restart unless-stopped -v $BASE_DIR/focalboard:/opt/focalboard/data -p 5010:8000 mattermost/focalboard
+sudo docker run -dit --name focalboard --restart unless-stopped -v $BASE_DIR/focalboard:/opt/focalboard/data -p 9999:8000 mattermost/focalboard
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:5010 to access focalboard."
+echo "login http://$local_ip:9999 to access focalboard."
 sleep 5
 fi
