@@ -200,6 +200,16 @@ apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-pdf.sh -o stirling-pdf.sh && bash  stirling-pdf.sh
 
+
+########################### Bookstack #############################
+
+mkdir bookstack && cd bookstack
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/setup_bookstack.sh -o setup_bookstack.sh && bash  setup_bookstack.sh
+
+
 ########################### OnlyOffice-Workspace #############################
 
 mkdir onlyoffice-workspace && cd onlyoffice-workspace
