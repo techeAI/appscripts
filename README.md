@@ -207,6 +207,10 @@ mkdir bookstack && cd bookstack
 
 apt install curl -y
 
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/docker-compose.yaml -o docker-compose.yaml
+
+####### Change value for  "APP_URL", and other credentials in docker-compose.yaml.Then run below command.
+
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/setup_bookstack.sh -o setup_bookstack.sh && bash  setup_bookstack.sh
 
 
