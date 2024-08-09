@@ -201,6 +201,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-pdf.sh -o stirling-pdf.sh && bash  stirling-pdf.sh
 
 
+########################### Focalboard #############################
+
+mkdir focalboard && cd focalboard
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/focalboard/setup_focalboard.sh -o setup_focalboard.sh && bash  setup_focalboard.sh
+
 ########################### Bookstack #############################
 
 mkdir bookstack && cd bookstack
