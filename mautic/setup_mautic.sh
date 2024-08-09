@@ -14,7 +14,8 @@ echo "Docker is already installed."
 sleep 2
 fi
 
-
+sudo mkdir /mnt/DriveDATA/mautic
+sudo chmod 777 /mnt/DriveDATA/mautic
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
