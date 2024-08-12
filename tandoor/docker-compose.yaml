@@ -1,0 +1,22 @@
+services:
+  db_recipes:
+    restart: unless-stopped
+    image: postgres:16-alpine
+    volumes:
+      - /mnt/DriveDATA/tandoor_recipes/postgresql:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+
+  web_recipes:
+    restart: unless-stopped
+    image: vabene1111/recipes
+    env_file:
+      - ./.env
+    ports:
+      - 5005:8080
+    volumes:
+      - /mnt/DriveDATA/tandoor_recipes/staticfiles:/opt/recipes/staticfiles
+      - /mnt/DriveDATA/tandoor_recipes/mediafiles:/opt/recipes/mediafiles
+    depends_on:
+      - db_recipes
+
