@@ -246,7 +246,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/openproject/s
 
 ####### Change value for "OPENPROJECT_HOST__NAME" and "OPENPROJECT_SECRET_KEY_BASE" in setup_openproject.sh then run below command.
 
-bach setup_openproject.sh
+bash setup_openproject.sh
 
 
 
