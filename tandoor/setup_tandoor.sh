@@ -16,7 +16,6 @@ sleep 2
 fi
 
 
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/tandoor/.env -o .env
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/tandoor/docker-compose.yaml -o docker-compose.yaml
 docker-compose up -d
 
