@@ -268,6 +268,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
 
 
+########################### Immich (Photo) #############################
+
+mkdir immich && cd immich
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
+
 
 ########################### Cockpit #############################
 
