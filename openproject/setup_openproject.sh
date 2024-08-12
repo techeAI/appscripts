@@ -14,7 +14,8 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-sudo mkdir $BASE_DIR/pgdata $BASE_DIR/assets
+sudo mkdir -p $BASE_DIR/pgdata 
+sudo mkdir -p $BASE_DIR/assets
 docker run -d -p 9222:80 --name openproject --restart unless-stopped \
   -e OPENPROJECT_HOST__NAME=openproject.openteche.io \
   -e OPENPROJECT_SECRET_KEY_BASE=secret \
