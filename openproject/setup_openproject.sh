@@ -14,8 +14,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-docker run --restart unless-stopped --publish 5004:5000 --detach --name whoogle-search benbusby/whoogle-search:latest
-
+sudo mkdir $BASE_DIR/pgdata $BASE_DIR/assets
 docker run -d -p 9222:80 --name openproject --restart unless-stopped \
   -e OPENPROJECT_HOST__NAME=openproject.openteche.io \
   -e OPENPROJECT_SECRET_KEY_BASE=secret \
