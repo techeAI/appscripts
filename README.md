@@ -236,6 +236,19 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/docker
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
 
 
+#######################  OpenProject #################################
+
+mkdir openproject && cd openproject
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/openproject/setup_openproject.sh -o setup_openproject.sh
+
+####### Change value for "OPENPROJECT_HOST__NAME" and "OPENPROJECT_SECRET_KEY_BASE" in setup_openproject.sh then run below command.
+
+bach setup_openproject.sh
+
+
 
 ########################### OnlyOffice-Workspace #############################
 
