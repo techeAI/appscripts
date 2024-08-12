@@ -259,6 +259,15 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/OnlyOffice/workspace-install.sh -o workspace-install.sh && bash workspace-install.sh -ims false
 
 
+########################### Nextcloud #############################
+
+mkdir nextcloud && cd nextcloud
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
+
+
 
 ########################### Cockpit #############################
 
