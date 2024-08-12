@@ -285,6 +285,20 @@ apt install curl -y
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mealie/setup_mealie.sh -o setup_mealie.sh && bash setup_mealie.sh
 
+
+
+########################### Tandoor (Recipes) #############################
+
+mkdir tandoor && cd tandoor
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/tandoor/.env -o .env 
+
+#Update the credentials in .env, once done run the below command.
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/tandoor/setup_tandoor.sh -o setup_tandoor.sh && bash setup_tandoor.sh
+
 ########################### Cockpit #############################
 
 mkdir cockpit && cd cockpit
