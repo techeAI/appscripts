@@ -24,6 +24,5 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:5008 to access focalboard."
+echo "login http://$local_ip:5008 to access Immich."
 sleep 5
-fi
