@@ -277,6 +277,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
 
 
+########################### Mealie #############################
+
+mkdir mealie && cd mealie
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mealie/setup_mealie.sh -o setup_mealie.sh && bash setup_mealie.sh
+
 ########################### Cockpit #############################
 
 mkdir cockpit && cd cockpit
