@@ -25,4 +25,4 @@ docker run -d -p 9222:80 --name openproject --restart unless-stopped \
   
   
 local_ip=$(ip route get 1 | awk '{print $7}')
-echo "Now you can access ipscanner through URL: http://$local_ip:9222"
+echo "Now you can access openproject through URL: http://$local_ip:9222"
