@@ -18,7 +18,7 @@ fi
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/.env -o .env
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/docker-compose.yml -o docker-compose.yml
-docker-compose up -d
+docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
