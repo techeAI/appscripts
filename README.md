@@ -317,6 +317,17 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/setup_vaultwarden.sh -o setup_vaultwarden.sh && bash setup_vaultwarden.sh
 
 
+
+########################### Home Assistant #############################
+
+mkdir homeassistant && cd homeassistant
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/homeassistant/setup_homeassistant.sh -o setup_homeassistant.sh && bash setup_homeassistant.sh
+
+
+
 ########################### Change URLS according to the domain  #############################
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/changeurls/changeurls.sh -o changeurls.sh && bash changeurls.sh
