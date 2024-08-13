@@ -282,6 +282,20 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/.env -
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
 
 
+########################### Akaunting #############################
+
+mkdir akaunting && cd akaunting
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/db.env -o db.env
+
+### Update the credentials and  details in db.env  and run below comamnd.
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/setup_akaunting.sh -o setup_akaunting.sh && bash setup_akaunting.sh
+
+
+
 ########################### Mealie #############################
 
 mkdir mealie && cd mealie
