@@ -307,6 +307,19 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/rocketchat/do
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/rocketchat/setup_rocketchat.sh -o setup_rocketchat.sh && bash setup_rocketchat.sh
 
 
+########################### Horilla (HRMS) #############################
+
+apt install git -y 
+
+git clone https://github.com/horilla-opensource/horilla.git
+
+cd horilla
+
+# update the credentials in ".env.dist" and required details in docker-compose.yaml and run the below mentioned command. Remember the exposed port.
+docker-compose up -d
+
+
+
 
 ########################### Mealie #############################
 
