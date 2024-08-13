@@ -15,7 +15,6 @@ echo "Docker is already installed."
 sleep 2
 fi
  
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/rocketchat/docker-compose.yaml -o docker-compose.yaml
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access rocketchat through URL: http://$local_ip:5012" 
