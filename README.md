@@ -308,6 +308,14 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/cockpit/cockpit.sh -o cockpit.sh && bash cockpit.sh
 
 
+########################### Vaultwarden #############################
+
+mkdir vaultwarden && cd vaultwarden
+
+apt install curl -y
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/setup_vaultwarden.sh -o setup_vaultwarden.sh && bash setup_vaultwarden.sh
+
 
 ########################### Change URLS according to the domain  #############################
 
