@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+
+  akaunting:
+    image: docker.io/akaunting/akaunting:latest
+    ports:
+      - 7070:80
+      - 7071:443
+    volumes:
+      - /mnt/DriveDATA/akaunting/data:/var/www/html/akaunting
+      - /mnt/DriveDATA/akaunting/apache:/etc/apache2/sites-available
+      - /mnt/DriveDATA/akaunting/letsencrypt:/etc/letsencrypt
+      - /mnt/DriveDATA/akaunting/letsencrypt_lib:/var/lib/letsencrypt
+    restart: unless-stopped
+    depends_on:
+      - akaunting-db
+
+  akaunting-db:
+    container_name: akaunting-db
+    image: mariadb
+    volumes:
+      - /mnt/DriveDATA/akaunting/akaunting-db:/var/lib/mysql
+    restart: unless-stopped
+    env_file:
+      - ./db.env
+
+        #volumes:
+        #akaunting-data:
+        #akaunting-db:
