@@ -274,6 +274,11 @@ mkdir immich && cd immich
 
 apt install curl -y
 
+
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/.env -o .env
+
+### Update the credentials and  details in .env  and run below comamnd.
+
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
 
 
