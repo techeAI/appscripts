@@ -17,7 +17,7 @@ fi
 
 sudo mkdir -p $BASE_DIR
 # Default values
-DEFAULT_PORT="5020"
+DEFAULT_PORT="5003"
 DEFAULT_VOLUME1="$BASE_DIR/Stiring_trainingData:/usr/share/tessdata"
 DEFAULT_VOLUME2="$BASE_DIR/Stiring_extraConfigs:/configs"
 DEFAULT_VOLUME3="$BASE_DIR/Stiring_logs:/logs"
