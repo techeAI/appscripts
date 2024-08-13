@@ -1,3 +1,6 @@
+#!/bin/bash
+
+apt install git docker-compose sudo curl wget  unzip   -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 
