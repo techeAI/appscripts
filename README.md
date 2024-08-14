@@ -376,6 +376,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/homeassistant
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/changeurls/changeurls.sh -o changeurls.sh && bash changeurls.sh
 
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/changeurls/updateip.sh -o updateip.sh && bash updateip.sh
 
 
 ########################### Proxmox(PVE) Helper Scripts ###########################
