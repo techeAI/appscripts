@@ -22,7 +22,7 @@ sudo mkdir -p /mnt/DriveDATA/nextcloud/document_data
 sudo mkdir -p /mnt/DriveDATA/nextcloud/document_log
 sudo mkdir -p /mnt/DriveDATA/nextcloud/app_data
 sudo mv nginx.conf /mnt/DriveDATA/nextcloud/
-
+chown -R www-data:www-data /mnt/DriveDATA/nextcloud/
 docker-compose up -d
 bash set_configuration.sh
 local_ip=$(ip route get 1 | awk '{print $7}')
