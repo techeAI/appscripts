@@ -1,7 +1,7 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA
 # Install necessary packages
-apt update && apt install sudo curl wget -y 2> /dev/null
+apt update && apt install sudo curl wget lm-sensors -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
     echo "Installing Docker..."
     sleep 3
