@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2024-09-09T07:19:33Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template basicCPUTemp</template>
+            <name>Template basicCPUTemp</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Temperature</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>CPU Temperature Avg</name>
+                    <key>basicCPUTemp.avg</key>
+                    <delay>10s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                    <applications>
+                        <application>
+                            <name>Temperature</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>CPU Temperature Max</name>
+                    <key>basicCPUTemp.max</key>
+                    <delay>10s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                    <applications>
+                        <application>
+                            <name>Temperature</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;90.0</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(60s)}&lt;75</recovery_expression>
+                            <name>Temperature high</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{last()}&gt;95</expression>
+                            <recovery_mode>NONE</recovery_mode>
+                            <name>Temperature too high</name>
+                            <priority>DISASTER</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CPU Temperature Min</name>
+                    <key>basicCPUTemp.min</key>
+                    <delay>10s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                    <applications>
+                        <application>
+                            <name>Temperature</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <name>CPU Temperature</name>
+            <graph_items>
+                <graph_item>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template basicCPUTemp</host>
+                        <key>basicCPUTemp.min</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>2774A4</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template basicCPUTemp</host>
+                        <key>basicCPUTemp.avg</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template basicCPUTemp</host>
+                        <key>basicCPUTemp.max</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
