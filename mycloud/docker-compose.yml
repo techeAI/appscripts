@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: app-server
+    container_name: mycloudapp-server
     image: nextcloud:fpm
     restart: always
     expose:
@@ -10,7 +10,7 @@ services:
     volumes:
       - /mnt/DriveDATA/nextcloud/app_data:/var/www/html
   onlyoffice-document-server:
-    container_name: onlyoffice-document-server
+    container_name: mycloudapp-onlyoffice-document-server
     image: onlyoffice/documentserver:latest
     restart: always
     environment:
@@ -22,7 +22,7 @@ services:
       - /mnt/DriveDATA/nextcloud/document_data:/var/www/onlyoffice/Data
       - /mnt/DriveDATA/nextcloud/document_log:/var/log/onlyoffice
   nginx:
-    container_name: nginx-server
+    container_name: mycloudapp-nginx-server
     image: nginx
     restart: always
     ports:
