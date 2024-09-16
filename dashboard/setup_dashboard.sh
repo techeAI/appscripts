@@ -31,6 +31,17 @@
                                 sleep 2
                         else
                                 echo "Setting up Dashboard..."
+echo "Dashboard be deployed behind a reverse proxy? (yes/no):"
+read reverse_proxy
+
+# Check the user's input
+if [[ "$reverse_proxy" == "yes" ]]; then
+    hport=8080
+elif [[ "$reverse_proxy" == "no" ]]; then
+    hport=80
+else
+    echo "Invalid input. Please enter 'yes' or 'no'."
+fi
 								sudo mkdir -p $BASE_DIR/teche-dashboard_configs
 								sudo mkdir -p $BASE_DIR/teche-dashboard_icons
 								sudo mkdir -p $BASE_DIR/teche-dashboard_data
