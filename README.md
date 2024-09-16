@@ -1,8 +1,6 @@
-####################### Installing DASHBOARD #######################
+**####################### Installing DASHBOARD #######################**
 
 Run below command in bash shell.
-
-mkdir dashboard && cd dashboard
 
 apt install curl -y
 
