@@ -45,7 +45,7 @@ fi
 								sudo mkdir -p $BASE_DIR/teche-dashboard_configs
 								sudo mkdir -p $BASE_DIR/teche-dashboard_icons
 								sudo mkdir -p $BASE_DIR/teche-dashboard_data
-                                sudo docker run  --name teche-dashboard  --restart unless-stopped  -p 80:7575  -v $BASE_DIR/teche-dashboard_configs:/app/data/configs  -v /var/run/docker.sock:/var/run/docker.sock -v $BASE_DIR/teche-dashboard_icons:/app/public/icons -v $BASE_DIR/teche-dashboard_data:/data -d docker.io/techeai/techeos:latest
+                                sudo docker run  --name teche-dashboard  --restart unless-stopped  -p $hport:7575  -v $BASE_DIR/teche-dashboard_configs:/app/data/configs  -v /var/run/docker.sock:/var/run/docker.sock -v $BASE_DIR/teche-dashboard_icons:/app/public/icons -v $BASE_DIR/teche-dashboard_data:/data -d docker.io/techeai/techeos:latest
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/default.json -o default.json
 								curl -sL  https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/public.json -o public.json
 								mv default.json $BASE_DIR/teche-dashboard_configs/
