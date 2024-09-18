@@ -1,6 +1,15 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA/
 
+#Check if nginx is running and download reverse proxy file
+systemctl is-active --quiet nginx
+if [ $? -eq 0 ]; then
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/handbrake/setup_handbrake.sh -o setup_handbrake.sh && bash setup_handbrake.sh
+else
+echo "Nginx is not running"
+exit 1
+fi
+
 ## Setting up
 mkdir -p $BASE_DIR/NextcloudAIO/nextcloud_aio_mastercontainer
 mkdir -p $BASE_DIR/NextcloudAIO/ncdata
