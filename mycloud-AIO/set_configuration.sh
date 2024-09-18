@@ -2,14 +2,8 @@
 BASE_DIR=/mnt/DriveDATA/
 
 #Check if nginx is running and download reverse proxy file
-systemctl is-active --quiet nginx
-if [ $? -eq 0 ]; then
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/main/mycloud-AIO/mycloudaio.conf -o mycloudaio.conf
 mv mycloudaio.conf /etc/nginx/sites-enabled/mycloudaio
-else
-echo "Nginx is not running"
-exit 1
-fi
 
 ## Setting up
 mkdir -p $BASE_DIR/NextcloudAIO/nextcloud_aio_mastercontainer
