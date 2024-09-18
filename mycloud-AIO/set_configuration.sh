@@ -2,7 +2,7 @@
 BASE_DIR=/mnt/DriveDATA
 
 #Check if nginx is running and download reverse proxy file
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/main/mycloud-AIO/mycloudaio.conf -o mycloudaio.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-AIO/mycloudaio.conf -o mycloudaio.conf
 mv mycloudaio.conf /etc/nginx/sites-enabled/mycloudaio
 
 ## Setting up
