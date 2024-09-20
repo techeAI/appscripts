@@ -1,20 +1,9 @@
 {
   "schemaVersion": 1,
   "configProperties": {
-    "name": "local"
+    "name": "default"
   },
   "categories": [
-    {
-      "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7",
-      "name": "System Management",
-      "position": 1,
-      "type": "category"
-    },
-    {
-      "id": "3fee2882-45bf-440d-a856-268f2cea479b",
-      "name": "Network Management",
-      "position": 2
-    },
     {
       "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7",
       "name": "Applications",
@@ -22,12 +11,23 @@
       "type": "category"
     },
     {
-      "id": "b98b083d-4081-44ab-af2e-5e308a677fc6",
+      "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7",
+      "name": "System Management",
+      "position": 1,
+      "type": "category"
+    },
+    {
+      "id": "45007893-010e-41d7-84f8-5811fcfca1c8",
       "name": "Storage Management",
       "position": 3
     },
     {
-      "id": "5575365b-4436-496d-8b28-c9ceaffd2ec8",
+      "id": "467fe748-bf26-4950-9b60-8f59574a6b4b",
+      "name": "Network Management",
+      "position": 2
+    },
+    {
+      "id": "842682bd-e9c5-4f0b-93f4-09b60153dcfb",
       "name": "Apps For Home",
       "position": 5,
       "type": "category"
@@ -47,25 +47,25 @@
       "position": 2
     },
     {
-      "id": "a7ef0a5c-4ee5-4c6b-8004-8c956eb6205c",
+      "id": "aaf7dd3f-ff4a-478a-884e-ff722b503585",
       "position": 3
     },
     {
-      "id": "7e3fe0b5-9c84-4d3d-929e-6a631878c086",
+      "id": "e0558e65-5b32-4c23-9ff1-9de08ccc9b93",
       "position": 4
     },
     {
-      "id": "b521ce97-b1cc-4d97-95e1-2a1c03c14986",
+      "id": "0027dd0a-d6cb-4c32-813d-3e04c3f90d4e",
       "position": 5
     }
   ],
   "apps": [
     {
-      "id": "da6b5c11-91e3-48ae-9790-675aa2c08697",
-      "name": "Project",
-      "url": "http://yourip:9222",
+      "id": "a64d0e3f-53db-40ce-89fb-2287f0790e67",
+      "name": "SuiteCRM",
+      "url": "https://suitecrm.your.domain/#/Login",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openproject.svg",
+        "iconUrl": "https://docs.suitecrm.com/images/logo-square.png",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -84,7 +84,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:9222"
+        "externalUrl": "https://suitecrm.your.domain/#/Login"
       },
       "area": {
         "type": "category",
@@ -95,18 +95,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 3,
+            "x": 1,
             "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 0
           },
           "size": {
             "width": 1,
@@ -122,7 +112,7 @@
     {
       "id": "61b13c2c-8ac3-43d6-a18b-c24527f60f8e",
       "name": "Mattermost",
-      "url": "http://yourip:8065",
+      "url": "https://mattermost.your.domain",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mattermost.svg",
         "appNameStatus": "normal",
@@ -143,7 +133,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8065"
+        "externalUrl": "https://mattermost.your.domain"
       },
       "area": {
         "type": "category",
@@ -155,645 +145,6 @@
         "lg": {
           "location": {
             "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "280a5bd2-9a0d-4978-aaae-f52646a388b6",
-      "name": "Docuseal",
-      "url": "http://yourip:3000",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docuseal.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:3000"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "b675da6f-0bc8-41d6-837b-a36ad6bc71d6",
-      "name": "Mautic",
-      "url": "http://yourip:8880",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mautic.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8880"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "fd3a6c88-e87d-4338-9e13-c6016f9b37f3",
-      "name": "Video Meeting",
-      "url": "http://yourip:5001",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jitsi-meet.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5001"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "af376ea8-bbe3-4807-8c13-5445b08cee57",
-      "name": "Updates",
-      "url": "https://yourip:9090/updates",
-      "appearance": {
-        "iconUrl": "/imgs/logo/openteche.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/updates"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6eebbd0c-bde2-4ec8-9183-944836b3a712",
-      "name": "Paperless",
-      "url": "http://yourip:8000",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/paperless-ng.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8000"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "92f9f25a-0843-42a6-b407-131df3824f06",
-      "name": "Terminal",
-      "url": "https://yourip:9090/system/terminal",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/terminal.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/system/terminal"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "ad8f1e99-6faa-4c30-9795-650d38a4681a",
-      "name": "StirlingPDF",
-      "url": "http://yourip:5003",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/stirling-pdf.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5003"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 9,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "2d656607-e0c6-499d-8e0b-1ebde382caca",
-      "name": "Diagnostics",
-      "url": "https://yourip:9090/system/logs",
-      "appearance": {
-        "iconUrl": "/icons/Diagnostics.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/system/logs"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "ef72b471-0ff6-4783-9032-e3ccb364b373",
-      "name": "SearchEngine",
-      "url": "http://yourip:5004",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whoogle.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5004"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "0b590b92-61fd-46fd-b45c-1b82bd714dad",
-      "name": "vaultwarden",
-      "url": "http://yourip:5007/#/login",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vaultwarden.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5007/#/login"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "d42b8ddd-5cae-4664-8d35-216892c757d9",
-      "name": "myPVE",
-      "url": "https://ccumytestpve.openteche.io",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/proxmox.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://ccumytestpve.openteche.io/"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 5,
             "y": 1
           },
           "size": {
@@ -849,75 +200,6 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "2252f126-88dc-4eda-b826-b11697565528",
-      "name": "HWInfo",
-      "url": "https://yourip:9090/system/hwinfo",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/phoneinfoga.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/system/hwinfo"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 7,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -928,7 +210,7 @@
     {
       "id": "aef2ef9c-6490-4d1c-947b-efdf1b336052",
       "name": "HRMS",
-      "url": "http://yourip:9444",
+      "url": "https://hr.your.domain",
       "appearance": {
         "iconUrl": "https://www.horilla.com/wp-content/themes/horilla-wp-theme-main/assets/images/brand/horilla-logo.png",
         "appNameStatus": "normal",
@@ -949,7 +231,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:9444"
+        "externalUrl": "https://hr.your.domain"
       },
       "area": {
         "type": "category",
@@ -967,16 +249,6 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -985,11 +257,11 @@
       }
     },
     {
-      "id": "a64d0e3f-53db-40ce-89fb-2287f0790e67",
-      "name": "SuiteCRM",
-      "url": "http://yourip:5010",
+      "id": "280a5bd2-9a0d-4978-aaae-f52646a388b6",
+      "name": "Docuseal",
+      "url": "https://docuseal.your.domain",
       "appearance": {
-        "iconUrl": "https://docs.suitecrm.com/images/logo-square.png",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docuseal.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1008,7 +280,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5010"
+        "externalUrl": "https://docuseal.your.domain/"
       },
       "area": {
         "type": "category",
@@ -1019,254 +291,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "e41b3493-8e6d-4d4f-81e8-2fc67a32b9f6",
-      "name": "IPScanner",
-      "url": "http://yourip:8840",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/apps_barcode_scanner.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8840"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "19d8b7cb-5ca3-4f11-b969-7129af422820",
-      "name": "Shinobi",
-      "url": "http://yourip:8080",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/shinobi.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8080"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "289e63c6-f3a4-402d-b626-a9cc2a6a651e",
-      "name": "System",
-      "url": "https://yourip:9090/system",
-      "appearance": {
-        "iconUrl": "/icons/System.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/system"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
+            "x": 2,
             "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "a9649784-26de-4c80-8417-d56eee94999e",
-      "name": "Bookstack",
-      "url": "http://yourip:3003",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/bookstack.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:3003"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 1
           },
           "size": {
             "width": 1,
@@ -1282,9 +308,9 @@
     {
       "id": "24ba2ade-f065-4dbb-89ed-9b3905642e50",
       "name": "Akaunting",
-      "url": "http://yourip:9333",
+      "url": "https://akaunting.your.domain",
       "appearance": {
-        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKH4QtxIgXk5D218ydmtbHm4hNjXUwhkogpYM0YqKhHyzH3OCPUUERKCZaww&s",
+        "iconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAllBMVEX///9tolJBQUI7Ozw2Njf39/c+Pj9nn0oyMjMvLzArKyyQkJCVlZWjw5ZjY2P09PTn5+fe3t4TExUlJSZxcXFMTE2np6fX19eAgIFpaWq1tbXAwMALCw2hoaHHx8cfHyFhnEJZWVqNtHrx9u9+rGgAAADl7eLZ5dRbmDmyzKbO3sdWljGIiInF2b2qxp2avIt2p11OkiRGdoViAAAJvklEQVR4nO2bCXerKBvHDaBRk7rELdGqWWy2mib3+3+590FFNLWxvdPe6nn5zTkzCSLwB54F0pEkgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFgSOz2B2C/++1x/Gf2l7frdpsB2+317bL/7fH8PbvLNbtNCybFv2/Z9fzbg/pLThlImLSA79npt8f1FxzeKWGCJoffHttX2f7plkLV/Hn67dF9if1t/ZEUyvE2Ik8AW+yRllFttfOtRwuouY1EzSFra5lO18CdO5hmo1Czb2s5rrPr0+n0dM3WLTuabkdgN7trc8zH2wkSmZ0s7yCpOU2OjUfr6/ATnEtDy3py2cv8kby/TJtPL783ys+xay7L+5203zbU3Ia+NG98sOuu2NjcheuBZza7P9zC37qrPHH/8DrspeELM71+UEXeTkeyNNxdfWwQuxvfaP9uZF/nXIt55Kq4w3sdcuS8sh00zR5Vq9OdTh8xFGprOD48UV7YAk5v/2pkX2dX77Lj44qv9W4crj87MGP40JVV1A5tPVyjubAxHnsylRNTPeCUpo4yfV6q9nrT4Yo5bSuynvR+z4zmozRhAOxqeipyMT3G9YucsorJp1dmwGLW5f3l9LXn4pLbzHCjZu3N+jLI2psNWAyPMw+zGUmqrwkGLGbHM0j5UT25zgAGLEZiY+yJmnVuNmgxtS1M1o+q8ZPzkMXseQb5wAWcpqMQIzWG+WFGc2hcEg5azIlbQ/ZBGrDLxiJm11ia7hvL3bV5eztoMU1Hte36gXm/bd1ED1tMvYmm2f6wvXfQu8v9LwSDFiOdK7873e+y9W3bStIOu+txMiYxcukDXg/FGk1v2duh2G2781uWHc73Pz8PW0x5m/znws75xY9Mt1vxCXzCdj0qMdTGjydp2/ET7fR2vzSDFyMdsqt0en2vhf7AJD+NyJsV7KVzpxbYb+dzseNGJIbe03b/4Ly+QtAE2xnBeabBKfvgzxrOh0l24XcAoxAjHZ4mXXLW2/35II1NjLQ7vE2O92HlOHmjUWd0YuifAF6269c1u7KBj9tLma/tX6uy8YiR6LXg+XTd3iBqZtfTub4c3NdZzZjECAQCgUAgEAgEAoHg70jCMIzaRWGe5/G/6j+A/oNvassyEEKbdmszQtTNN7XfS0wQnn9TWz7CikJmrbIZVrDxTe33MtcV7ZvEyK4KK0NWVrNwhtGPignyF97fPCXO7EHlL5B4MHCkoLBZ+LMrY7kv2jMXk/i+n3xPy3MN4Q1GWt78e5GfXRnLJejZ6q/3ZewVQU7ggKDm5IxUTIgVspIMgnS/UfrDYpY/I8bMNbRIpDBFxLV5cVOMFVDM6pschH7sR1ZZbtU16rHRL2VLJv0E71kRvBGy1qEsgd2QJjZ7q92QDdvdjuKyjyZFx6HV7OGOAPyyakqWpihqI3A2xAQGsPEri0qWBlI1zXNDKdxAcTHoeGN4tf+IoXZevrkxDDcwfddTNRUZcTk4KNyAv8Fls8UbrKGiydy05itP0wj0wWaQNpYbSINmVr40h1pd3k/29cL05aUK/+XvcjH2RsPEWVaP5h6BoIQxJsj3U5wW4cGcOXhRb9KZSrRV+aoOkTeaYYKxghRCloWaha5rGIKBquv6c/H+PMV6ObhwgfVl5JLiDUxIXDul0FMJFGFamGtQq0OMBcayoME/WUB3fO1qMbSCoi2rRmcwDLLQkbJIsbdRkF4MRgaH6PiNV4lbfDI1pHgGxqnjkWfw/k6xesbKNejKrACjeGuuI7UMmkmKlM0GQxeelkIdneUlISIIaQuM9JQonoLUvEMMvI03dMIsiDWOX08EizMmjai6y2o/wxej6CDUYe76xSBF0VBErQDaJ0Y1W9SDNhwAFxMs6BtpkVtFGkxWFS+CDWhJi+2RIFghRDrE0LGWEuRYR9irO6hWxnR1ui6sFCZLZRuOqu8RI2t0Ny0r29YVlAY9YmwqRquaShxYzLJWnCLkVImvBUERkQ6bsVOw+7IHCDXUrbXEmLnT1BI5MLl1QhrpfdtMAjHErQZtglU64SfEaLNqumwDo+eA1Sd13hvSVLIjl4PlYDNng3GobD8V22wlzSGWanxBVzBM3giNfL1iFIWVU1ejz+VeMdhjM2qB/LSQn2C+qgDYTIcYEwxRYz7Vh65T1gOIUYzQAb/VWE8o87j7phuzVwzmL4RO7S8fiSEr5obMGWs2pBuEu1qYxQ4xEbgwNI9CSjQjzAZKMYjaosedo2TDajWPPeHXxEQp0pZfEsOalX3Y3xsuBso7xFAfgWjUoCD6WWuIUXDl6SoCKqYReUPtX4mh1uDyWfW7xFgLVCgoKT4vIi6GntmUJZ+QQPktMWBupCEm7hIzo97G4cA6MZ9RxJmI+rraJ0iW0t5mPttmfHP/jBhqM9jjs7rsshmISsQNOS4N9jYbEbjmmKrhyTOsFOKpNZXQWJk6N8u/X0zkKGjBxXR5M9gmuHW+jOiZM2+IkWJoRasdPIhVeU4UQPBiYmCNaq+3+oQY92tiaALAl5466ndiNrTXRl4qyTBh1XKy3GwOq6extQnSZtyIndr7wYbDmFXy+sXQEJVyJ98rhs6WsmDRF8b9LmgGMLK7G56YmrzfFGPOIBNSmeSNCkYVFV8s36lzs+IawYlpuUzH2SuGHqLAUZqy/DkxxdJgLbFM0woMleZmd2Jgb2OvfVtm17NaZ81mrsI8sCwBMn/I5KMkCd0UeSydKVIVlLpQ7m80r1+MFMIUEZzH8+RzYsACwJ4dz10amkY7vsvNaL6GXamNi6t0gp9nzFznaiKPHuKcNHVUkoNMFmQDWDNEy/V0mSvNdKYlhmepSx32iqY9F1kxDPojMfVZPnF1VcEEzkrEf+/NfN3Rndb1UtGhrqfUBeSOnlaGby4XupNW+WLiajocz7Cmzez4RX9hbSYrkIex6qysGBRtyv0DL2Kezrzoizpq2XMvdeBwVoiZwZNypu0XPa29vzl71l/qO2IbDqx66ihwxF0SRWnfHcMpO45NqY1MC0O5fMqUWrQwrrqwIjjTok2emFICpXWabYfLjee5vlUUV6/CJ7+OssE8jqM68plB5LP3eUMW1AmZm5NbHdCjfxJFCTxdkbtbPkmmSPew0tZTufXNtGzbNt+3YEG51S5uV3jXYUe9Vp3OEUo0zvDUeuxAnCHGw//DbeDwmyzquTrPZuNh/uKWG8v0CY3sY14YOddIukArA4M/gwg1aouBuEQwvUiDDIWo3n1EGRdmlK88ounwDzLyzqvZUWEnvh/PY//bfv0UCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEPz/8T+ZLtAV/ggz0wAAAABJRU5ErkJggg==",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1303,7 +329,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:9333"
+        "externalUrl": "https://akaunting.your.domain/"
       },
       "area": {
         "type": "category",
@@ -1321,8 +347,96 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "6eebbd0c-bde2-4ec8-9183-944836b3a712",
+      "name": "Paperless",
+      "url": "https://paperless.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/paperless-ng.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://paperless.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "b675da6f-0bc8-41d6-837b-a36ad6bc71d6",
+      "name": "Mautic",
+      "url": "https://mautic.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mautic.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mautic.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
           "location": {
             "x": 5,
             "y": 0
@@ -1341,7 +455,7 @@
     {
       "id": "e094d72d-cb34-4d6c-ae95-ff687f120a1c",
       "name": "DAAS",
-      "url": "http://yourip:8201",
+      "url": "https://mydesk.your.domain",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/guacamole.svg",
         "appNameStatus": "normal",
@@ -1362,479 +476,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8201"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 9,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "7e1d2a3b-2f8c-43f0-91a0-b6ddc48bdff0",
-      "name": "Router",
-      "url": "https://10.15.15.1",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/asus-router.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://10.15.15.1"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "3fee2882-45bf-440d-a856-268f2cea479b"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "c13dc8a3-97fd-4db0-a6e5-6c5ae9c0b42b",
-      "name": "Navigator",
-      "url": "https://yourip:9090/navigator",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/yandex_navigator.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/navigator"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b98b083d-4081-44ab-af2e-5e308a677fc6"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
-      "name": "Nextcloud",
-      "url": "http://yourip:4000",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:4000"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "c326973d-4ec9-4545-884c-8daf9a8feff5",
-      "name": "Services",
-      "url": "https://yourip:9090/system/services",
-      "appearance": {
-        "iconUrl": "/icons/Services.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/system/services"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "c98b78f8-01f4-4d53-a3db-e7b34d119bb0",
-      "name": "Network",
-      "url": "https://yourip:9090/network",
-      "appearance": {
-        "iconUrl": "/icons/Network.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/network"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "3fee2882-45bf-440d-a856-268f2cea479b"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "14945f24-3b27-4984-87e4-acff7745ac64",
-      "name": "Storage",
-      "url": "https://yourip:9090/storage",
-      "appearance": {
-        "iconUrl": "/icons/Storage.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/storage"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b98b083d-4081-44ab-af2e-5e308a677fc6"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "2d1ab5ea-0302-4cb4-a156-34a5577b8988",
-      "name": "Handbrake",
-      "url": "http://yourip:8214",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/handbrake.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8214"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6e6ff386-0b45-4ebe-a527-e454ea314615",
-      "name": "Portainer",
-      "url": "http://yourip:8212",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8212"
+        "externalUrl": "https://mydesk.your.domain/"
       },
       "area": {
         "type": "category",
@@ -1852,16 +494,6 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -1870,11 +502,11 @@
       }
     },
     {
-      "id": "20f58166-9964-4ea3-b89c-3d12e8d201f1",
-      "name": "PiHole",
-      "url": "http://yourip:81/admin/login.php",
+      "id": "0e0084f1-c290-41d3-b4f2-a6f171473973",
+      "name": "StirlingPDF",
+      "url": "https://pdfeditor.your.domain",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/stirling-pdf.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1893,28 +525,18 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:81/admin/login.php"
+        "externalUrl": "https://pdfeditor.your.domain/"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "3fee2882-45bf-440d-a856-268f2cea479b"
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
         }
       },
       "shape": {
         "lg": {
           "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
+            "x": 9,
             "y": 0
           },
           "size": {
@@ -1929,11 +551,11 @@
       }
     },
     {
-      "id": "f3af2115-681b-4cd6-a847-af0cdc9354ce",
-      "name": "Syncthing",
-      "url": "http://yourip:8384",
+      "id": "06c68613-61d3-4d42-9e8f-6dfcb0226efa",
+      "name": "IPScanner",
+      "url": "https://ipscanner.your.domain",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/apps_barcode_scanner.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1952,29 +574,117 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:8384"
+        "externalUrl": "https://ipscanner.your.domain/"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "b98b083d-4081-44ab-af2e-5e308a677fc6"
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "da0174be-3367-499f-b3ce-3c2f2e88b1ec",
+      "name": "focalboard",
+      "url": "https://focalboard.your.domain/login",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/focalboard.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://focalboard.your.domain/login"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "036d85c8-d8bd-4757-b592-142e0c28bbe2",
+      "name": "CCUmyPVE",
+      "url": "https://ccumytestpve.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/proxmox.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://ccumytestpve.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
         }
       },
       "shape": {
         "lg": {
           "location": {
             "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 0
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -2029,11 +739,1324 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "c7accf1a-8341-49a2-87d0-f0ea87738c27",
+      "name": "Portainer",
+      "url": "https://portainer.your.domain/#!/2/docker/containers",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://portainer.your.domain/#!/2/docker/containers"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 9,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "45ed0193-062f-4968-8f04-f875c010d802",
+      "name": "SearchEngine",
+      "url": "https://search.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whoogle.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://search.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "c8bf4afb-2d6e-4bc9-a905-9eaa583132b5",
+      "name": "Updates",
+      "url": "https://mypanel.your.domain/updates",
+      "appearance": {
+        "iconUrl": "/imgs/logo/openteche.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/updates"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "79501754-07dd-4c1b-9360-b83b58ca4265",
+      "name": "Vaultwarden",
+      "url": "https://Vaultwarden.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vaultwarden.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://Vaultwarden.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 9,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "65d47cdb-3975-48d3-99c9-0c69c1888bc2",
+      "name": "HWInfo",
+      "url": "https://mypanel.your.domain/system/hwinfo",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/phoneinfoga.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/system/hwinfo"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 6,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "fd3a6c88-e87d-4338-9e13-c6016f9b37f3",
+      "name": "Video Meeting",
+      "url": "https://jitsi.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jitsi-meet.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://jitsi.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "8742b345-5518-4014-8afc-c66f8be475c7",
+      "name": "Users",
+      "url": "https://mypanel.your.domain/users",
+      "appearance": {
+        "iconUrl": "/icons/Users.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/users"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
           "location": {
             "x": 2,
-            "y": 2
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "940b0fcb-4d1c-4117-8d7a-51b4306ec64d",
+      "name": "calcom",
+      "url": "https://calcom.your.domain",
+      "appearance": {
+        "iconUrl": "https://cal.com/android-chrome-512x512.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://calcom.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "86799813-d75c-4391-b2fc-55e249cea934",
+      "name": "Metrics",
+      "url": "https://mypanel.your.domain/metrics",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/graylog.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/metrics"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 7,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "f922f67c-214e-4783-86cc-196efd964212",
+      "name": "Router",
+      "url": "https://10.15.15.1",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/airtel.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://10.15.15.1/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "5db13d98-8884-4940-8a0b-40fe20929849",
+      "name": "MyNAS",
+      "url": "https://ccumynas.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/truenas-core.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://ccumynas.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "19d8b7cb-5ca3-4f11-b969-7129af422820",
+      "name": "Shinobi",
+      "url": "https://shinobi.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/shinobi.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://shinobi.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "2d656607-e0c6-499d-8e0b-1ebde382caca",
+      "name": "Diagnostics",
+      "url": "https://mypanel.your.domain/system/logs",
+      "appearance": {
+        "iconUrl": "/icons/Diagnostics.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/system/logs"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "0a4d2430-0368-40c6-8a52-0be7e721bc6d",
+      "name": "OpenWRT",
+      "url": "https://openwrt.your.domain/cgi-bin/luci",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openwrt.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://openwrt.your.domain/cgi-bin/luci/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "f3af2115-681b-4cd6-a847-af0cdc9354ce",
+      "name": "Syncthing",
+      "url": "https://syncthing.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/syncthing.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://syncthing.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "da6b5c11-91e3-48ae-9790-675aa2c08697",
+      "name": "Project",
+      "url": "https://project.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openproject.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://project.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "44685f31-8c1c-4959-8765-107524730988",
+      "name": "Photo",
+      "url": "https://photo.your.domain",
+      "appearance": {
+        "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeaq8D7sIn0_dLHmbWeTZIYxy1EC6NtViZJ3vpT73sG1OhcH5n_ClTVgyL9V76_Tq1L7Y&usqp=CAU",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://photo.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "842682bd-e9c5-4f0b-93f4-09b60153dcfb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "d64cdf06-bc3d-4437-a3ee-8214deffa43a",
+      "name": "Terminal",
+      "url": "https://mypanel.your.domain/system/terminal",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/terminal.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/system/terminal"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "d4c180b3-036c-4c14-8f31-a8a193ca57a2",
+      "name": "pfsense",
+      "url": "https://pfsense.local",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pfsense.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://pfsense.local"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "e795681c-4e2e-4907-9828-97a0f87ceb89",
+      "name": "FileShare",
+      "url": "https://mypanel.your.domain/file-sharing",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sparkleshare.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/file-sharing"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
+      "name": "Nextcloud",
+      "url": "https://mycloud.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mycloud.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "204e3548-d81b-491b-895f-4445b15be2cb",
+      "name": "Recipes",
+      "url": "https://recipes.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tandoor.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://recipes.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "842682bd-e9c5-4f0b-93f4-09b60153dcfb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "289e63c6-f3a4-402d-b626-a9cc2a6a651e",
+      "name": "System",
+      "url": "https://mypanel.your.domain/system",
+      "appearance": {
+        "iconUrl": "/icons/System.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/system"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "c98b78f8-01f4-4d53-a3db-e7b34d119bb0",
+      "name": "Network",
+      "url": "https://mypanel.your.domain/network",
+      "appearance": {
+        "iconUrl": "/icons/Network.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/network"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "0007f56b-ce30-49b6-8950-a68596b98507",
+      "name": "Navigator",
+      "url": "https://mypanel.your.domain/navigator",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/yandex_navigator.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/navigator"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "2d1ab5ea-0302-4cb4-a156-34a5577b8988",
+      "name": "Handbrake",
+      "url": "https://handbrake.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/handbrake.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://handbrake.your.domain/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 6,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "e0ba1fef-1aca-4806-a78e-183ee9b0aef7",
+      "name": "Mealie",
+      "url": "https://mealie.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mealie.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mealie.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "842682bd-e9c5-4f0b-93f4-09b60153dcfb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
           },
           "size": {
             "width": 1,
@@ -2070,7 +2093,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:3004"
+        "externalUrl": "https://monitor.teche.ai"
       },
       "area": {
         "type": "wrapper",
@@ -2088,252 +2111,6 @@
             "width": 2,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 3
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "c0bd8bb3-1620-4d9f-b43b-32cc169c4522",
-      "name": "Metrics",
-      "url": "https://yourip:9090/metrics",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/graylog.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/metrics"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "9bdaa0e1-e6fb-4ac1-b364-a350bf090c60",
-      "name": "OpenWRT",
-      "url": "http://10.16.16.1",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openwrt.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://10.16.16.1"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "3fee2882-45bf-440d-a856-268f2cea479b"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "2d831dfe-5e53-4be1-8a6a-4f2651a4dc69",
-      "name": "FileShare",
-      "url": "https://yourip:9090/file-sharing",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/synology-file-station.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/file-sharing"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b98b083d-4081-44ab-af2e-5e308a677fc6"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "da0174be-3367-499f-b3ce-3c2f2e88b1ec",
-      "name": "focalboard",
-      "url": "http://yourip:9999",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/focalboard.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:9999"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -2344,7 +2121,7 @@
     {
       "id": "4dbf6e49-3648-4d4c-b298-c5228826768c",
       "name": "myPANEL",
-      "url": "https://yourip:9090",
+      "url": "https://mypanel.your.domain",
       "appearance": {
         "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/server-2.png",
         "appNameStatus": "normal",
@@ -2365,7 +2142,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": false,
-        "externalUrl": "https://yourip:9090"
+        "externalUrl": "https://mypanel.your.domain"
       },
       "area": {
         "type": "wrapper",
@@ -2383,16 +2160,6 @@
             "width": 2,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -2401,11 +2168,11 @@
       }
     },
     {
-      "id": "8742b345-5518-4014-8afc-c66f8be475c7",
-      "name": "Users",
-      "url": "https://yourip:9090/users",
+      "id": "c326973d-4ec9-4545-884c-8daf9a8feff5",
+      "name": "Services",
+      "url": "https://mypanel.your.domain/system/services",
       "appearance": {
-        "iconUrl": "/icons/Users.png",
+        "iconUrl": "/icons/Services.png",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2424,7 +2191,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://yourip:9090/users"
+        "externalUrl": "https://mypanel.your.domain/system/services"
       },
       "area": {
         "type": "category",
@@ -2435,18 +2202,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
+            "x": 1,
             "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 1
           },
           "size": {
             "width": 1,
@@ -2460,11 +2217,11 @@
       }
     },
     {
-      "id": "e1e416c8-6a97-48d4-a4d4-d95b7a800825",
-      "name": "PfSense",
-      "url": "https://pfsense.local",
+      "id": "83ba7cbd-990a-4b64-9acf-0415aaec9698",
+      "name": "PiHole",
+      "url": "https://pihole.your.domain/admin/login.php",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pfsense.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2483,12 +2240,110 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://pfsense.local"
+        "externalUrl": "https://pihole.your.domain/admin/login.php"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "3fee2882-45bf-440d-a856-268f2cea479b"
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "14945f24-3b27-4984-87e4-acff7745ac64",
+      "name": "Storage",
+      "url": "https://mypanel.your.domain/storage",
+      "appearance": {
+        "iconUrl": "/icons/Storage.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://mypanel.your.domain/storage"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "a9649784-26de-4c80-8417-d56eee94999e",
+      "name": "Bookstack",
+      "url": "https://bs.your.domain",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/bookstack.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://bs.your.domain"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
         }
       },
       "shape": {
@@ -2501,16 +2356,6 @@
             "width": 1,
             "height": 1
           }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
         }
       },
       "integration": {
@@ -2519,127 +2364,9 @@
       }
     },
     {
-      "id": "a094a1d9-bdd2-4857-8862-a29863c602dd",
-      "name": "MyNAS",
-      "url": "http://10.16.16.20",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/truenas.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://10.16.16.20"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "b98b083d-4081-44ab-af2e-5e308a677fc6"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "940b0fcb-4d1c-4117-8d7a-51b4306ec64d",
-      "name": "calcom",
-      "url": "http://yourip:5000",
-      "appearance": {
-        "iconUrl": "https://cal.com/android-chrome-512x512.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5000"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "106c89bd-ba0a-436f-a8e4-8c0df827ec02",
+      "id": "7c85f51e-0777-4e15-b481-cc7c2f472c61",
       "name": "Home Assistant",
-      "url": "http://yourip:5006",
+      "url": "https://homeassistant.your.domain",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/homeassistant.svg",
         "appNameStatus": "normal",
@@ -2660,165 +2387,18 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5006"
+        "externalUrl": "https://homeassistant.your.domain"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "5575365b-4436-496d-8b28-c9ceaffd2ec8"
+          "id": "842682bd-e9c5-4f0b-93f4-09b60153dcfb"
         }
       },
       "shape": {
         "lg": {
           "location": {
             "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "bb448f1c-bfb1-4ccd-975b-d4a16da25e9a",
-      "name": "Photo",
-      "url": "http://yourip:5008/auth/login",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/immich.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5008/auth/login"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "5575365b-4436-496d-8b28-c9ceaffd2ec8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "aa89ae22-c808-42fc-b3f9-7dd5f6b68888",
-      "name": "Recipes",
-      "url": "http://yourip:5005",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tandoor.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5005"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "5575365b-4436-496d-8b28-c9ceaffd2ec8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "88566fc7-937b-4da5-9ad0-7a4e3a4d836f",
-      "name": "Mealie",
-      "url": "http://yourip:5009",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mealie.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://yourip:5009"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "5575365b-4436-496d-8b28-c9ceaffd2ec8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
             "y": 0
           },
           "size": {
@@ -2834,57 +2414,6 @@
     }
   ],
   "widgets": [
-    {
-      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
-      "type": "weather",
-      "properties": {
-        "displayInFahrenheit": false,
-        "location": {
-          "name": "Calcutta",
-          "latitude": 22.56263,
-          "longitude": 88.36304
-        },
-        "displayCityName": true
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
     {
       "id": "430e2fc9-c5ef-4c5f-819b-103b22d8a242",
       "type": "date",
@@ -2930,6 +2459,57 @@
           "location": {
             "x": 0,
             "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
+      "type": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": {
+          "name": "Calcutta",
+          "latitude": 22.56263,
+          "longitude": 88.36304
+        },
+        "displayCityName": true
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
           },
           "size": {
             "width": 2,
