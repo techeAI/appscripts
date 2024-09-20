@@ -21,7 +21,7 @@
                                 sleep 2
                         else
                                echo "Setting up System Monitoring service..."
-                                sudo docker run -dit -p 8208:3001 --restart=unless-stopped -v /:/mnt/host:ro  --privileged --name system_monitor mauricenino/dashdot
+                                sudo docker run -dit --name teche-dashboard-sysvital -p 8208:3001 --restart=unless-stopped -v /:/mnt/host:ro  --privileged --name system_monitor mauricenino/dashdot
 
                         fi
 
