@@ -15,6 +15,8 @@ echo "Docker is already installed."
 sleep 2
 fi
 apt install docker-compose -y
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/crm-nginx.conf -o crm-nginx.conf
+mv crm-nginx.conf /etc/nginx/sites-enabled/crm
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/docker-compose.yaml -o docker-compose.yaml
 # Function to get user input with a default value
 get_user_input() {
@@ -27,15 +29,17 @@ get_user_input() {
 }
 
 # Get user inputs
-MARIADB_ROOT_PASSWORD=$(get_user_input "Enter MariaDB root password" "rootpassword")
+MARIADB_ROOT_PASSWORD=$(get_user_input "Enter MariaDB root password" "aPUo56ZCWR")
 MARIADB_USER=$(get_user_input "Enter MariaDB user" "bn_suitecrm")
-MARIADB_PASSWORD=$(get_user_input "Enter MariaDB password" "bitnami123")
+MARIADB_PASSWORD=$(get_user_input "Enter MariaDB password" "aPUo56ZCWR")
 MARIADB_DATABASE=$(get_user_input "Enter MariaDB database" "bitnami_suitecrm")
 MARIADB_VOLUME=$(get_user_input "Enter absolute path for MariaDB volume" "$BASE_DIR/suitecrm/suitecrm_db")
-SUITECRM_PORT_HTTP=$(get_user_input "Enter SuiteCRM HTTP port" "5010")
-SUITECRM_PORT_HTTPS=$(get_user_input "Enter SuiteCRM HTTPS port" "5011")
+#SUITECRM_PORT_HTTP=$(get_user_input "Enter SuiteCRM HTTP port" "5010")
+SUITECRM_PORT_HTTP="5010"
+#SUITECRM_PORT_HTTPS=$(get_user_input "Enter SuiteCRM HTTPS port" "5011")
+SUITECRM_PORT_HTTP="5011"
 SUITECRM_DATABASE_USER=$(get_user_input "Enter SuiteCRM database user" "bn_suitecrm")
-SUITECRM_DATABASE_PASSWORD=$(get_user_input "Enter SuiteCRM database password" "bitnami123")
+SUITECRM_DATABASE_PASSWORD=$(get_user_input "Enter SuiteCRM database password" "aPUo56ZCWR")
 SUITECRM_DATABASE_NAME=$(get_user_input "Enter SuiteCRM database name" "bitnami_suitecrm")
 SUITECRM_VOLUME=$(get_user_input "Enter absolute path for SuiteCRM volume" "$BASE_DIR/suitecrm/suitecrm_data")
 
@@ -65,5 +69,6 @@ echo ""
 echo ""
 echo "Default login details are as username: user, password: bitnami"
 sleep 10
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/crm"
 #echo "docker-compose.yaml has been updated with the provided values."
 #echo "Directories have been created with appropriate permissions if they did not already exist."
