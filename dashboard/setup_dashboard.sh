@@ -37,6 +37,8 @@ read reverse_proxy
 # Check the user's input
 if [[ "$reverse_proxy" == "yes" ]]; then
     hport=8080
+	curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/dashboard-nginx.conf -o dashboard-nginx.conf
+mv dashboard-nginx.conf /etc/nginx/sites-enabled/dashboard
 elif [[ "$reverse_proxy" == "no" ]]; then
     hport=80
 else
@@ -67,6 +69,5 @@ fi
 			echo " "
 			echo "Dashboard can be accessed at the URL http://$local_ip"
 			echo " "
+			echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/dashboard"
 			sleep 3
-			
-
