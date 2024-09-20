@@ -1,5 +1,8 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA
+#Download nginx reverse proxy seting
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/zabbix/zabbix-nginx.conf -o zabbix-nginx.conf
+mv zabbix-nginx.conf /etc/nginx/sites-enabled/zabbix
 # Install necessary packages
 apt update && apt install sudo curl wget lm-sensors -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
@@ -129,4 +132,5 @@ sleep 10
 echo "Zabbix server is running on port $SERVER_PORT."
 echo "Zabbix frontend is running on http://$local_ip:$FRONTEND_PORT."
 echo "Please login with default user name 'admin' and password 'zabbix' and change on first login."
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/zabbix"
 
