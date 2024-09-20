@@ -14,14 +14,13 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-
-
-
 if sudo docker ps --format '{{.Names}}' | grep -q "docuseal"; then
                                 echo "The container 'Docuseal' is already running. Skipping installation."
                                 sleep 2
                         else
                                 echo "Setting up Docuseal.."
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/docuseal-nginx.conf -o docuseal-nginx.conf
+mv docuseal-nginx.conf /etc/nginx/sites-enabled/docuseal
 sudo docker run -d --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
@@ -29,5 +28,6 @@ echo "#########################################################"
 echo " "
 echo " "
 echo "login http://$local_ip:3000 to access docuseal."
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/docuseal"
 sleep 5
 fi
