@@ -67,7 +67,7 @@ fi
 
 			echo "######################################################"
 			echo " "
-			echo "Dashboard can be accessed at the URL http://$local_ip"
+			echo "Dashboard can be accessed at the URL http://$local_ip:$hport"
 			echo " "
 			echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/dashboard"
 			sleep 3
