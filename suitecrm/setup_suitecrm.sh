@@ -67,7 +67,10 @@ local_ip=$(ip route get 1 | awk '{print $7}')
 echo  "Please access the suiteCRM at http://$local_ip:$SUITECRM_PORT_HTTP or https://$local_ip:$SUITECRM_PORT_HTTPS"
 echo ""
 echo ""
-echo "Default login details are as username: user, password: bitnami"
+echo "Default login details are:"
+echo "Username : user"
+echo "Password: bitnami"
+echo "Please change default username and password upon first login"
 sleep 10
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/crm"
 #echo "docker-compose.yaml has been updated with the provided values."
