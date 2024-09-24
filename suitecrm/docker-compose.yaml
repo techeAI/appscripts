@@ -12,7 +12,7 @@ services:
     volumes:
       - '${MARIADB_VOLUME}:/bitnami/mariadb'
   suitecrm:
-    image: docker.io/bitnami/suitecrm:8
+    image: docker.io/bitnami/suitecrm:7
     container_name: suitecrm
     restart: unless-stopped
     ports:
