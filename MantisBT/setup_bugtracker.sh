@@ -18,16 +18,12 @@ fi
 apt install docker-compose -y
 mkdir -p $BASE_DIR/html/config
 mkdir -p $BASE_DIR/html/custom
-mkdir -p $BASE_DIR/html/plugins
 mkdir -p $BASE_DIR/lib/mysql
-chown -R www-data:www-data $BASE_DIR/html/
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
 mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
 docker-compose -f ./docker-compose.yaml up -d
 chown -R www-data:www-data $BASE_DIR/html/
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/EmailReporting_v0.10.1.zip -o EmailReporting_v0.10.1.zip
-unzip EmailReporting_v0.10.1.zip -d $BASE_DIR/html/plugins/
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo  "Please access the Bug Tracket at http://$local_ip:$port_http"
 echo ""
