@@ -6,12 +6,11 @@ services:
         container_name: techeBT-frontend
         environment:
             MANTIS_TIMEZONE: Asia/Kolkata
-            MANTIS_ENABLE_ADMIN: 0
+            MANTIS_ENABLE_ADMIN: 1
         ports:
             - "3001:80"
         volumes:
-            - /mnt/DriveDATA/mantis/html/config:/var/www/html/config
-            - /mnt/DriveDATA/mantis/html/custom:/var/www/html/custom
+            - /mnt/DriveDATA/mantis/html:/var/www/html
         restart: unless-stopped
 
     mysql:
