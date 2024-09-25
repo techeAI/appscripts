@@ -10,8 +10,8 @@ services:
         ports:
             - "3001:80"
         volumes:
-            - $BASE_DIR/html/config:/var/www/html/config
-            - $BASE_DIR/html/custom:/var/www/html/custom
+            - /mnt/DriveDATA/mantis/html/config:/var/www/html/config
+            - /mnt/DriveDATA/mantis/html/custom:/var/www/html/custom
         restart: unless-stopped
 
     mysql:
@@ -23,5 +23,5 @@ services:
             MYSQL_USER: techebt
             MYSQL_PASSWORD: aPUo56ZCWR
         volumes:
-            - $BASE_DIR/lib/mysql:/var/lib/mysql
+            - /mnt/DriveDATA/mantis/lib/mysql:/var/lib/mysql
         restart: unless-stopped
