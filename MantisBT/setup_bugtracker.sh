@@ -21,8 +21,8 @@ mkdir -p $BASE_DIR/html/custom
 mkdir -p $BASE_DIR/lib/mysql
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yml -o docker-compose.yaml
 
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
-#mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
+mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
 
 docker-compose -f ./docker-compose.yaml up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
