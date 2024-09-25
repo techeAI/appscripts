@@ -29,5 +29,4 @@ local_ip=$(ip route get 1 | awk '{print $7}')
 echo  "Please access the Bug Tracket at http://$local_ip:$port_http"
 echo ""
 echo ""
-sleep 10
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/techebt"
