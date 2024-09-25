@@ -21,8 +21,8 @@ mkdir -p $BASE_DIR/html/custom
 mkdir -p $BASE_DIR/lib/mysql
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yml -o docker-compose.yaml
 
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/crm-nginx.conf -o crm-nginx.conf
-#mv crm-nginx.conf /etc/nginx/sites-enabled/crm
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
+#mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
 
 docker-compose -f ./docker-compose.yaml up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
@@ -31,5 +31,3 @@ echo ""
 echo ""
 sleep 10
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/techebt"
-#echo "docker-compose.yaml has been updated with the provided values."
-#echo "Directories have been created with appropriate permissions if they did not already exist."
