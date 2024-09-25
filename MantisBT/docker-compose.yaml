@@ -11,7 +11,8 @@ services:
             - "3001:80"
         volumes:
             - /mnt/DriveDATA/mantis/html/config:/var/www/html/config
-            - /mnt/DriveDATA/mantis/html/custom:/var/www/html/custom        
+            - /mnt/DriveDATA/mantis/html/custom:/var/www/html/custom    
+            - /mnt/DriveDATA/mantis/html/plugins:/var/www/html/plugins
         restart: unless-stopped
 
     mysql:
