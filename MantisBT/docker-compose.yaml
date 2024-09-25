@@ -6,7 +6,7 @@ services:
         container_name: techeBT-frontend
         environment:
             MANTIS_TIMEZONE: Asia/Kolkata
-            MANTIS_ENABLE_ADMIN: 1
+            MANTIS_ENABLE_ADMIN: 0
         ports:
             - "3001:80"
         volumes:
