@@ -19,6 +19,8 @@ apt install docker-compose -y
 mkdir -p $BASE_DIR/html/config
 mkdir -p $BASE_DIR/html/custom
 mkdir -p $BASE_DIR/lib/mysql
+chown www-data:www-data $BASE_DIR/html/config
+chown www-data:www-data $BASE_DIR/html/custom
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
