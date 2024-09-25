@@ -17,7 +17,7 @@ sleep 2
 fi
 apt install docker-compose -y
 mkdir -p $BASE_DIR/html
-#mkdir -p $BASE_DIR/html/custom
+mkdir -p $BASE_DIR/html/custom
 mkdir -p $BASE_DIR/lib/mysql
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
