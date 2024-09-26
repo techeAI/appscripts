@@ -18,6 +18,8 @@ services:
             MYSQL_DATABASE: techebttracker
             MYSQL_USER: techebt
             MYSQL_PASSWORD: aPUo56ZCWR
+            MARIADB_CHARACTER_SET_SERVER: utf8mb4
+            MARIADB_COLLATION_SERVER: utf8mb4_general_ci
         volumes:
             - /mnt/DriveDATA/mantis/db:/var/lib/mysql
         restart: unless-stopped
