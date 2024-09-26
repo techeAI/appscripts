@@ -2,16 +2,12 @@ version: "3.8"
 
 services:
     mantisbt:
-        image: xlrl/mantisbt:2.26.3
+        image: techeai/techebt:2.26.3
         container_name: techeBT-frontend
-        environment:
-            MANTIS_TIMEZONE: Asia/Kolkata
-            MANTIS_ENABLE_ADMIN: 1
         ports:
             - "3001:80"
         volumes:
-            - /mnt/DriveDATA/mantis/html/config:/var/www/html/config
-            - /mnt/DriveDATA/mantis/html/custom:/var/www/html/custom
+            - /mnt/DriveDATA/mantis/html:/home/ubuntu/public_html
         restart: unless-stopped
 
     mysql:
@@ -23,5 +19,5 @@ services:
             MYSQL_USER: techebt
             MYSQL_PASSWORD: aPUo56ZCWR
         volumes:
-            - /mnt/DriveDATA/mantis/lib/mysql:/var/lib/mysql
+            - /mnt/DriveDATA/mantis/db:/var/lib/mysql
         restart: unless-stopped
