@@ -20,11 +20,11 @@ mkdir -p $BASE_DIR/html
 mkdir -p $BASE_DIR/db
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/mantisbt-1.3.20.zip -o mantisbt-1.3.20.zip
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-2.26.3.zip -o techebt-2.26.3.zip
 mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
 docker-compose -f ./docker-compose.yaml up -d
-mv mantisbt-1.3.20.zip $BASE_DIR/html/
-cd $BASE_DIR/html/ && unzip mantisbt-1.3.20.zip
+mv techebt-2.26.3.zip $BASE_DIR/html/
+cd $BASE_DIR/html/ && unzip techebt-2.26.3.zip
 chown -R www-data:www-data $BASE_DIR/html/
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo  "Please access the Bug Tracket at http://$local_ip:$port_http"
