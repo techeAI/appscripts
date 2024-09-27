@@ -16,6 +16,11 @@ sleep 2
 fi
  
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/docker-compose.yaml -o docker-compose.yaml
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/akaunting-nginx.conf -o akaunting-nginx.conf
+mv akaunting-nginx.conf /etc/nginx/sites-enabled/akaunting
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access Akaunting through URL: http://$local_ip:7070" 
+echo ""
+echo ""
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/akaunting"

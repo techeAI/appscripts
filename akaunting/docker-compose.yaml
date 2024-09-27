@@ -3,7 +3,8 @@ version: '3.5'
 services:
 
   akaunting:
-    image: docker.io/akaunting/akaunting:latest
+    container_name: akaunting
+    image: docker.io/akaunting/akaunting:3
     ports:
       - 7070:80
       - 7071:443
@@ -17,14 +18,12 @@ services:
       - akaunting-db
 
   akaunting-db:
+    image: mariadb:11.5.2
     container_name: akaunting-db
-    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: aPUo56ZCWR
+      MYSQL_USER: techeakaunt
+      MYSQL_PASSWORD: aPUo56ZCWR
     volumes:
       - /mnt/DriveDATA/akaunting/akaunting-db:/var/lib/mysql
     restart: unless-stopped
-    env_file:
-      - ./db.env
-
-        #volumes:
-        #akaunting-data:
-        #akaunting-db:
