@@ -2069,6 +2069,55 @@
         "properties": []
       }
     },
+   {
+      "id": "f1e5ad92-2d80-419a-a3af-ff7c7c85845c",
+      "name": "TecheBT",
+      "url": "https://bugs.domainname",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mantisbt.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://bugs.domainname"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 9,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
     {
       "id": "61b5eea8-1d20-4455-bc48-3c5c10589ba8",
       "name": "Zabbix",
@@ -2093,7 +2142,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://monitor.teche.ai"
+        "externalUrl": "https://monitor.domainname"
       },
       "area": {
         "type": "wrapper",
