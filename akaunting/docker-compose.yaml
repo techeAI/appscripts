@@ -22,6 +22,7 @@ services:
     container_name: akaunting-db
     environment:
       MYSQL_ROOT_PASSWORD: aPUo56ZCWR
+      MYSQL_DATABASE: accounts
       MYSQL_USER: techeakaunt
       MYSQL_PASSWORD: aPUo56ZCWR
     volumes:
