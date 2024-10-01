@@ -1,6 +1,7 @@
 #!/bin/bash
 apt install wget curl sudo -y 2> /dev/null
-BASE_DIR=/mnt/DriveDATA/hrms
+BASE_DIR=/mnt/DriveDATA/mantis
+port_http=3001
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
@@ -15,9 +16,8 @@ echo "Docker is already installed."
 sleep 2
 fi
 apt install docker-compose -y
-
-mkdir -p $BASE_DIR
-
+mkdir -p $BASE_DIR/html
+mkdir -p $BASE_DIR/db
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-2.26.3.zip -o techebt-2.26.3.zip
