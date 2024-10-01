@@ -18,10 +18,9 @@ fi
 apt install docker-compose -y
 mkdir -p $BASE_DIR/html
 mkdir -p $BASE_DIR/db
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-2.26.3.zip -o techebt-2.26.3.zip
-mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/hrms-nginx.conf -o hrms-nginx.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/HRMS.zip -o HRMS.zip
+mv hrms-nginx.conf /etc/nginx/sites-enabled/hrms
 docker-compose -f ./docker-compose.yaml up -d
 mv techebt-2.26.3.zip $BASE_DIR/html/
 cd $BASE_DIR/html/ && unzip techebt-2.26.3.zip
