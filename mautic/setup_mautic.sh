@@ -13,9 +13,11 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-
 sudo mkdir /mnt/DriveDATA/mautic
 sudo chmod 777 /mnt/DriveDATA/mautic
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/docker-compose.yaml -o docker-compose.yaml
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/mautic-nginx.conf -o mautic-nginx.conf
+mv mautic-nginx.conf /etc/nginx/sites-enabled/mautic
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
