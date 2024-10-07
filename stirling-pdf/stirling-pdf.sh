@@ -63,9 +63,9 @@ docker run -d \
   -v $BASE_DIR/Stiring_extraConfigs:/configs \
   -v $BASE_DIR/Stiring_logs:/logs \
   -e DOCKER_ENABLE_SECURITY=true \
-  -e SECURITY_ENABLE_LOGIN=true
-  -e SECURITY_INITIALLOGIN_USERNAME=admin
-  -e SECURITY_INITIALLOGIN_PASSWORD=admin
+  -e SECURITY_ENABLE_LOGIN=true \
+  -e SECURITY_INITIALLOGIN_USERNAME=admin \
+  -e SECURITY_INITIALLOGIN_PASSWORD=admin \
   -e INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false \
   -e LANGS=en_US \
   --name stirling-pdf \
