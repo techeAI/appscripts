@@ -16,7 +16,7 @@ services:
 
   mautic:
     container_name: mautic
-    image: mautic/mautic:5-apache
+    image: mautic/mautic:v4-apache
     volumes:
       - /mnt/DriveDATA/mautic/mautic_data:/var/www/html
     environment:
