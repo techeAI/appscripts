@@ -69,6 +69,6 @@ docker run -d \
   frooodle/s-pdf:0.29.0
   
 local_ip=$(ip route get 1 | awk '{print $7}')
-echo "Now you can access ipscanner through URL: http://$local_ip:$PORT"
+echo "Now you can access pdf editor through URL: http://$local_ip:$PORT"
 sleep 5
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/stirling"
