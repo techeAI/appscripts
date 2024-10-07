@@ -24,5 +24,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:8880 to access mautic."
+echo "login http://$local_ip:7073 to access mautic."
 sleep 5
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mautic"

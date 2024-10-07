@@ -2,10 +2,11 @@ version: "2"
 
 services:
   database:
-    image: powertic/percona-docker
+    image: mariadb:11.0.3
     container_name: mautic-database
     environment:
-      MYSQL_ROOT_PASSWORD: Monday@123
+      MYSQL_ROOT_PASSWORD: aPUo56ZCWR
+      MYSQL_DATABASE: mautic4
     volumes:
       - /mnt/DriveDATA/mautic/database:/var/lib/mysql
     restart: unless-stopped
@@ -21,7 +22,7 @@ services:
     environment:
       - MAUTIC_DB_HOST=mautic-database
       - MAUTIC_DB_USER=root
-      - MAUTIC_DB_PASSWORD=mypassword
+      - MAUTIC_DB_PASSWORD=aPUo56ZCWR
       - MAUTIC_DB_NAME=mautic4
     restart: unless-stopped
     networks:
