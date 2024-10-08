@@ -9,7 +9,7 @@ sudo sh get-docker.sh
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
-sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock > /dev/null
 else
 echo "Docker is already installed."
 sleep 2
