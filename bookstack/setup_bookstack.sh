@@ -15,11 +15,16 @@ echo "Docker is already installed."
 sleep 2
 fi
 mkdir -p /mnt/DriveDATA/bookstack/
+echo "Generating Random App Key"
+random_key=$(openssl rand -hex 16)
+echo "Generated key: $random_key"
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/bs-nginx.conf -o bs-nginx.conf
 mv bs-nginx.conf /etc/nginx/sites-enabled/bs
-
-sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml && docker-compose up -d
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml 
+sed -i "s|SomeRandomStringWith32Characters|$random_key|g" ./docker-compose.yaml
+sleep 2
+docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
