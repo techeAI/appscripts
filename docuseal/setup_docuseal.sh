@@ -21,7 +21,7 @@ if sudo docker ps --format '{{.Names}}' | grep -q "docuseal"; then
                                 echo "Setting up Docuseal.."
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/docuseal-nginx.conf -o docuseal-nginx.conf
 mv docuseal-nginx.conf /etc/nginx/sites-enabled/docuseal
-sudo docker run -d --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal
+sudo docker run -d --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal:1.7.5
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
