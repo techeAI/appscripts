@@ -1,6 +1,6 @@
 #!/bin/bash
 read -p "Enter the URL: " app_url
-apt install wget curl docker-compose sudo -y 2> /dev/null
+apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
