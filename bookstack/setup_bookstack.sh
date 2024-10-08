@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Enter the URL: " app_url
+read -p "Enter the URL(Do not add http or https): https://" app_url
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
