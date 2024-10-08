@@ -15,7 +15,7 @@ sleep 2
 fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/whoogle/search-nginx.conf -o search-nginx.conf
 mv search-nginx.conf /etc/nginx/sites-enabled/search
-docker run --restart unless-stopped --publish 7075:5000 --detach --name whoogle-search benbusby/whoogle-search:0.9.0
+docker run -dt --restart unless-stopped --publish 7075:5000 -e WHOOGLE_USER=admin -e WHOOGLE_PASS=admin--name whoogle-search benbusby/whoogle-search:0.9.0
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access ipscanner through URL: http://$local_ip:7075"
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/search"
