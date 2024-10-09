@@ -16,8 +16,6 @@ sleep 2
 fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/vw-nginc.conf -o vw-nginc.conf
 mv vw-nginc.conf /etc/nginx/sites-enabled/vw
-clear
-echo "Admin Panel Secret Key is : $random_string"
 echo "Please Note Down Key (It will not be recoverable)"
 docker run -dt --name vaultwarden --restart=unless-stopped -v $BASE_DIR/vaultwarden/:/data/ -p 7077:80 vaultwarden/server:1.32.1
 local_ip=$(ip route get 1 | awk '{print $7}')
