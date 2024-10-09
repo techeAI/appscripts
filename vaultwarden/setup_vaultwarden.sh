@@ -19,7 +19,7 @@ mv vw-nginc.conf /etc/nginx/sites-enabled/vw
 clear
 echo "Admin Panel Secret Key is : $random_string"
 echo "Please Note Down Key (It will not be recoverable)"
-docker run -dt --name vaultwarden --restart=unless-stopped -v $BASE_DIR/vaultwarden/:/data/ -p 7077:80 -e WEBSOCKET_ENABLED:true -e ADMIN_TOKEN:$random_string vaultwarden/server:1.32.1
+docker run -dt --name vaultwarden --restart=unless-stopped -v $BASE_DIR/vaultwarden/:/data/ -p 7077:80 vaultwarden/server:1.32.1
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access vaultwarden through URL: http://$local_ip:7077"
 sleep 5
