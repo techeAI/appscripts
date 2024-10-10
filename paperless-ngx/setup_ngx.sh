@@ -20,10 +20,10 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/ngx-nginc.conf -o ngx-nginc.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/ngx-nginx.conf -o ngx-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/docker-compose.env -o docker-compose.env
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/docker-compose.yaml -o docker-compose.yaml
-mv ngx-nginc.conf /etc/nginx/sites-enabled/ngx
+mv ngx-nginx.conf /etc/nginx/sites-enabled/ngx
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access vaultwarden through URL: http://$local_ip:7078"
