@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  obsidian:
+    image: linuxserver/obsidian:1.6.7
+    container_name: obsidian
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /mnt/DriveDATA/obsidian/config:/config
+    ports:
+      - 7079:3000
+    devices:
+      - /dev/dri:/dev/dri #optional
+    shm_size: "1gb"
+    restart: unless-stopped
