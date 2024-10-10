@@ -13,7 +13,7 @@ services:
       - /mnt/DriveDATA/obsidian/config:/config
     ports:
       - 7079:3000
-    devices:
-      - /dev/dri:/dev/dri #optional
+#    devices:
+#      - /dev/dri:/dev/dri #optional (not for cloud)
     shm_size: "1gb"
     restart: unless-stopped
