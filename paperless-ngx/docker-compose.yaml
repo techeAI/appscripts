@@ -15,7 +15,7 @@ services:
       - /mnt/DriveDATA/paperless-ngx/dbdata:/var/lib/mysql
     environment:
       MARIADB_HOST: paperless-db
-      MARIADB_DATABASE: pprl-ngx
+      MARIADB_DATABASE: paperless
       MARIADB_USER: pprl-ngx
       MARIADB_PASSWORD: aPUo56ZCWR
       MARIADB_ROOT_PASSWORD: aPUo56ZCWR
