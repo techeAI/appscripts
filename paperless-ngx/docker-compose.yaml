@@ -1,0 +1,65 @@
+version: '3.8'
+services:
+  broker:
+    container_name: paperless-broker
+    image: docker.io/library/redis:7
+    restart: unless-stopped
+    volumes:
+      - /mnt/DriveDATA/paperless-ngx/redisdata:/data
+
+  db:
+    container_name: paperless-db
+    image: docker.io/library/mariadb:11
+    restart: unless-stopped
+    volumes:
+      - /mnt/DriveDATA/paperless-ngx/dbdata:/var/lib/mysql
+    environment:
+      MARIADB_HOST: paperless-db
+      MARIADB_DATABASE: pprl-ngx
+      MARIADB_USER: pprl-ngx
+      MARIADB_PASSWORD: aPUo56ZCWR
+      MARIADB_ROOT_PASSWORD: aPUo56ZCWR
+
+  webserver:
+    container_name: paperless-frontend
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+      - gotenberg
+      - tika
+    ports:
+      - "7078:8000"
+    volumes:
+      - /mnt/DriveDATA/paperless-ngx/data:/usr/src/paperless/data
+      - /mnt/DriveDATA/paperless-ngx/media:/usr/src/paperless/media
+      - /mnt/DriveDATA/paperless-ngx/export:/usr/src/paperless/export
+      - /mnt/DriveDATA/paperless-ngx/consume:/usr/src/paperless/consume
+    env_file: docker-compose.env
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBENGINE: mariadb
+      PAPERLESS_DBHOST: db
+      PAPERLESS_DBUSER: pprl-ngx # only needed if non-default username
+      PAPERLESS_DBPASS: aPUo56ZCWR # only needed if non-default password
+      PAPERLESS_DBPORT: 3306
+      PAPERLESS_TIKA_ENABLED: 1
+      PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
+      PAPERLESS_TIKA_ENDPOINT: http://tika:9998
+
+  gotenberg:
+    container_name: paperless-gotenberg
+    image: docker.io/gotenberg/gotenberg:8.7
+    restart: unless-stopped
+    # The gotenberg chromium route is used to convert .eml files. We do not
+    # want to allow external content like tracking pixels or even javascript.
+    command:
+      - "gotenberg"
+      - "--chromium-disable-javascript=true"
+      - "--chromium-allow-list=file:///tmp/.*"
+
+  tika:
+    container_name: paperless-tika
+    image: docker.io/apache/tika:latest
+    restart: unless-stopped
