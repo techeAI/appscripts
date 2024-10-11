@@ -25,6 +25,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:$PORT to access bookstack."
+echo "login http://$local_ip:$PORT to access."
 sleep 5
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mindmap"
