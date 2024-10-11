@@ -1,5 +1,6 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA
+PORT=7079
 apt install wget curl sudo -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -14,19 +15,22 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-sudo mkdir /mnt/DriveDATA/focalboard && sudo chmod 777 /mnt/DriveDATA/focalboard
+sudo mkdir $BASE_DIR/focalboard && sudo chmod 777 $BASE_DIR/focalboard
 if sudo docker ps --format '{{.Names}}' | grep -q "focalboard"; then
                                 echo "The container 'focalboard' is already running. Skipping installation."
                                 sleep 2
                         else
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/focalboard/focal-nginx.conf -o focal-nginx.conf
+mv focal-nginx.conf /etc/nginx/sites-enabled/focal
                                 echo "Setting up focalboard.."
 
-sudo docker run -dit --name focalboard --restart unless-stopped -v $BASE_DIR/focalboard:/opt/focalboard/data -p 9999:8000 mattermost/focalboard
+sudo docker run -dt --name focalboard --restart unless-stopped -v $BASE_DIR/focalboard:/opt/focalboard/data -p $PORT:8000 mattermost/focalboard:7.8.9
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:9999 to access focalboard."
+echo "login http://$local_ip:$PORT to access focalboard."
 sleep 5
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/focal"
 fi
