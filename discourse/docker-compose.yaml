@@ -43,6 +43,13 @@ services:
       - POSTGRESQL_CLIENT_POSTGRES_USER=techeadmin
       - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_discourse
       - POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS=hstore,pg_trgm
+      - DISCOURSE_SMTP_HOST=DISCOURSE_SMTP_HOST_ChangeME
+      - DISCOURSE_SMTP_PORT_NUMBER=DISCOURSE_SMTP_PORT_NUMBER_ChangeME
+      - DISCOURSE_SMTP_USER=DISCOURSE_SMTP_USER_ChangeME
+      - DISCOURSE_SMTP_PASSWORD=DISCOURSE_SMTP_PASSWORD_ChangeME
+      - DISCOURSE_SMTP_PROTOCOL=smtp
+      - DISCOURSE_SMTP_AUTH=login
+  
   discourse-sidekiq:
     container_name: discourse-sidekiq
     image: docker.io/bitnami/discourse:3
