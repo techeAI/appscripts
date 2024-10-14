@@ -1,0 +1,72 @@
+# Copyright Broadcom, Inc. All Rights Reserved.
+# SPDX-License-Identifier: APACHE-2.0
+
+services:
+  discourse-postgresql:
+    container_name: discourse-postgresql
+    image: docker.io/bitnami/postgresql:17
+    volumes:
+      - '/mnt/DriveDATA/discourse/postgresql_data:/bitnami/postgresql'
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_USERNAME=techeadmin
+      - POSTGRESQL_DATABASE=bitnami_discourse
+  discourse-redis:
+    container_name: discourse-redis
+    image: docker.io/bitnami/redis:7.4
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - '/mnt/DriveDATA/discourse/redis_data:/bitnami/redis'
+  discourse-web:
+    container_name: discourse-web 
+    image: docker.io/bitnami/discourse:3
+    ports:
+      - '7080:3000'
+    volumes:
+      - '/mnt/DriveDATA/discourse/discourse_data:/bitnami/discourse'
+    depends_on:
+      - discourse-postgresql
+      - discourse-redis
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - DISCOURSE_HOST=ChangeMe-APP_URL
+      - DISCOURSE_DATABASE_HOST=discourse-postgresql
+      - DISCOURSE_DATABASE_PORT_NUMBER=5432
+      - DISCOURSE_DATABASE_USER=techeadmin
+      - DISCOURSE_DATABASE_NAME=bitnami_discourse
+      - DISCOURSE_REDIS_HOST=discourse-redis
+      - DISCOURSE_REDIS_PORT_NUMBER=6379
+      - POSTGRESQL_CLIENT_POSTGRES_USER=techeadmin
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_discourse
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS=hstore,pg_trgm
+  discourse-sidekiq:
+    container_name: discourse-sidekiq
+    image: docker.io/bitnami/discourse:3
+    depends_on:
+      - discourse-web
+    volumes:
+      - '/mnt/DriveDATA/discourse/sidekiq_data:/bitnami/discourse'
+    command: /opt/bitnami/scripts/discourse-sidekiq/run.sh
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - DISCOURSE_HOST=ChangeMe-APP_URL
+      - DISCOURSE_DATABASE_HOST=discourse-postgresql
+      - DISCOURSE_DATABASE_PORT_NUMBER=5432
+      - DISCOURSE_DATABASE_USER=techeadmin
+      - DISCOURSE_DATABASE_NAME=bitnami_discourse
+      - DISCOURSE_REDIS_HOST=discourse-redis
+      - DISCOURSE_REDIS_PORT_NUMBER=6379
+#volumes:
+#  postgresql_data:
+#    driver: local
+#  redis_data:
+#    driver: local
+#  discourse_data:
+#    driver: local
+#  sidekiq_data:
+#    driver: local
