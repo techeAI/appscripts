@@ -4,7 +4,6 @@ services:
     container_name: headscale-main
     image: headscale/headscale:stable
     restart: unless-stopped
-    container_name: headscale
     ports:
       - "7082:8080"
     volumes:
@@ -15,6 +14,5 @@ services:
     container_name: headscale-ui
     image: ghcr.io/gurucomputing/headscale-ui:2024.10.10
     restart: unless-stopped
-    container_name: headscale-ui
     ports:
       - 7083:8080
