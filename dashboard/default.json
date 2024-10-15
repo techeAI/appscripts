@@ -2069,6 +2069,55 @@
         "properties": []
       }
     },
+    {
+      "id": "9a46a7e2-24a0-4557-b625-4170afc4f4ba",
+      "name": "MySpeed",
+      "url": "https://myspeed.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/myspeed.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://myspeed.teche.ai/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "436d478e-e5bc-4039-8c09-cffb0e6dace7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
    {
       "id": "f1e5ad92-2d80-419a-a3af-ff7c7c85845c",
       "name": "TecheBT",
