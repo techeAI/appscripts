@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Enter Full URL without (http/https) for headscale nginx:https:// " url
+read -p "Enter Full URL without(http/https) for headscale:  https://" url
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA
 mkdir -p $BASE_DIR/headscale/config
