@@ -2,7 +2,7 @@ version: '3.5'
 services:
   headscale:
     container_name: headscale-main
-    image: headscale/headscale:stable
+    image: headscale/headscale:v0.23.0-alpha9
     restart: unless-stopped
     ports:
       - "7082:8080"
