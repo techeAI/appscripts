@@ -1,0 +1,17 @@
+services:
+  headscale:
+    image: headscale/headscale:v0.23.0-alpha9
+    restart: unless-stopped
+    container_name: headscale
+    ports:
+      - "8887:8080"
+    volumes:
+      - changebasedir/headscale/config/:/etc/headscale
+      - changebasedir/headscale/data/:/var/lib/headscale
+    command: serve
+  headscale-ui:
+    image: ghcr.io/gurucomputing/headscale-ui:latest
+    restart: unless-stopped
+    container_name: headscale-ui
+    ports:
+      - 5000:443
