@@ -27,6 +27,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "After install SSL - login http://$local_ip:$PORT to access on URL."
+echo "Open http://$local_ip:$PORT to access on URL."
 sleep 5
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/myspeed"
