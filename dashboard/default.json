@@ -2093,7 +2093,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://myspeed.teche.ai/"
+        "externalUrl": "https://prefixmyspeed.domainname/"
       },
       "area": {
         "type": "category",
@@ -2118,6 +2118,55 @@
         "properties": []
       }
     },
+    {
+      "id": "92ee8c18-b3fd-46d1-acf2-1ce675be9d25",
+      "name": "Headscale",
+      "url": "https://prefixnet.domainname/web",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tailscale.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://net.teche.ai/web"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    }, 
    {
       "id": "f1e5ad92-2d80-419a-a3af-ff7c7c85845c",
       "name": "TecheBT",
