@@ -17,8 +17,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mindmap-wisemap/mindmap-nginx.com -o mindmap-nginx.com
-mv mindmap-nginx.com /etc/nginx/sites-enabled/mindmap
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mindmap-wisemap/mindmap-nginx.conf -o mindmap-nginx.conf mv mindmap-nginx.conf  /etc/nginx/sites-enabled/mindmap
 
 docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wise-db wisemapping/wisemapping:latest
 
