@@ -2072,7 +2072,7 @@
     {
       "id": "9a46a7e2-24a0-4557-b625-4170afc4f4ba",
       "name": "MySpeed",
-      "url": "https://myspeed.teche.ai",
+      "url": "https://prefixmyspeed.domainname/",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/myspeed.svg",
         "appNameStatus": "normal",
@@ -2119,6 +2119,55 @@
       }
     },
     {
+      "id": "8d046091-3bb2-422b-b9c6-fee3ae26f430",
+      "name": "Mesh-Central",
+      "url": "https://prefixmesh.domainname",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/meshcentral.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://prefixmesh.domainname"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "69eaa56f-45f0-444a-be9b-fc7ffafac3b7"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "92ee8c18-b3fd-46d1-acf2-1ce675be9d25",
       "name": "Headscale",
       "url": "https://prefixnet.domainname/web",
@@ -2143,7 +2192,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://net.teche.ai/web"
+        "externalUrl": "https://prefixnet.domainname/web"
       },
       "area": {
         "type": "category",
@@ -2171,7 +2220,7 @@
    {
       "id": "f1e5ad92-2d80-419a-a3af-ff7c7c85845c",
       "name": "TecheBT",
-      "url": "https://bugs.domainname",
+      "url": "https://prefixbugs.domainname",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mantisbt.png",
         "appNameStatus": "normal",
@@ -2192,7 +2241,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://bugs.domainname"
+        "externalUrl": "https://prefixbugs.domainname"
       },
       "area": {
         "type": "category",
