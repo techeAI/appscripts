@@ -27,6 +27,8 @@ sed -i "s|ChangeMe-APP_URL|$app_url|g" ./chatwoot-nginx.conf
 mv chatwoot-nginx.conf /etc/nginx/sites-enabled/chatwoot
 mv env .env
 sleep 2
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
+sleep 5
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
