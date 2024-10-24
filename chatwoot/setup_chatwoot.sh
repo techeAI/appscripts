@@ -15,7 +15,7 @@ echo "Docker is already installed."
 sleep 2
 fi
 mkdir -p /mnt/DriveDATA/bookstack/
-echo "Generating Random App Key"
+#echo "Generating Random App Key"
 #random_key=$(openssl rand -hex 16)
 #echo "Generated key: $random_key"
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/chatwoot/docker-compose.yaml -o docker-compose.yaml
