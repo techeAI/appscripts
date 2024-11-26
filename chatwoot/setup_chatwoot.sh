@@ -14,7 +14,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-mkdir -p /mnt/DriveDATA/bookstack/
+mkdir -p /mnt/DriveDATA/chatwoot/
 #echo "Generating Random App Key"
 #random_key=$(openssl rand -hex 16)
 #echo "Generated key: $random_key"
