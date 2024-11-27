@@ -28,6 +28,6 @@ mv ngx-nginx.conf /etc/nginx/sites-enabled/ngx
 sed -i "s|PLACEHOLDER_URL|$url|g" docker-compose.env
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
-echo "Now you can access vaultwarden through URL: http://$local_ip:7078"
+echo "Now you can access papperless through URL: $url"
 sleep 5
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/ngx"
