@@ -3,7 +3,7 @@
 apt install wget curl docker-compose sudo -y > /dev/null
 BASE_DIR=/mnt/DriveDATA/
 mkdir -p $BASE_DIR/mindmap
-PORT=7079
+PORT=7087
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
