@@ -20,6 +20,7 @@ fi
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/docker-compose.yml -o docker-compose.yml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/immich-nginx.conf -o immich-nginx.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/.env -o .env
 mv immich-nginx.conf /etc/nginx/sites-enabled/
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
