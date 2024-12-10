@@ -1,6 +1,8 @@
 #!/bin/bash
 
 apt install wget curl docker-compose sudo -y 2> /dev/null
+mkdir -p /mnt/DriveDATA/immich/immich_server
+mkdir -p /mnt/DriveDATA/immich/immich_server_db
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
