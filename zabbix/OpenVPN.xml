@@ -1,0 +1,45 @@
+<zabbix_export>
+    <version>7.0</version>
+    <templates>
+        <template>
+            <uuid>4d29c5d53e9b42c79eb5234b97b02a4e</uuid>
+            <template>Template OpenVPN</template>
+            <name>Template OpenVPN</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>2a22f7ec6f1e4f5d9fae67d5b7ecf80b</uuid>
+                    <name>OpenVPN: Connected Clients</name>
+                    <key>openvpn.clients.count</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type> <!-- Text for number of clients -->
+                </item>
+                <item>
+                    <uuid>b20a12d84b6545e38d426dc63d02c84f</uuid>
+                    <name>OpenVPN: Bytes Received</name>
+                    <key>openvpn.bytes.received</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type> <!-- Numeric float for bytes -->
+                </item>
+                <item>
+                    <uuid>e94b146cdc4248f7b6788d3d13d6cb13</uuid>
+                    <name>OpenVPN: Bytes Sent</name>
+                    <key>openvpn.bytes.sent</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type> <!-- Numeric float for bytes -->
+                </item>
+                <item>
+                    <uuid>7f5b7a895d494a2e843e3793e344af9c</uuid>
+                    <name>OpenVPN: Assigned IPs</name>
+                    <key>openvpn.assigned.ips</key>
+                    <delay>30s</delay>
+                    <value_type>TEXT</value_type> <!-- Text for IPs -->
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
