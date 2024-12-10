@@ -22,9 +22,9 @@ mv mindmap-nginx.conf  /etc/nginx/sites-enabled/mindmap
 
 docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wise-db wisemapping/wisemapping:latest
 
-docker cp mindmap-wisemap:/var/lib/wisemapping/db $BASE_DIR/mindmap/
-docker rm -f mindmap-wisemap
-docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wisemapping/db wisemapping/wisemapping:latest
+#docker cp mindmap-wisemap:/var/lib/wisemapping/db $BASE_DIR/mindmap/
+#docker rm -f mindmap-wisemap
+#docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wisemapping/db wisemapping/wisemapping:latest
 
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
