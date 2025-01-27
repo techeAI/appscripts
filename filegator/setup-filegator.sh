@@ -15,8 +15,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-sudo mkdir -p $BASE_DIR/filegator/files &&  sudo mkdir -p $BASE_DIR/filegator/users.json && mkdir -p $BASE_DIR/filegator/config
-sudo chown -R www-data:www-data $BASE_DIR/filegator/
+
 if sudo docker ps --format '{{.Names}}' | grep -q "filgator"; then
                                 echo "The container 'filgator' is already running. Skipping installation."
                                 sleep 2
@@ -24,10 +23,12 @@ if sudo docker ps --format '{{.Names}}' | grep -q "filgator"; then
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/filegator-nginx.conf -o filegator-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/configuration.php -o configuration.php
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/user.json -o user.json
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/user.json -o users.json
+sudo mkdir -p $BASE_DIR/filegator/files &&  sudo mkdir -p $BASE_DIR/filegator/users/ && mkdir -p $BASE_DIR/filegator/config
 mv filegator-nginx.conf /etc/nginx/sites-enabled/filegator
 mv configuration.php $BASE_DIR/filegator/config/configuration.php
-#mv user.json $BASE_DIR/filegator/users/user.json
+mv users.json $BASE_DIR/filegator/users/users.json
+sudo chown -R www-data:www-data $BASE_DIR/filegator/
                                 echo "Setting up filegator.."
 
 sleep 2
