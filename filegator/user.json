@@ -1,0 +1,1 @@
+{"1":{"username":"sysadmin","name":"SysAdmin","role":"admin","homedir":"\/","permissions":"read|write|upload|download|batchdownload|zip|chmod","password":"$2y$10$FfipFQpgJQWuZiN4cjWB6OIcy94.RWX.35l4nTy8IHSmmhgMF91tK"},"2":{"username":"guest","name":"Guest","role":"guest","homedir":"\/","permissions":"","password":""}}
