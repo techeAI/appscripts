@@ -10,6 +10,6 @@ services:
       # Mount local folder as a repository
       - /mnt/DriveDATA/filegator/files:/var/www/filegator/repository
       # Locally stored users.json file
-      - /mnt/DriveDATA/filegator/users/users.json:/var/www/filegator/private/users.json
+      - /mnt/DriveDATA/filegator/users.json:/var/www/filegator/private/users.json
       # Load your own custom configuration file
       - /mnt/DriveDATA/filegator/config/configuration.php:/var/www/filegator/configuration.php
