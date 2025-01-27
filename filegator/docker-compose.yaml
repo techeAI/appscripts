@@ -12,4 +12,4 @@ services:
       # Locally stored users.json file
       - /mnt/DriveDATA/filegator/users/users.json:/var/www/filegator/private/users.json
       # Load your own custom configuration file
-      - /mnt/DriveDATA/filegator/config/configuration.php:/var/www/filegator/configuration.php
+      #- /mnt/DriveDATA/filegator/config/configuration.php:/var/www/filegator/configuration.php
