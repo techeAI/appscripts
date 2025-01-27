@@ -16,6 +16,8 @@ echo "Docker is already installed."
 sleep 2
 fi
 sudo mkdir -p $BASE_DIR/filegator/files &&  sudo mkdir -p $BASE_DIR/filegator/users && mkdir -p $BASE_DIR/filegator/config
+touch $BASE_DIR/filegator/config/configuration.php
+touch $BASE_DIR/filegator/users/users.json
 sudo chown -R www-data:www-data $BASE_DIR/filegator/
 if sudo docker ps --format '{{.Names}}' | grep -q "filgator"; then
                                 echo "The container 'filgator' is already running. Skipping installation."
