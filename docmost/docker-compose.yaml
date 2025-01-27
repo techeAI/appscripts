@@ -23,7 +23,7 @@ services:
       - "7091:3000"
     restart: unless-stopped
     volumes:
-      - docmost:/app/data/storage
+      - /mnt/DriveDATA/docmost/db:/app/data/storage
 
   db:
     image: postgres:16-alpine
@@ -33,13 +33,13 @@ services:
       POSTGRES_PASSWORD: aPUo56ZCWR
     restart: unless-stopped
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - /mnt/DriveDATA/docmost/data:/var/lib/postgresql/data
 
   redis:
     image: redis:7.2-alpine
     restart: unless-stopped
     volumes:
-      - redis_data:/data
+      - /mnt/DriveDATA/docmost/radish:/data
 
 #volumes:
 #  docmost:
