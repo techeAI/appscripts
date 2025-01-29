@@ -3,7 +3,7 @@ apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/snipeit
 mkdir -p $BASE_DIR/db
 mkdir -p $BASE_DIR/storage
-hex_key=$(openssl rand -hex 4)
+hex_key=$(openssl rand -base64 32)
 echo "Generated key is: $hex_key"
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
