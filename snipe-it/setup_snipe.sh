@@ -3,8 +3,8 @@ apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/snipeit
 mkdir -p $BASE_DIR/db
 mkdir -p $BASE_DIR/storage
-#hex_key=$(openssl rand -hex 4)
-#echo "Generated key is: $hex_key"
+hex_key=$(openssl rand -hex 4)
+echo "Generated key is: $hex_key"
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -35,6 +35,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/dock
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snipe.env -o snipe.env
 #sed -i "s|ChangeMeAppURL|$url|g" docker-compose.yaml
 #sed -i "s|ChangeMeAppURL|$url|g" snipe.env
+sed -i "s|ChangeMEAPPKEY|$hex_key|g" snipe.env
 sed -i "s|ChangeMeSMTPHOST|$smtphost|g" snipe.env
 sed -i "s|ChangeMePORT|$smtpport|g" snipe.env
 sed -i "s|ChangeMeUserNAME|$smtpuname|g" snipe.env
