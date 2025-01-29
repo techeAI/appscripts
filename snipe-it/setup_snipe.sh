@@ -17,7 +17,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-#read -p "Enter Full URL (without http or https) for docmost:- https://" url
+read -p "Enter Full URL (without http or https):- https://" url
 read -p "Do you want to set up SMTP? (yes/no): " response
 
 if [[ "$response" == "yes" || "$response" == "y" ]]; then
@@ -34,7 +34,8 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snip
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snipe.env -o snipe.env
 #sed -i "s|ChangeMeAppURL|$url|g" docker-compose.yaml
-#sed -i "s|ChangeMeAppURL|$url|g" snipe.env
+sed -i "s|ChangeMeAppURL|$url|g" snipe-nginx.conf
+sed -i "s|ChangeMeAppURL|$url|g" snipe.env
 sed -i "s|ChangeMEAPPKEY|$hex_key|g" snipe.env
 sed -i "s|ChangeMeSMTPHOST|$smtphost|g" snipe.env
 sed -i "s|ChangeMePORT|$smtpport|g" snipe.env
@@ -45,4 +46,4 @@ mv snipe.env .env
 mv snipe-nginx.conf /etc/nginx/sites-enabled/snipe
 docker compose up -d
 sleep 5
-echo "To Run Behind nginx proxy please install SSL by certbot --nginx and open URL"
+echo "To Run Behind nginx proxy please install SSL by certbot --nginx and open URL https://$url"
