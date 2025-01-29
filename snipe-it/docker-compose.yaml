@@ -1,5 +1,4 @@
-# Compose file for production.
-version "3.8"
+version: "3.8"
 services:
   snipeapp:
     image: snipe/snipe-it:v7.1.16
@@ -10,9 +9,8 @@ services:
     ports:
       - "7092:80"
     depends_on:
-      db:
+      snipedb:
         condition: service_healthy
-        restart: true
     env_file:
       - .env
 
@@ -28,12 +26,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     healthcheck:
-      # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 5s
       timeout: 1s
       retries: 5
-
-  #volumes:
-    #db_data:
-    #storage:
