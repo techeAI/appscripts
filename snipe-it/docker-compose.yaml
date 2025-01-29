@@ -1,5 +1,5 @@
 # Compose file for production.
-version "3.8:
+version "3.8"
 services:
   snipeapp:
     image: snipe/snipe-it:v7.1.16
