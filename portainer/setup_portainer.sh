@@ -23,7 +23,7 @@ if sudo docker ps --format '{{.Names}}' | grep -q "portainer"; then
 			else
 				echo "Setting up Portainer.."
 				sudo mkdir -p $BASE_DIR 2> /dev/null
-				sudo docker run --name=portainer -d --restart unless-stopped  -p 8212:9000  -v /var/run/docker.sock:/var/run/docker.sock  -v $BASE_DIR/portainer_data:/data  portainer/portainer-ce:latest
+				sudo docker run --name=portainer -d --restart unless-stopped  -p 8212:9000  -v /var/run/docker.sock:/var/run/docker.sock  -v $BASE_DIR/portainer_data:/data  portainer/portainer-ce:2.21.5
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
