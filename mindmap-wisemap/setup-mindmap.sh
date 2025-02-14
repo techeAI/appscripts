@@ -20,7 +20,7 @@ fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mindmap-wisemap/mindmap-nginx.conf -o mindmap-nginx.conf
 mv mindmap-nginx.conf  /etc/nginx/sites-enabled/mindmap
 
-docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wise-db wisemapping/wisemapping:latest
+docker run -dt --restart unless-stopped --name mindmap-wisemap -p $PORT:8080 -v $BASE_DIR/mindmap:/var/lib/wise-db wisemapping/wisemapping:5.0.14
 
 #docker cp mindmap-wisemap:/var/lib/wisemapping/db $BASE_DIR/mindmap/
 #docker rm -f mindmap-wisemap
