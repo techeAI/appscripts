@@ -53,7 +53,7 @@ services:
     tty: true
     restart: unless-stopped
     privileged: true
-    cgroup: host
+    #cgroup: host
     volumes:
      - Basedir/community_data:/var/www/onlyoffice/Data
      - Basedir/community_log:/var/log/onlyoffice
