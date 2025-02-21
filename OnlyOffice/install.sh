@@ -783,7 +783,7 @@ check_ports () {
 	fi
 
 	if [ "$INSTALL_COMMUNITY_SERVER" == "true" ]; then
-		ARRAY_PORTS=(${ARRAY_PORTS[@]} "$COMMUNITY_PORT" "5222");
+		ARRAY_PORTS=(${ARRAY_PORTS[@]} "$COMMUNITY_PORT" "443" "5222");
 	elif [ "$INSTALL_DOCUMENT_SERVER" == "true" ]; then
 		if [ "${USE_AS_EXTERNAL_SERVER}" == "true" ]; then
 			ARRAY_PORTS=(${ARRAY_PORTS[@]} "$COMMUNITY_PORT" "443");
