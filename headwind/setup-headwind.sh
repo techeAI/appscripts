@@ -29,7 +29,7 @@ sed -i "s|changeme-url|$app_url|g" headwind-nginx.conf
 sed -i "s|changeme-email|$adminemail|g" .env
 sed -i "s|changeme-secret|$secret|g" .env
 
-mv immich-nginx.conf /etc/nginx/sites-enabled/
+mv headwind-nginx.conf /etc/nginx/sites-enabled/
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
