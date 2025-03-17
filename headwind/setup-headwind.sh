@@ -37,5 +37,5 @@ echo "#########################################################"
 echo " "
 echo " "
 echo "Secret is $secret"
-echo "login http://$local_ip:7086 to access Immich."
+echo "login http://$local_ip:8213 to access Immich."
 sleep 5
