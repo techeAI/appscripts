@@ -22,7 +22,7 @@ secret=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 10)
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headwind/docker-compose.yml -o docker-compose.yml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headwind/headwind-nginx.conf -o headwind-nginx.conf
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/headwind.env -o .env
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headwind/headwind.env -o .env
 
 sed -i "s|changeme-url|$app_url|g" .env
 sed -i "s|changeme-url|$app_url|g" headwind-nginx.conf
