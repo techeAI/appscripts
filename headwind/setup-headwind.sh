@@ -17,7 +17,7 @@ echo "Docker is already installed."
 sleep 2
 fi
 read -p "Enter the URL(Do not add http or https): https://" app_url
-read -p "Enter Admin Email: https://" adminemail
+read -p "Enter Admin Email: " adminemail
 secret=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 10)
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headwind/docker-compose.yml -o docker-compose.yml
@@ -27,7 +27,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/headwi
 sed -i "s|changeme-url|$app_url|g" .env
 sed -i "s|changeme-url|$app_url|g" headwind-nginx.conf
 sed -i "s|changeme-email|$adminemail|g" .env
-sed -i "s|changeme-secret|$secret|g" .volumes
+sed -i "s|changeme-secret|$secret|g" .env
 
 mv headwind-nginx.conf /etc/nginx/sites-enabled/
 docker compose up -d
