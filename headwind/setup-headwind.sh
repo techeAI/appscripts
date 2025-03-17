@@ -27,7 +27,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/headwi
 sed -i "s|changeme-url|$app_url|g" .env
 sed -i "s|changeme-url|$app_url|g" headwind-nginx.conf
 sed -i "s|changeme-email|$adminemail|g" .env
-sed -i "s|changeme-secret|$secret|g" .env
+sed -i "s|changeme-secret|$secret|g" .volumes
 
 mv headwind-nginx.conf /etc/nginx/sites-enabled/
 docker compose up -d

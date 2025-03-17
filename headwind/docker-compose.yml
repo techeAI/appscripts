@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: ${SQL_PASS}
       POSTGRES_DB: ${SQL_BASE}
     volumes: 
-      - ./volumes/db:/var/lib/postgresql/data
+      - /mnt/DriveDATA/headwind/headwind_db:/var/lib/postgresql/data
 
   hmdm:
     image: headwindmdm/hmdm:0.1.5
