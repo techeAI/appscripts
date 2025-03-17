@@ -17,11 +17,11 @@ services:
     ports:
       # Uncomment this port forwarding if you want to use plain HTTP instead of HTTPS
       #- 80:8080
-      - 443:8443
-      - 31000:31000
+      - 8213:8443
+      #- 31000:31000
     volumes:
-      - ./volumes/work:/usr/local/tomcat/work
-      - ./volumes/letsencrypt:/etc/letsencrypt
+      - /mnt/DriveDATA/headwind/headwind-work:/usr/local/tomcat/work
+    #  - ./volumes/letsencrypt:/etc/letsencrypt
     environment:
       SQL_HOST: postgresql
       SQL_USER: ${SQL_USER}
