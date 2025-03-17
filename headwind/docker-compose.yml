@@ -2,6 +2,7 @@ version: '3'
 
 services:
   postgresql:
+    container_name: headwind-postgress
     image: postgres:12-alpine
     ports:
       - 8214:5432
@@ -13,6 +14,7 @@ services:
       - /mnt/DriveDATA/headwind/headwind_db:/var/lib/postgresql/data
 
   hmdm:
+    container_name: headwind
     image: headwindmdm/hmdm:0.1.5
     ports:
       # Uncomment this port forwarding if you want to use plain HTTP instead of HTTPS
