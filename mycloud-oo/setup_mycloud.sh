@@ -15,16 +15,16 @@ echo "Docker is already installed."
 sleep 2
 fi
 
-curl -L -o docker-compose.yml https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-00/docker-compose.yml
+curl -L -o docker-compose.yml https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/docker-compose.yml
 curl -L -o nginx.conf https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/nginx.conf
-curl -L -o set_configuration.sh https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-00/set_configuration.sh
-curl -L -o mycloud-00-nginx.conf https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-00/mycloud-00-nginx.conf
+curl -L -o set_configuration.sh https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/set_configuration.sh
+curl -L -o mycloud-oo-nginx.conf https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/mycloud-00-nginx.conf
 
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/document_data
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/document_log
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/app_data
 sudo mv nginx.conf /mnt/DriveDATA/nextcloud-oo/
-sudo mv mycloud-00-nginx.conf /etc/nginx/sites-enabled/mycloud-00
+sudo mv mycloud-oo-nginx.conf /etc/nginx/sites-enabled/mycloud-oo
 chown -R www-data:www-data /mnt/DriveDATA/nextcloud-oo/
 docker-compose up -d
 sleep 20
