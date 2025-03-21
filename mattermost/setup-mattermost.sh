@@ -22,10 +22,13 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/do
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost-nginx.conf -o mattermost-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost.env -o mattermost.env
 
+
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
+
+
 mv mattermost-nginx.conf /etc/nginx/sites-enabled/mattermost
 mv mattermost.env .env
-sed -i "s|ChangeMe-APP_URL|$app_url|g" ./.env
-
 
 sleep 2
 docker-compose up -d
