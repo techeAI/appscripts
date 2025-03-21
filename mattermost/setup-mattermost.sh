@@ -14,8 +14,9 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-mkdir -p /mnt/DriveDATA/mattermost/
+mkdir -p /mnt/DriveDATA/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
 sudo chown -R 2000:2000 /mnt/DriveDATA/mattermost/
+sudo chmod -R 777 /mnt/DriveDATA/mattermost/
 #echo "Generating Random App Key"
 #random_key=$(openssl rand -hex 16)
 #echo "Generated key: $random_key"
