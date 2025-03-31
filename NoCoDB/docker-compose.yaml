@@ -5,9 +5,9 @@ services:
       nocodb-db: 
         condition: service_healthy
     environment: 
-      NC_DB: "pg://nocodb-db:5432?u=nocodbuser&p=aPUo56ZCWR&d=nocodb"
+      NC_DB: "pg://nocodb-db:5432?u=postgres&p=aPUo56ZCWR&d=nocodb"
     image: "nocodb/nocodb:0.262.5"
-    container_name: nocodb-serevr
+    container_name: nocodb-server
     ports: 
       - "8219:8080"
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
     environment: 
       POSTGRES_DB: nocodb
       POSTGRES_PASSWORD: aPUo56ZCWR
-      POSTGRES_USER: nocodbuser
+      POSTGRES_USER: postgres
     healthcheck: 
       interval: 10s
       retries: 10
