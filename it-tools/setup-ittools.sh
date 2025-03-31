@@ -28,6 +28,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:8220 to access NoCoDB."
+echo "login http://$local_ip:8220 to access it-tools."
 sleep 5
 #echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mattermost"
