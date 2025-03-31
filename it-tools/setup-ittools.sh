@@ -14,12 +14,12 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-mkdir -p /mnt/DriveDATA/nocodb/{data,database}
+mkdir -p /mnt/DriveDATA/ittools/data
 
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/docker-compose.yaml -o docker-compose.yaml
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/nocodb-nginx.conf -o nocodb-nginx.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/docker-compose.yaml -o docker-compose.yaml
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/nginx-ittools.conf -o nginx-ittools.conf
 
-mv nocodb-nginx.conf /etc/nginx/sites-enabled/nocodb
+mv nginx-ittools.conf /etc/nginx/sites-enabled/ittools
 
 sleep 2
 docker-compose up -d
@@ -28,6 +28,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login http://$local_ip:8219 to access NoCoDB."
+echo "login http://$local_ip:8220 to access NoCoDB."
 sleep 5
 #echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mattermost"

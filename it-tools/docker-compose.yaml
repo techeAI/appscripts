@@ -1,34 +1,15 @@
-version: '2.1'
-services: 
-  nocodb: 
-    depends_on: 
-      nocodb-db: 
-        condition: service_healthy
-    environment: 
-      NC_DB: "pg://nocodb-db:5432?u=postgres&p=aPUo56ZCWR&d=nocodb"
-    image: "nocodb/nocodb:0.262.5"
-    container_name: nocodb-server
-    ports: 
-      - "8219:8080"
+version: '3'
+
+services:
+  it-tools:
+    image: corentinth/it-tools:2024.10.22-7ca5933
+    container_name: it-tools
+    ports:
+      - "8220:80"
+    volumes:
+      - /mnt/DriveDATA/ittools/data:/data  # Persistent storage
     restart: unless-stopped
-    volumes: 
-      - "/mnt/DriveDATA/nocodb/data:/usr/app/data"
-  
-  nocodb-db: 
-    environment: 
-      POSTGRES_DB: nocodb
-      POSTGRES_PASSWORD: aPUo56ZCWR
-      POSTGRES_USER: postgres
-    healthcheck: 
-      interval: 10s
-      retries: 10
-      test: "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""
-      timeout: 2s
-    image: postgres:16.6
-    container_name: nocodb-pgsql
-    restart: always
-    volumes: 
-      - "/mnt/DriveDATA/nocodb/database:/var/lib/postgresql/data"
-#volumes: 
-#  db_data: {}
-# nc_data: {}
+
+#volumes:
+#  it-tools-data:
+#    driver: local
