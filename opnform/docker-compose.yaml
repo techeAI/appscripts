@@ -1,2 +1,0 @@
-docker run -dt --name opnform restart=unless-stopped -p 35551:80 -v /mnt/DriveDATA/opnform/:/persist jhumanj/opnform:1.2.6
-docker run -dt --name opnform --restart=unless-stopped -p 35551:80 -eDISABLE_SIGNUP=true -v /mnt/DriveDATA/opnform/:/persist jhumanj/opnform:1.2.6
