@@ -35,8 +35,6 @@ sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
 sed -i "s|ChangeMe-APP_URL|$local_ip:8217|g" ./mattermost.env
 #sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost-nginx.conf
-sed -i '/^#.*MM_SERVICESETTINGS_TLSCERTFILE/s/^#//' ./mattermost.env
-sed -i '/^#.*MM_SERVICESETTINGS_TLSKEYFILE/s/^#//' ./mattermost.env
 #sed -i '/^MM_SERVICESETTINGS_SITEURL=/ s|https://|http://|' ./mattermost.env
 else
     echo "Invalid response. Please enter 'yes' or 'no'."
@@ -52,6 +50,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-#echo "login https://$local_ip:8217 to access mattermost."
+echo "login https://$local_ip:8217 to access mattermost."
 sleep 5
 #echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mattermost"
