@@ -33,8 +33,8 @@ read -p "Enter the URL(Do not add http or https):" app_url
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
-sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost.env
-sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost-nginx.conf
+sed -i "s|ChangeMe-APP_URL|$local_ip:8217|g" ./mattermost.env
+#sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost-nginx.conf
 sed -i '/^#.*MM_SERVICESETTINGS_TLSCERTFILE/s/^#//' ./mattermost.env
 sed -i '/^#.*MM_SERVICESETTINGS_TLSKEYFILE/s/^#//' ./mattermost.env
 #sed -i '/^MM_SERVICESETTINGS_SITEURL=/ s|https://|http://|' ./mattermost.env
