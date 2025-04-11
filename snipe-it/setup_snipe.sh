@@ -17,7 +17,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter Full URL (without http or https):- https://" url
+read -p "Enter Full URL (without http or https):- " url
 read -p "Do you want to set up SMTP? (yes/no): " response
 
 if [[ "$response" == "yes" || "$response" == "y" ]]; then
@@ -34,6 +34,9 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snip
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snipe.env -o snipe.env
 #sed -i "s|ChangeMeAppURL|$url|g" docker-compose.yaml
+read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
+echo "Setting up for public deployment..."
 sed -i "s|ChangeMeAppURL|$url|g" snipe-nginx.conf
 sed -i "s|ChangeMeAppURL|$url|g" snipe.env
 sed -i "s|ChangeMEAPPKEY|$hex_key|g" snipe.env
@@ -42,6 +45,22 @@ sed -i "s|ChangeMePORT|$smtpport|g" snipe.env
 sed -i "s|ChangeMeUserNAME|$smtpuname|g" snipe.env
 sed -i "s|ChangeMeMailFrom|$smtpname|g" snipe.env
 sed -i "s|ChangeMePWD|$smtppwd|g" snipe.env
+elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
+sed -i "s|ChangeMeAppURL|$url|g" snipe-nginx.conf
+sed -i "s|ChangeMeAppURL|$url|g" snipe.env
+sed -i "s|ChangeMEAPPKEY|$hex_key|g" snipe.env
+sed -i "s|ChangeMeSMTPHOST|$smtphost|g" snipe.env
+sed -i "s|ChangeMePORT|$smtpport|g" snipe.env
+sed -i "s|ChangeMeUserNAME|$smtpuname|g" snipe.env
+sed -i "s|ChangeMeMailFrom|$smtpname|g" snipe.env
+sed -i "s|ChangeMePWD|$smtppwd|g" snipe.env
+sed -i "s|ChangeMeAppURL|$url|g" snipe.env
+sed -i '/^APP_URL=/ s|https://|http://|' ./snipe.env
+else
+    echo "Invalid response. Please enter 'yes' or 'no'."
+    exit 1
+fi
+
 mv snipe.env .env
 mv snipe-nginx.conf /etc/nginx/sites-enabled/snipe
 docker compose up -d

@@ -18,8 +18,8 @@ sudo mkdir /mnt/DriveDATA/n8n
 sudo chmod 777 /mnt/DriveDATA/n8n
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/n8n/n8n-nginx.conf -o n8n-nginx.conf
 mv n8n-nginx.conf /etc/nginx/sites-enabled/n8n
-read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 
+read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
 docker run -dt  --name n8n  -p 7088:5678 -e GENERIC_TIMEZONE="Asia/Kolkata"  -e TZ="Asia/Kolkata" -e WEBHOOK_URL="https://$app_url" -v /mnt/DriveDATA/n8n:/home/node n8nio/n8n:1.78.0
