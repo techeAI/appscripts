@@ -15,7 +15,7 @@ echo "Docker is already installed."
 sleep 2
 fi
 mkdir -p /mnt/DriveDATA/mattermost/{config,config/ssl,data,logs,plugins,client/plugins,bleve-indexes}
-openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout mattermost.key -out mattermost.crt -subj "/C=CT/ST=State/L=City/O=MyOrg/OU=Unit/CN=$local_ip"
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /mnt/DriveDATA/mattermost/config/ssl/mattermost.key -out /mnt/DriveDATA/mattermost/config/ssl/mattermost.crt -subj "/C=CT/ST=State/L=City/O=MyOrg/OU=Unit/CN=$local_ip"
 sudo chown -R 2000:2000 /mnt/DriveDATA/mattermost/
 #sudo chmod -R 777 /mnt/DriveDATA/mattermost/
 #echo "Generating Random App Key"
