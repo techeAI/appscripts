@@ -1,6 +1,5 @@
 #!/bin/bash
 local_ip=$(ip route get 1 | awk '{print $7}')
-read -p "Enter the URL(Do not add http or https):" app_url
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -30,11 +29,12 @@ read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
+read -p "Enter the URL(Do not add http or https):" app_url
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
-sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
-sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
+sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost.env
+sed -i "s|ChangeMe-APP_URL|$local_ip|g" ./mattermost-nginx.conf
 sed -i '/^#.*MM_SERVICESETTINGS_TLSCERTFILE/s/^#//' ./mattermost.env
 sed -i '/^#.*MM_SERVICESETTINGS_TLSKEYFILE/s/^#//' ./mattermost.env
 #sed -i '/^MM_SERVICESETTINGS_SITEURL=/ s|https://|http://|' ./mattermost.env
@@ -52,6 +52,6 @@ echo "#########################################################"
 echo "#########################################################"
 echo " "
 echo " "
-echo "login https://$local_ip:8217 to access mattermost."
+#echo "login https://$local_ip:8217 to access mattermost."
 sleep 5
 #echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mattermost"
