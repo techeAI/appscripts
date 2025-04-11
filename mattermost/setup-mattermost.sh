@@ -24,11 +24,20 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/do
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost-nginx.conf -o mattermost-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost.env -o mattermost.env
 
+read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 
+if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
+echo "Setting up for public deployment..."
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
-
-
+elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
+sed -i '/^MM_SERVICESETTINGS_SITEURL=/ s|https://|http://|' ./mattermost.env
+else
+    echo "Invalid response. Please enter 'yes' or 'no'."
+    exit 1
+fi
 mv mattermost-nginx.conf /etc/nginx/sites-enabled/mattermost
 mv mattermost.env .env
 
