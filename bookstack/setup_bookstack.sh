@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Enter the URL(Do not add http or https): https://" app_url
+local_ip=$(ip route get 1 | awk '{print $7}')
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -21,11 +21,28 @@ echo "Generated key: $random_key"
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/bs-nginx.conf -o bs-nginx.conf
 mv bs-nginx.conf /etc/nginx/sites-enabled/bs
-sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml 
 sed -i "s|SomeRandomStringWith32Characters|$random_key|g" ./docker-compose.yaml
 sleep 2
+
+read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+
+if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
+echo "Setting up for public deployment..."
+read -p "Enter the URL(Do not add http or https):" app_url
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
+sed -i "s|changemeurlscheme-APP_URL|https|g" ./docker-compose.yaml
+
+elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
+app_url=$local_ip:7076
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
+sed -i "s|changemeurlscheme-APP_URL|http|g" ./docker-compose.yaml
+else
+    echo "Invalid response. Please enter 'yes' or 'no'."
+    exit 1
+fi
+
 docker-compose up -d
-local_ip=$(ip route get 1 | awk '{print $7}')
+
 echo "#########################################################"
 echo "#########################################################"
 echo " "

@@ -22,7 +22,7 @@ services:
       - DB_DATABASE=bookstack
       - DB_USERNAME=bookstack
       - DB_PASSWORD=aPUo56ZCWR
-      - APP_URL=https://ChangeMe-APP_URL
+      - APP_URL=changemeurlscheme://ChangeMe-APP_URL
       - APP_KEY=SomeRandomStringWith32Characters
     volumes:
       - /mnt/DriveDATA/bookstack/bookstack_uploads:/var/www/bookstack/public/uploads
