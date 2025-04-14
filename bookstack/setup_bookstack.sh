@@ -30,12 +30,12 @@ if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
 read -p "Enter the URL(Do not add http or https):" app_url
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
-sed -i "s|changemeurlscheme-APP_URL|https|g" ./docker-compose.yaml
+sed -i "s|changemeurlscheme|https|g" ./docker-compose.yaml
 
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
 app_url=$local_ip:7076
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
-sed -i "s|changemeurlscheme-APP_URL|http|g" ./docker-compose.yaml
+sed -i "s|changemeurlscheme|http|g" ./docker-compose.yaml
 else
     echo "Invalid response. Please enter 'yes' or 'no'."
     exit 1
