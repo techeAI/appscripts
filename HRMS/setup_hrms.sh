@@ -23,7 +23,7 @@ unzip HRMS.zip
 cd HRMS && docker-compose -f ./docker-compose.yaml up -d
 chown -R www-data:www-data $BASE_DIR
 local_ip=$(ip route get 1 | awk '{print $7}')
-echo  "Please access the HRMS at http://$local_ip:7072"
+#echo  "Please access the HRMS at http://$local_ip:7072"
 echo ""
 echo ""
 echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/hrms"
