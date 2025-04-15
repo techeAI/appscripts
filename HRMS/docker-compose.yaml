@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  hrms-frontend:
+    container_name: hrms-frontend
+    image: horilla/horilla:latest  
+    ports:
+      - "7072:8000"
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: "postgres://techehrms:aPUo56ZCWR@hrms-db:5432/hrms"
+    command: >
+      sh -c "
+      echo 'Waiting for database to be ready...' &&
+      until pg_isready -h hrms-db -p 5432 -U postgres; do sleep 2; done &&
+      python3 manage.py makemigrations &&
+      python3 manage.py migrate &&
+      python3 manage.py collectstatic --noinput &&
+      python3 manage.py compilemessages &&
+      gunicorn --bind 0.0.0.0:8000 horilla.wsgi:application
+      "
+    depends_on:
+      hrms-db:
+        condition: service_healthy
+
+  hrms-db:
+    container_name: hrms-db  
+    image: postgres:16-bullseye
+    environment:
+      POSTGRES_DB: hrms
+      POSTGRES_USER: techehrms
+      POSTGRES_PASSWORD: aPUo56ZCWR
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256"
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - /mnt/DriveDATA/hrms:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
