@@ -1,4 +1,5 @@
 #!/bin/bash
+local_ip=$(ip route get 1 | awk '{print $7}')
 apt install wget curl sudo -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/hrms
 if [ ! -x /usr/bin/docker ]; then
@@ -19,8 +20,20 @@ mkdir -p $BASE_DIR
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/hrms-nginx.conf -o hrms-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/docker-compose.yaml -o docker-compose.yaml
 mv hrms-nginx.conf /etc/nginx/sites-enabled/hrms
+
+read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
+echo "Setting up for public deployment..."
+read -p "Enter the URL(Do not add http or https):" app_url
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
+sed -i "s|ChangeMe-APP_URL|$app_url|g" ./hrms-nginx.conf
+elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
+sed -i "s|ip|$local_ip|g" ./docker-compose.yaml
+else
+    echo "Invalid response. Please enter 'yes' or 'no'."
+    exit 1
+fi
 docker compose up -d
-local_ip=$(ip route get 1 | awk '{print $7}')
 echo  "Please access the HRMS at http://$local_ip:7072"
 echo ""
 echo ""

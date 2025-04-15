@@ -9,6 +9,7 @@ services:
     restart: unless-stopped
     environment:
       DATABASE_URL: "postgres://techehrms:aPUo56ZCWR@hrms-db:5432/hrms"
+      CSRF_TRUSTED_ORIGINS: "https://ChangeMe-APP_URL,http://ChangeMe-APP_URL,https://localhost:7072,http://localhost:7072,http://ip:7072,https://ip:7072"
     command: >
       sh -c "
       echo 'Waiting for database to be ready...' &&
