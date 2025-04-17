@@ -20,9 +20,7 @@ fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/jenkins-nginx.conf -o jenkins-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/docker-compose.yaml -o docker-compose.yaml
 mv jenkins-nginx.conf  /etc/nginx/sites-enabled/jenkins
-
-
-
+docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
@@ -30,4 +28,4 @@ echo " "
 echo " "
 echo "login http://$local_ip:$PORT to access."
 sleep 5
-echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/mindmap"
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/jenkins"
