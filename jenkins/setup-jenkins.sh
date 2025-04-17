@@ -3,6 +3,7 @@
 apt install wget curl docker-compose sudo -y > /dev/null
 BASE_DIR=/mnt/DriveDATA/
 mkdir -p $BASE_DIR/jenkins
+chown -R 1000:1000 $BASE_DIR/jenkins
 PORT=8221
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
