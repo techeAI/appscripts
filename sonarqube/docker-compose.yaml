@@ -7,9 +7,9 @@ services:
     depends_on:
       - sonar_db
     environment:
-      SONAR_JDBC_URL: jdbc:postgresql://sonar_db:5432/sonar
-      SONAR_JDBC_USERNAME: sonar
-      SONAR_JDBC_PASSWORD: sonar
+      SONAR_JDBC_URL: jdbc:postgresql://sonar_db:5432/biztechsonar
+      SONAR_JDBC_USERNAME: biztechsonar
+      SONAR_JDBC_PASSWORD: aPUo56ZCWR
     ports:
       - "8223:9000"
     volumes:
@@ -23,9 +23,9 @@ services:
     container_name: sonarqube-db
     image: postgres:13
     environment:
-      POSTGRES_USER: sonar
-      POSTGRES_PASSWORD: sonar
-      POSTGRES_DB: sonar
+      POSTGRES_USER: biztechsonar
+      POSTGRES_PASSWORD: aPUo56ZCWR
+      POSTGRES_DB: biztechsonar
     volumes:
       - /mnt/DriveDATA/sonarqube/sonar_db:/var/lib/postgresql
       - /mnt/DriveDATA/sonarqube/sonar_db_data:/var/lib/postgresql/data
