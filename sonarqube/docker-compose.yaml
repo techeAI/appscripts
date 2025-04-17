@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: sonarqube-server
+    depends_on:
+      - sonar_db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://sonar_db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    ports:
+      - "8223:9000"
+    volumes:
+      - /mnt/DriveDATA/sonarqube/sonarqube_conf:/opt/sonarqube/conf
+      - /mnt/DriveDATA/sonarqube/sonarqube_data:/opt/sonarqube/data
+      - /mnt/DriveDATA/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions
+      - /mnt/DriveDATA/sonarqube/sonarqube_logs:/opt/sonarqube/logs
+      - /mnt/DriveDATA/sonarqube/sonarqube_temp:/opt/sonarqube/temp
+
+  sonar_db:
+    container_name: sonarqube-db
+    image: postgres:13
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+    volumes:
+      - /mnt/DriveDATA/sonarqube/sonar_db:/var/lib/postgresql
+      - /mnt/DriveDATA/sonarqube/sonar_db_data:/var/lib/postgresql/data
+
+#volumes:
+#  sonarqube_conf:
+ # sonarqube_data:
+ # sonarqube_extensions:
+ # sonarqube_logs:
+ # sonarqube_temp:
+ # sonar_db:
+ # sonar_db_data:

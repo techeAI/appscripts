@@ -1,9 +1,9 @@
 #!/bin/bash
 #read -p "Enter the URL(Do not add http or https): https://" app_url
 BASE_DIR=/mnt/DriveDATA/
-mkdir -p $BASE_DIR/jenkins
-chown -R 1000:1000 $BASE_DIR/jenkins
-PORT=8221
+mkdir -p $BASE_DIR/sonarqube/{sonarqube_conf,sonarqube_data,sonarqube_extensions,sonarqube_logs,sonarqube_temp,sonar_db,sonar_db_data}
+
+PORT=8223
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
@@ -17,9 +17,9 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/jenkins-nginx.conf -o jenkins-nginx.conf
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/docker-compose.yaml -o docker-compose.yaml
-mv jenkins-nginx.conf  /etc/nginx/sites-enabled/jenkins
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/sonarqube/sonarqube-nginx.conf -o sonarqube-nginx.conf
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/sonarqube/docker-compose.yaml -o docker-compose.yaml
+mv sonarqube  /etc/nginx/sites-enabled/sonarqube
 apt install wget curl docker-compose sudo -y > /dev/null
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
@@ -29,4 +29,4 @@ echo " "
 echo " "
 echo "login http://$local_ip:$PORT to access."
 sleep 5
-echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/jenkins"
+echo "To Run Behind nginx proxy please set server_name in /etc/nginx/sites-enabled/sonar"
