@@ -20,6 +20,7 @@ fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/jenkins-nginx.conf -o jenkins-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/jenkins/docker-compose.yaml -o docker-compose.yaml
 mv jenkins-nginx.conf  /etc/nginx/sites-enabled/jenkins
+apt install wget curl docker-compose sudo -y > /dev/null
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
