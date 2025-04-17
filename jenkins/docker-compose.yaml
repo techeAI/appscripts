@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:2.506
+    container_name: jenkins-server
+    restart: unless-stopped
+    ports:
+      - "8221:8080"
+      - "8222:50000"  # For Jenkins agents
+    volumes:
+      - /mnt/DriveDATA/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock  # Optional: if you want Jenkins to control Docker
