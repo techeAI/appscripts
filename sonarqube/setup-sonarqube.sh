@@ -17,7 +17,7 @@ sudo sysctl -p
 
 BASE_DIR=/mnt/DriveDATA/
 mkdir -p $BASE_DIR/sonarqube/{sonarqube_conf,sonarqube_data,sonarqube_extensions,sonarqube_logs,sonarqube_temp,sonar_db,sonar_db_data}
-
+sudo chown -R 1000:1000 $BASE_DIR/sonarqube/
 PORT=8223
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
