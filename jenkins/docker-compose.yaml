@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   jenkins:
-    image: jenkins/jenkins:2.506
+    image: jenkins/jenkins:lts-jdk17
     container_name: jenkins-server
     restart: unless-stopped
     ports:
