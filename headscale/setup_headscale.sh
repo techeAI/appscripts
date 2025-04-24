@@ -31,4 +31,4 @@ local_ip=$(ip route get 1 | awk '{print $7}')
 sleep 5
 echo "To Run Behind nginx proxy please update SSL cert"
 echo "Headscale URL: https://$url"
-echo "Headscale-UI URL: https://$url/web"
+echo "Headscale-UI URL: https://$url/admin"
