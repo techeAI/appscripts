@@ -2,7 +2,7 @@ version: '3.5'
 services:
   headscale:
     container_name: headscale-main
-    image: headscale/headscale:v0.23.0-alpha9
+    image: headscale/headscale:0.25.1
     restart: unless-stopped
     ports:
       - "7082:8080"
@@ -11,8 +11,20 @@ services:
       - /mnt/DriveDATA/headscale/data:/var/lib/headscale
     command: serve
   headscale-ui:
-    container_name: headscale-ui
-    image: ghcr.io/gurucomputing/headscale-ui:2024.10.10
+    container_name: headscale-headplane
+  #  image: ghcr.io/gurucomputing/headscale-ui:2024.10.10
+    image: ghcr.io/tale/headplane:0.5.10
     restart: unless-stopped
     ports:
-      - 7083:8080
+    #  - 7083:8080
+      - 7083:3000
+    volumes:
+      - '/mnt/DriveDATA/headscale/headplane/config.yaml:/etc/headplane/config.yaml'
+      # This should match headscale.config_path in your config.yaml
+      - '/mnt/DriveDATA/headscale/config/config.yaml:/etc/headscale/config.yaml'
+
+      # Headplane stores its data in this directory
+      - '/mnt/DriveDATA/headscale/data:/var/lib/headplane'
+
+      # If you are using the Docker integration, mount the Docker socket
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'    
