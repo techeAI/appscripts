@@ -26,7 +26,7 @@ sed -i "s|domainname_changeme|$url|g" ./headscale-nginx.conf
 mv headscale-nginx.conf /etc/nginx/sites-enabled/headscale
 mv config.yaml $BASE_DIR/headscale/config/
 sleep 1
-docker-compose up -d
+docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 sleep 5
 echo "To Run Behind nginx proxy please update SSL cert"
