@@ -24,8 +24,8 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/pangolian/doc
 sed -i "s|Changeme-url|$url|g" pangolian-config.yml
 sed -i "s|Changeme-url|$url|g" pangolian-nginx.conf
 sed -i "s|Chaneme-basedomain|$domainname|g" pangolian-config.yml
-sed -i "s|Chaneme-username|$username|g" pangolian-config.yml
-sed -i "s|Chaneme-password|$password|g" pangolian-config.yml
+sed -i "s|changeme-username|$username|g" pangolian-config.yml
+sed -i "s|changeme-password|$password|g" pangolian-config.yml
 mv pangolian-nginx.conf /etc/nginx/sites-available/pangolian
 ln -s /etc/nginx/sites-available/pangolian /etc/nginx/sites-enabled/pangolian
 mv pangolian-config.yml $BASE_DIR/config/config.yml
