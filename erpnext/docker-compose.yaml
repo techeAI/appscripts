@@ -1,0 +1,85 @@
+version: '3.7'
+
+services:
+  mariadb:
+    container_name: erpnext-mariadb
+    image: mariadb:10.6
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: aPUo56ZCWR
+    volumes:
+      - /mnt/DriveDATA/erpnext/mariadb:/var/lib/mysql
+
+  redis-cache:
+    container_name: erpnext-redis-cache
+    image: redis:6.2-alpine
+    restart: unless-stopped
+
+  redis-queue:
+    container_name: erpnext-redis-queue
+    image: redis:6.2-alpine
+    restart: unless-stopped
+
+  redis-socketio:
+    container_name: erpnext-redis-socketio
+    image: redis:6.2-alpine
+    restart: unless-stopped
+
+  site-creator:
+    container_name: erpnext-site-creator
+    image: frappe/erpnext-worker:version-15
+    command: new
+    depends_on:
+      - mariadb
+      - redis-cache
+      - redis-queue
+      - redis-socketio
+    restart: "no"
+    environment:
+      SITE_NAME: changeme-url
+      DB_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: aPUo56ZCWR
+      ADMIN_PASSWORD: Password123!!
+      INSTALL_APPS: erpnext
+    volumes:
+      - /mnt/DriveDATA/erpnext/sites:/home/frappe/frappe-bench/sites
+
+  backend:
+    container_name: erpnext-backend
+    image: frappe/erpnext-worker:version-15
+    restart: unless-stopped
+    depends_on:
+      - site-creator
+    volumes:
+      - /mnt/DriveDATA/erpnext/sites:/home/frappe/frappe-bench/sites
+
+  scheduler:
+    container_name: erpnext-scheduler
+    image: frappe/erpnext-worker:version-15
+    restart: unless-stopped
+    command: scheduler
+    depends_on:
+      - site-creator
+    volumes:
+      - /mnt/DriveDATA/erpnext/sites:/home/frappe/frappe-bench/sites
+
+  worker:
+    container_name: erpnext-worker
+    image: frappe/erpnext-worker:version-15
+    restart: unless-stopped
+    command: worker
+    depends_on:
+      - site-creator
+    volumes:
+      - /mnt/DriveDATA/erpnext/sites:/home/frappe/frappe-bench/sites
+
+  web:
+    container_name: erpnext-web
+    image: frappe/erpnext-nginx:version-15
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8227:80"
+    volumes:
+      - /mnt/DriveDATA/erpnext/sites:/home/frappe/frappe-bench/sites
