@@ -1,12 +1,7 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
-BASE_DIR=/mnt/DriveDATA/paperless-ngx
-mkdir -p $BASE_DIR/data
-mkdir -p $BASE_DIR/media
-mkdir -p $BASE_DIR/dbdata
-mkdir -p $BASE_DIR/redisdata
-mkdir -p $BASE_DIR/export
-mkdir -p $BASE_DIR/consume
+BASE_DIR=/mnt/DriveDATA/pangolin
+mkdir -p $BASE_DIR/config
 
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -34,6 +29,7 @@ sed -i "s|Chaneme-username|$username|g" pangolian-config.yml
 sed -i "s|Chaneme-password|$password|g" pangolian-config.yml
 mv pangolian-nginx.conf /etc/nginx/sites-available/pangolian
 ln -s /etc/nginx/sites-available/pangolian /etc/nginx/sites-enabled/pangolian
+mv pangolian-config.yml $BASE_DIR/config/
 docker compose up -d
 #local_ip=$(ip route get 1 | awk '{print $7}')
 #echo "Now you can access tunnel through URL: https://$url"
