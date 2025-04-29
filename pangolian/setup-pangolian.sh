@@ -28,7 +28,7 @@ sed -i "s|Chaneme-username|$username|g" pangolian-config.yml
 sed -i "s|Chaneme-password|$password|g" pangolian-config.yml
 mv pangolian-nginx.conf /etc/nginx/sites-available/pangolian
 ln -s /etc/nginx/sites-available/pangolian /etc/nginx/sites-enabled/pangolian
-mv pangolian-config.yml $BASE_DIR/config/
+mv pangolian-config.yml $BASE_DIR/config/config.yml
 docker compose up -d
 #local_ip=$(ip route get 1 | awk '{print $7}')
 #echo "Now you can access tunnel through URL: https://$url"
