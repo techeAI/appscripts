@@ -27,7 +27,7 @@ services:
 
   site-creator:
     container_name: erpnext-site-creator
-    image: frappe/erpnext-worker:version-15
+    image: frappe/erpnext-worker:v14
     command: new
     depends_on:
       - mariadb
@@ -46,7 +46,7 @@ services:
 
   backend:
     container_name: erpnext-backend
-    image: frappe/erpnext-worker:version-15
+    image: frappe/erpnext-worker:v14
     restart: unless-stopped
     depends_on:
       - site-creator
@@ -55,7 +55,7 @@ services:
 
   scheduler:
     container_name: erpnext-scheduler
-    image: frappe/erpnext-worker:version-15
+    image: frappe/erpnext-worker:v14
     restart: unless-stopped
     command: scheduler
     depends_on:
@@ -65,7 +65,7 @@ services:
 
   worker:
     container_name: erpnext-worker
-    image: frappe/erpnext-worker:version-15
+    image: frappe/erpnext-worker:v14
     restart: unless-stopped
     command: worker
     depends_on:
@@ -75,7 +75,7 @@ services:
 
   web:
     container_name: erpnext-web
-    image: frappe/erpnext-nginx:version-15
+    image: frappe/erpnext-nginx:v14
     restart: unless-stopped
     depends_on:
       - backend
