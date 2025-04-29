@@ -2,7 +2,6 @@
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/pangolin
 mkdir -p $BASE_DIR/config
-
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 curl -fsSL https://get.docker.com -o get-docker.sh
