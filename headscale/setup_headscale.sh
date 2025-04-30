@@ -23,10 +23,11 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headscale/con
 sleep 2
 sed -i "s|domainname_changeme|$url|g" ./config.yaml
 sed -i "s|domainname_changeme|$url|g" ./headscale-nginx.conf
-mv headscale-nginx.conf /etc/nginx/sites-enabled/headscale
+mv headscale-nginx.conf /etc/nginx/sites-available/headscale
+ln -s /etc/nginx/sites-available/headscale /etc/nginx/sites-enabled/headscale
 mv config.yaml $BASE_DIR/headscale/config/
 sleep 1
-docker-compose up -d
+docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 sleep 5
 echo "To Run Behind nginx proxy please update SSL cert"
