@@ -2,6 +2,7 @@
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/odoo
 mkdir -p $BASE_DIR/{odoo-web-data,config,addons,odoo-db-data}
+chown -R 101:101 $BASE_DIR
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 curl -fsSL https://get.docker.com -o get-docker.sh
