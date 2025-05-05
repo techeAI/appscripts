@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  web:
+    image: odoo:17.0
+    container_name: odoo-web
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8228:8069"
+    volumes:
+      - /mnt/DriveDATA/odoo/odoo-web-data:/var/lib/odoo
+      - /mnt/DriveDATA/odoo/config:/etc/odoo
+      - /mnt/DriveDATA/odoo/addons:/mnt/extra-addons
+    environment:
+      - PASSWORD=aPUo56ZCWR
+      - USER=Biztechodoo
+
+  db:
+    image: postgres:15
+    container_name: odoo-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=aPUo56ZCWR
+      - POSTGRES_USER=Biztechodoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - /mnt/DriveDATA/odoo/odoo-db-data:/var/lib/postgresql/data/pgdata
