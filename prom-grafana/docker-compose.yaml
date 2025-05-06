@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - /mnt/DriveDATA/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /mnt/DriveDATA/prometheus:/prometheus
+      - /etc/localtime:/etc/localtime:ro
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+        #- '--web.external-url=https://prom.teche.ai/'
+        #- '--web.route-prefix='
+    ports:
+      - "8229:9090"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - /mnt/DriveDATA/grafana:/var/lib/grafana
+    ports:
+      - "8230:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SERVER_ROOT_URL=https://changechangeme-url
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8231:8080"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "8232:9100"
+    networks:
+      - monitoring
+    restart: unless-stopped
+
+networks:
+  monitoring:
