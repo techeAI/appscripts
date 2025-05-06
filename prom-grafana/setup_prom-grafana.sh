@@ -22,6 +22,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/prometheus.yml -o prometheus.yml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/docker-compose.yaml -o docker-compose.yaml
 sed -i "s|changeme-url|$url|g" docker-compose.yaml
+sed -i "s|changeme-url|$url|g" grafana-nginx.conf
 mv prom-nginx.conf /etc/nginx/sites-available/prom
 mv grafana-nginx.conf /etc/nginx/sites-available/grafana
 mv prometheus.yml /mnt/DriveDATA/prometheus/prometheus.yml
