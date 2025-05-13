@@ -3,7 +3,6 @@
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/
 mkdir -p $BASE_DIR/{postgres,keycloak}
-sudo chown -R 1000:1000 $BASE_DIR/keycloak/
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -25,4 +24,5 @@ sed -i "s|changeme-url|$url|g" keyclock-nginx.conf
 mv keyclock-nginx.conf /etc/nginx/sites-available/keyclock
 ln -s /etc/nginx/sites-available/keyclock /etc/nginx/sites-enabled/keyclock
 docker-compose build && docker compose up -d
+sudo chown -R 1000:1000 $BASE_DIR/keycloak/
 echo "install SSL certificate an open URL in browser: https://$url"
