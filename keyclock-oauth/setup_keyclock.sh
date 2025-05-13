@@ -23,6 +23,7 @@ sed -i "s|changeme-url|$url|g" docker-compose.yaml
 sed -i "s|changeme-url|$url|g" keyclock-nginx.conf
 mv keyclock-nginx.conf /etc/nginx/sites-available/keyclock
 ln -s /etc/nginx/sites-available/keyclock /etc/nginx/sites-enabled/keyclock
+sudo chown -R 1000:1000 $BASE_DIR/keycloak/
 docker-compose build && docker compose up -d
 sudo chown -R 1000:1000 $BASE_DIR/keycloak/
 echo "install SSL certificate an open URL in browser: https://$url"
