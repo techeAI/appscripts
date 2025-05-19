@@ -18,7 +18,7 @@ fi
 read -p "Enter URL to access keyclock on browser (without http/https)(ex. auth.teche.ai): " url
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/keyclock-nginx.conf -o keyclock-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/docker-compose.yaml -o docker-compose.yaml
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/Dockerfile -o Dockerfile
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/Dockerfile -o Dockerfile
 sed -i "s|changeme-url|$url|g" docker-compose.yaml
 sed -i "s|changeme-url|$url|g" keyclock-nginx.conf
 mv keyclock-nginx.conf /etc/nginx/sites-available/keyclock

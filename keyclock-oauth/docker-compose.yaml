@@ -1,8 +1,8 @@
-version: "3.8"
+version: "3.9"
 
 services:
   postgres:
-    image: postgres:15
+    image: postgres:16
     container_name: keycloak-db
     restart: unless-stopped
     environment:
@@ -15,20 +15,21 @@ services:
       - keycloak-net
 
   keycloak:
-    build:
-      context: .
-    image: biztech-keycloak:24.0
+    image: quay.io/keycloak/keycloak:26.2
     container_name: keycloak
     restart: unless-stopped
-    command: start --optimized
+    command: >
+      start
+      --hostname=changeme-url
+      --hostname-strict=false
+      --proxy-headers=xforwarded
+      --http-enabled=true
+      --features=preview,scripts,token-exchange,admin-fine-grained-authz
     environment:
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
       KC_DB_USERNAME: bzkeyclk
       KC_DB_PASSWORD: aPUo56ZCWR
-      KC_PROXY: edge
-      KC_HOSTNAME: changeme-url
-      KC_HOSTNAME_STRICT: "false"
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
