@@ -1,0 +1,111 @@
+provider "aws" {
+  region = var.aws_region
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+}
+
+locals {
+  key_name_suffix = formatdate("YYYY-MM-DD-HH-MM-SS", timestamp())
+  key_name        = "maestro-${local.key_name_suffix}"
+  key_file        = "${path.module}/${local.key_name}.key"
+}
+
+resource "tls_private_key" "ec2_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "aws_key_pair" "generated_key" {
+  key_name   = local.key_name
+  public_key = tls_private_key.ec2_key.public_key_openssh
+}
+
+resource "local_file" "private_key_pem" {
+  content         = tls_private_key.ec2_key.private_key_pem
+  filename        = local.key_file
+  file_permission = "0400"
+}
+
+data "aws_vpc" "default" {
+  default = true
+}
+
+data "aws_subnet" "default" {
+  filter {
+    name   = "default-for-az"
+    values = ["true"]
+  }
+}
+
+resource "aws_security_group" "maestro_sg" {
+  name        = "maestro-sg"
+  description = "maestro-sg"
+  vpc_id      = data.aws_vpc.default.id
+
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_instance" "example" {
+  ami                    = var.ami_id
+  instance_type          = var.instance_type
+  key_name               = aws_key_pair.generated_key.key_name
+  vpc_security_group_ids = [aws_security_group.maestro_sg.id]
+  subnet_id = data.aws_subnet.default.id
+  root_block_device {
+    volume_size = 60
+    volume_type = "gp2"
+  }
+
+  ebs_block_device {
+    device_name = "/dev/xvdf"
+    volume_size = 8
+    volume_type = "gp2"
+    delete_on_termination = true
+  }
+
+  user_data = <<-EOF
+              #!/bin/bash
+              mkfs -t ext4 /dev/xvdf
+              mkdir -p /mnt/DriveDATA
+              echo "/dev/xvdf /mnt/DriveDATA ext4 defaults,nofail 0 2" >> /etc/fstab
+              mount -a
+              EOF
+
+  tags = {
+    Name = "Maestro-EC2"
+  }
+}
+
+resource "aws_eip" "maestro_ip" {
+  instance = aws_instance.example.id
+  vpc      = true
+}
