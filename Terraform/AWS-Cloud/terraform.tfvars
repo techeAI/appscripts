@@ -1,2 +1,0 @@
-aws_access_key = "YOUR_ACCESS_KEY_HERE"
-aws_secret_key = "YOUR_SECRET_KEY_HERE"
