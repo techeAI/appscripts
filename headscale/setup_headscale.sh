@@ -1,5 +1,6 @@
 #!/bin/bash
-read -p "Enter Full URL without(http/https) for headscale:  https://" url
+#read -p "Enter Full URL without(http/https) for headscale:  https://" url
+url=$(grep "^headscale_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA
 mkdir -p $BASE_DIR/headscale/config
