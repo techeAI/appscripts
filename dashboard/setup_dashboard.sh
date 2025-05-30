@@ -1,5 +1,7 @@
 #!/bin/bash				
-				
+#cho "Dashboard be deployed behind a reverse proxy? (yes/no):"
+#read reverse_proxy
+reverse_proxy=$(grep "^reverse_proxy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)			
 				apt install sudo curl wget  -y 2> /dev/null
 				BASE_DIR=/mnt/DriveDATA/DASHBOARD
 			if [ ! -x /usr/bin/docker ]; then
@@ -31,8 +33,6 @@
                                 sleep 2
                         else
                                 echo "Setting up Dashboard..."
-echo "Dashboard be deployed behind a reverse proxy? (yes/no):"
-read reverse_proxy
 
 # Check the user's input
 if [[ "$reverse_proxy" == "yes" ]]; then
