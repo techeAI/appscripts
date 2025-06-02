@@ -19,7 +19,7 @@ fi
 mkdir -p $BASE_DIR/myspeed
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/myspeed/myspeed-nginx.conf -o myspeed-nginx.conf
 sleep 2
-sed -i "s|dprefixmyspeed.domainname|$url|g" ./myspeed-nginx.conf
+sed -i "s|prefixmyspeed.domainname|$url|g" ./myspeed-nginx.conf
 mv myspeed-nginx.conf /etc/nginx/sites-available/myspeed
 ln -s /etc/nginx/sites-available/myspeed /etc/nginx/sites-enabled/myspeed
 
