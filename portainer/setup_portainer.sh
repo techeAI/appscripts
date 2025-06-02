@@ -1,5 +1,6 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA/portainer
+url=$(grep "^portainer_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl sudo -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -25,6 +26,7 @@ if sudo docker ps --format '{{.Names}}' | grep -q "portainer"; then
 				sudo mkdir -p $BASE_DIR 2> /dev/null
 				sudo docker run --name=portainer -d --restart unless-stopped  -p 8212:9000  -v /var/run/docker.sock:/var/run/docker.sock  -v $BASE_DIR/portainer_data:/data  portainer/portainer-ce:2.21.5
 				curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/portainer-nginx.conf -o portainer-nginx.conf
+				sed -i "s|prefixapps.domainname|$url|g" ./portainer-nginx.conf 
 				mv portainer-nginx.conf /etc/nginx/sites-available/portainer
 				ln -s /etc/nginx/sites-available/portainer /etc/nginx/sites-enabled/portainer
 local_ip=$(ip route get 1 | awk '{print $7}')

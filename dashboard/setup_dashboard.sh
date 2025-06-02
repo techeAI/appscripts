@@ -1,6 +1,8 @@
 #!/bin/bash				
 #cho "Dashboard be deployed behind a reverse proxy? (yes/no):"
 #read reverse_proxy
+dashurl=$(grep "^dashboard_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+vitalurl=$(grep "^vitals_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 reverse_proxy=$(grep "^reverse_proxy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)			
 				apt install sudo curl wget  -y 2> /dev/null
 				BASE_DIR=/mnt/DriveDATA/DASHBOARD
@@ -38,7 +40,8 @@ reverse_proxy=$(grep "^reverse_proxy=" /mnt/DriveDATA/Deploy-config/urls.conf | 
 if [[ "$reverse_proxy" == "yes" ]]; then
     hport=8080
 	curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/dashboard-nginx.conf -o dashboard-nginx.conf
-	
+sed -i "s|prefixdash.domainname|$dashurl|g" ./dashboard-nginx.conf
+sed -i "s|prefixvital.domainname|$vitalurl|g" ./dashboard-nginx.conf
 mv dashboard-nginx.conf /etc/nginx/sites-available/dashboard
 ln -s /etc/nginx/sites-available/dashboard /etc/nginx/sites-enabled/dashboard
 elif [[ "$reverse_proxy" == "no" ]]; then
