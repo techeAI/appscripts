@@ -1,6 +1,8 @@
 
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
+#read -p "Enter URL to access keyclock on browser (without http/https)(ex. auth.teche.ai): " url
+url=$(grep "^keycloak_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA/
 mkdir -p $BASE_DIR/{postgres,keycloak}
 if [ ! -x /usr/bin/docker ]; then
@@ -15,7 +17,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter URL to access keyclock on browser (without http/https)(ex. auth.teche.ai): " url
+
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/keyclock-nginx.conf -o keyclock-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/docker-compose.yaml -o docker-compose.yaml
 #curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/Dockerfile -o Dockerfile
