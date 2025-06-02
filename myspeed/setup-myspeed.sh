@@ -1,6 +1,7 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA/
 PORT=7081
+url=$(grep "^myspeed_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -18,7 +19,10 @@ fi
 mkdir -p $BASE_DIR/myspeed
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/myspeed/myspeed-nginx.conf -o myspeed-nginx.conf
 sleep 2
-mv myspeed-nginx.conf /etc/nginx/sites-enabled/myspeed
+sed -i "s|dprefixmyspeed.domainname|$url|g" ./myspeed-nginx.conf
+mv myspeed-nginx.conf /etc/nginx/sites-available/myspeed
+ln -s /etc/nginx/sites-available/myspeed /etc/nginx/sites-enabled/myspeed
+
 sleep 2
 docker run -dt --name myspeed --restart unless-stopped -p $PORT:5216 -v $BASE_DIR/myspeed:/myspeed/data germannewsmaker/myspeed:1.0.9
 
