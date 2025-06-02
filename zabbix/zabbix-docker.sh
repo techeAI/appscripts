@@ -1,8 +1,11 @@
 #!/bin/bash
 BASE_DIR=/mnt/DriveDATA
+url=$(grep "^zabbix_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 #Download nginx reverse proxy seting
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/zabbix/zabbix-nginx.conf -o zabbix-nginx.conf
-mv zabbix-nginx.conf /etc/nginx/sites-enabled/zabbix
+sed -i "s|prefixmonitor.domainname|$url|g" ./zabbix-nginx.conf
+mv zabbix-nginx.conf /etc/nginx/sites-available/zabbix
+ln -s /etc/nginx/sites-available/zabbix /etc/nginx/sites-enabled/zabbix
 # Install necessary packages
 apt update && apt install sudo curl wget lm-sensors -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
