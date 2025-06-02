@@ -20,10 +20,12 @@ DEFAULT_SERVER_PORT=10051
 DEFAULT_FRONTEND_VOLUME="$BASE_DIR/Zabbix/frontend_data"
 DEFAULT_SERVER_VOLUME="$BASE_DIR/Zabbix/server_data"
 DEFAULT_DB_VOLUME="$BASE_DIR/Zabbix/mariadb_data"
-DEFAULT_DB_ROOT_PASSWORD="root_password"
+#DEFAULT_DB_ROOT_PASSWORD="root_password"
+DEFAULT_DB_ROOT_PASSWORD="GxB?W-AR6*7"
 DEFAULT_DB_NAME="zabbix"
 DEFAULT_DB_USER="zabbix"
-DEFAULT_DB_PASSWORD="zabbix_password"
+#DEFAULT_DB_PASSWORD="zabbix_password"
+DEFAULT_DB_PASSWORD="GxB?W-AR6*7"
 NETWORK_NAME="zabbix-network"
 
 # Create directories if they don't exist
@@ -36,37 +38,37 @@ if ! docker network ls | grep -wq $NETWORK_NAME; then
     docker network create $NETWORK_NAME
 fi
 
-echo "Press Enter to use the default value shown in brackets."
+#echo "Press Enter to use the default value shown in brackets."
 
 # Prompt the user for ports
-read -p "Enter the port for Zabbix frontend (default $DEFAULT_FRONTEND_PORT): " FRONTEND_PORT
-FRONTEND_PORT=${FRONTEND_PORT:-$DEFAULT_FRONTEND_PORT}
+#read -p "Enter the port for Zabbix frontend (default $DEFAULT_FRONTEND_PORT): " FRONTEND_PORT
+#FRONTEND_PORT=${FRONTEND_PORT:-$DEFAULT_FRONTEND_PORT}
 
-read -p "Enter the port for Zabbix server (default $DEFAULT_SERVER_PORT): " SERVER_PORT
-SERVER_PORT=${SERVER_PORT:-$DEFAULT_SERVER_PORT}
+#read -p "Enter the port for Zabbix server (default $DEFAULT_SERVER_PORT): " SERVER_PORT
+#SERVER_PORT=${SERVER_PORT:-$DEFAULT_SERVER_PORT}
 
 # Prompt the user for volumes
-read -p "Enter the volume for Zabbix frontend (default $DEFAULT_FRONTEND_VOLUME): " FRONTEND_VOLUME
-FRONTEND_VOLUME=${FRONTEND_VOLUME:-$DEFAULT_FRONTEND_VOLUME}
+#read -p "Enter the volume for Zabbix frontend (default $DEFAULT_FRONTEND_VOLUME): " FRONTEND_VOLUME
+#FRONTEND_VOLUME=${FRONTEND_VOLUME:-$DEFAULT_FRONTEND_VOLUME}
 
-read -p "Enter the volume for Zabbix server (default $DEFAULT_SERVER_VOLUME): " SERVER_VOLUME
-SERVER_VOLUME=${SERVER_VOLUME:-$DEFAULT_SERVER_VOLUME}
+#read -p "Enter the volume for Zabbix server (default $DEFAULT_SERVER_VOLUME): " SERVER_VOLUME
+#SERVER_VOLUME=${SERVER_VOLUME:-$DEFAULT_SERVER_VOLUME}
 
-read -p "Enter the volume for MariaDB (default $DEFAULT_DB_VOLUME): " DB_VOLUME
-DB_VOLUME=${DB_VOLUME:-$DEFAULT_DB_VOLUME}
+#read -p "Enter the volume for MariaDB (default $DEFAULT_DB_VOLUME): " DB_VOLUME
+#DB_VOLUME=${DB_VOLUME:-$DEFAULT_DB_VOLUME}
 
 # Prompt the user for database credentials
-read -p "Enter the MariaDB root password (default $DEFAULT_DB_ROOT_PASSWORD): " DB_ROOT_PASSWORD
-DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-$DEFAULT_DB_ROOT_PASSWORD}
+#read -p "Enter the MariaDB root password (default $DEFAULT_DB_ROOT_PASSWORD): " DB_ROOT_PASSWORD
+#DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-$DEFAULT_DB_ROOT_PASSWORD}
 
-read -p "Enter the Zabbix database name (default $DEFAULT_DB_NAME): " DB_NAME
-DB_NAME=${DB_NAME:-$DEFAULT_DB_NAME}
+#read -p "Enter the Zabbix database name (default $DEFAULT_DB_NAME): " DB_NAME
+#DB_NAME=${DB_NAME:-$DEFAULT_DB_NAME}
 
-read -p "Enter the Zabbix database user (default $DEFAULT_DB_USER): " DB_USER
-DB_USER=${DB_USER:-$DEFAULT_DB_USER}
+#read -p "Enter the Zabbix database user (default $DEFAULT_DB_USER): " DB_USER
+#DB_USER=${DB_USER:-$DEFAULT_DB_USER}
 
-read -p "Enter the Zabbix database password (default $DEFAULT_DB_PASSWORD): " DB_PASSWORD
-DB_PASSWORD=${DB_PASSWORD:-$DEFAULT_DB_PASSWORD}
+#read -p "Enter the Zabbix database password (default $DEFAULT_DB_PASSWORD): " DB_PASSWORD
+#DB_PASSWORD=${DB_PASSWORD:-$DEFAULT_DB_PASSWORD}
 
 # Function to check if a container is running
 is_container_running() {
