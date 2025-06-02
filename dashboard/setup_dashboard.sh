@@ -38,6 +38,7 @@ reverse_proxy=$(grep "^reverse_proxy=" /mnt/DriveDATA/Deploy-config/urls.conf | 
 if [[ "$reverse_proxy" == "yes" ]]; then
     hport=8080
 	curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/dashboard-nginx.conf -o dashboard-nginx.conf
+	
 mv dashboard-nginx.conf /etc/nginx/sites-available/dashboard
 ln -s /etc/nginx/sites-available/dashboard /etc/nginx/sites-enabled/dashboard
 elif [[ "$reverse_proxy" == "no" ]]; then

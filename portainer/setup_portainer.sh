@@ -25,7 +25,8 @@ if sudo docker ps --format '{{.Names}}' | grep -q "portainer"; then
 				sudo mkdir -p $BASE_DIR 2> /dev/null
 				sudo docker run --name=portainer -d --restart unless-stopped  -p 8212:9000  -v /var/run/docker.sock:/var/run/docker.sock  -v $BASE_DIR/portainer_data:/data  portainer/portainer-ce:2.21.5
 				curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/portainer-nginx.conf -o portainer-nginx.conf
-				mv portainer-nginx.conf /etc/nginx/sites-enabled/portainer
+				mv portainer-nginx.conf /etc/nginx/sites-available/portainer
+				ln -s /etc/nginx/sites-available/portainer /etc/nginx/sites-enabled/portainer
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
 echo "#########################################################"
