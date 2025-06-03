@@ -126,70 +126,11 @@
   ],
   "apps": [
     {
-      "id": "19d8b7cb-5ca3-4f11-b969-7129af422820",
-      "name": "Shinobi",
-      "url": "https://teche.ai/comingsoon.html",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/shinobi.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://teche.ai/comingsoon.html"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 3
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "5978bbd9-da8c-4159-b65c-2831ec269171",
-      "name": "discourse",
+      "id": "cb536700-d8b2-4719-80af-0668231298ff",
+      "name": "Matrix",
       "url": "https://teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/discourse.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/matrix-synapse.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -219,8 +160,306 @@
       "shape": {
         "lg": {
           "location": {
+            "x": 5,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
             "x": 2,
-            "y": 2
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "0e0084f1-c290-41d3-b4f2-a6f171473973",
+      "name": "PDF-Editor",
+      "url": "https://pdf.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/stirling-pdf.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://pdf.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
+      "name": "Cloud",
+      "url": "https://cloud.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://cloud.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 6,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "e9ebf465-d64f-4976-a923-f158c90f5261",
+      "name": "Photos",
+      "url": "https://photos.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-photos.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://photos.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "fb5d22cf-6e74-482f-a2c9-1d29e8bd8143",
+      "name": "Wiki",
+      "url": "https://wiki.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/dokuwiki.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://wiki.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "34ee2b00-4536-43c3-b660-8c29d3951ce1",
+      "name": "Vault",
+      "url": "https://cloud.teche.ai/index.php/apps/files/files",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vault.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401",
+          "404"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://cloud.teche.ai/index.php/apps/files/files"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 7,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -230,7 +469,7 @@
         "md": {
           "location": {
             "x": 1,
-            "y": 3
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -362,6 +601,66 @@
       }
     },
     {
+      "id": "da6b5c11-91e3-48ae-9790-675aa2c08697",
+      "name": "Projects",
+      "url": "https://projects.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openproject.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://projects.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "45ed0193-062f-4968-8f04-f875c010d802",
       "name": "SearchEngine",
       "url": "https://search.teche.ai",
@@ -422,6 +721,66 @@
       }
     },
     {
+      "id": "52019584-89f2-4cc0-9d5a-75bdedc60598",
+      "name": "Flow",
+      "url": "https://flow.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/n8n.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://flow.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 9,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "a9649784-26de-4c80-8417-d56eee94999e",
       "name": "Bookstack",
       "url": "https://books.teche.ai",
@@ -467,6 +826,67 @@
         "md": {
           "location": {
             "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "da0174be-3367-499f-b3ce-3c2f2e88b1ec",
+      "name": "focalboard",
+      "url": "https://board.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/focalboard.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401",
+          "403"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://board.teche.ai/"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
             "y": 2
           },
           "size": {
@@ -540,6 +960,198 @@
       }
     },
     {
+      "id": "95dc91dc-aa16-4312-a176-33d21e8b621b",
+      "name": "AntiVirus",
+      "url": "https://antivirus.teche.ai",
+      "appearance": {
+        "iconUrl": "/imgs/logo/openteche.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401",
+          "204",
+          "400",
+          "403",
+          "404",
+          "405",
+          "408",
+          "410",
+          "429",
+          "202",
+          "502",
+          "500",
+          "503",
+          "504"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://antivirus.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "6ec5d2fa-dc6f-4a3b-9d9f-3ab923047b5d",
+      "name": "File-Drawer",
+      "url": "https://vault.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/filegator.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://vault.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "61b5eea8-1d20-4455-bc48-3c5c10589ba8",
+      "name": "Monitor-Maestro",
+      "url": "https://monitor.teche.ai",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/zabbix.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://monitor.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "280a5bd2-9a0d-4978-aaae-f52646a388b6",
       "name": "eSign",
       "url": "https://esign.teche.ai",
@@ -599,11 +1211,11 @@
       }
     },
     {
-      "id": "61c46be3-9ee1-4dd9-b53a-cf9b217647bb",
-      "name": "FORMS",
-      "url": "https://forms.teche.ai",
+      "id": "82f3d8bd-c6ac-45ed-a940-cf63b3b8c419",
+      "name": "Nginx",
+      "url": "https://websrv.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/opnform.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nginx-proxy-manager.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -622,29 +1234,19 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://forms.teche.ai"
+        "externalUrl": "https://websrv.teche.ai/"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
         }
       },
       "shape": {
         "lg": {
           "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 3
+            "x": 6,
+            "y": 0
           },
           "size": {
             "width": 1,
@@ -658,11 +1260,11 @@
       }
     },
     {
-      "id": "79501754-07dd-4c1b-9360-b83b58ca4265",
-      "name": "Passwords",
-      "url": "https://pass.teche.ai",
+      "id": "61b13c2c-8ac3-43d6-a18b-c24527f60f8e",
+      "name": "Mattermost",
+      "url": "https://mattermost.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vaultwarden.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mattermost.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -676,12 +1278,13 @@
           "302",
           "304",
           "307",
-          "308"
+          "308",
+          "401"
         ]
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://pass.teche.ai"
+        "externalUrl": "https://mattermost.teche.ai"
       },
       "area": {
         "type": "category",
@@ -693,7 +1296,7 @@
         "lg": {
           "location": {
             "x": 2,
-            "y": 1
+            "y": 2
           },
           "size": {
             "width": 1,
@@ -702,7 +1305,7 @@
         },
         "md": {
           "location": {
-            "x": 4,
+            "x": 0,
             "y": 3
           },
           "size": {
@@ -717,11 +1320,11 @@
       }
     },
     {
-      "id": "c1a0ea9d-1840-4e76-b159-6bc03842932a",
-      "name": "NoCoDB",
-      "url": "https://tables.teche.ai",
+      "id": "2e80f299-e46e-4547-b66c-e97ee91a6767",
+      "name": "mySite",
+      "url": "https://openteche.io",
       "appearance": {
-        "iconUrl": "https://avatars.githubusercontent.com/u/50206778?s=200&v=4",
+        "iconUrl": "/imgs/logo/openteche.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -740,427 +1343,12 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://tables.teche.ai/"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "1374b5a3-a09f-41a7-a1ee-e089c5706114",
-      "name": "Mind",
-      "url": "https://mind.teche.ai",
-      "appearance": {
-        "iconUrl": "https://www.wisemapping.com/_next/static/media/logo-small.3e04aac9.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://mind.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6ec5d2fa-dc6f-4a3b-9d9f-3ab923047b5d",
-      "name": "File-Drawer",
-      "url": "https://vault.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/filegator.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://vault.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 5,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "0e0084f1-c290-41d3-b4f2-a6f171473973",
-      "name": "PDF-Editor",
-      "url": "https://pdf.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/stirling-pdf.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://pdf.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "fac31843-7569-4f2d-9735-27cb40e66b2d",
-      "name": "Firewall",
-      "url": "https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#SecurityGroup:groupId=sg-015d3f91a34d904c0",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/firewalla.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#SecurityGroup:groupId=sg-015d3f91a34d904c0"
+        "externalUrl": "https://openteche.io/"
       },
       "area": {
         "type": "category",
         "properties": {
           "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 7,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
-      "name": "Cloud",
-      "url": "https://cloud.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://cloud.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "0674c1b0-ab4d-4d84-88d8-32fc677e2326",
-      "name": "Sites",
-      "url": "https://websrv.teche.ai/#/sites/list",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-sites.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://websrv.teche.ai/#/sites/list"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "e9ebf465-d64f-4976-a923-f158c90f5261",
-      "name": "Photos",
-      "url": "https://photos.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-photos.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://photos.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
         }
       },
       "shape": {
@@ -1176,7 +1364,7 @@
         },
         "md": {
           "location": {
-            "x": 5,
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -1192,7 +1380,7 @@
     },
     {
       "id": "f922f67c-214e-4783-86cc-196efd964212",
-      "name": "*Router",
+      "name": "Router",
       "url": "https://10.15.15.1",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/airtel.svg",
@@ -1250,11 +1438,11 @@
       }
     },
     {
-      "id": "fb5d22cf-6e74-482f-a2c9-1d29e8bd8143",
-      "name": "Wiki",
-      "url": "https://wiki.teche.ai",
+      "id": "5978bbd9-da8c-4159-b65c-2831ec269171",
+      "name": "discourse",
+      "url": "https://discourse.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/dokuwiki.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/discourse.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1273,7 +1461,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://wiki.teche.ai"
+        "externalUrl": "https://discourse.teche.ai"
       },
       "area": {
         "type": "category",
@@ -1284,7 +1472,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
+            "x": 9,
             "y": 0
           },
           "size": {
@@ -1294,8 +1482,8 @@
         },
         "md": {
           "location": {
-            "x": 0,
-            "y": 1
+            "x": 1,
+            "y": 3
           },
           "size": {
             "width": 1,
@@ -1309,11 +1497,11 @@
       }
     },
     {
-      "id": "61b5eea8-1d20-4455-bc48-3c5c10589ba8",
-      "name": "Maestro",
-      "url": "https://monitor.teche.ai",
+      "id": "2265ad4e-dddd-4a46-be71-7565060c8ece",
+      "name": "Domain",
+      "url": "https://ap.www.namecheap.com",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/zabbix.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-domains.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1332,7 +1520,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://monitor.teche.ai"
+        "externalUrl": "https://ap.www.namecheap.com/"
       },
       "area": {
         "type": "category",
@@ -1343,7 +1531,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 0,
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -1353,7 +1541,7 @@
         },
         "md": {
           "location": {
-            "x": 2,
+            "x": 0,
             "y": 1
           },
           "size": {
@@ -1369,7 +1557,7 @@
     },
     {
       "id": "c98b78f8-01f4-4d53-a3db-e7b34d119bb0",
-      "name": "*Network",
+      "name": "Network",
       "url": "http://192.168.0.1",
       "appearance": {
         "iconUrl": "/icons/Network.png",
@@ -1413,185 +1601,6 @@
         "md": {
           "location": {
             "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "34ee2b00-4536-43c3-b660-8c29d3951ce1",
-      "name": "Vault",
-      "url": "https://cloud.teche.ai/index.php/apps/files/files",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vault.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401",
-          "404"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://cloud.teche.ai/index.php/apps/files/files"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 7,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "82f3d8bd-c6ac-45ed-a940-cf63b3b8c419",
-      "name": "Nginx",
-      "url": "https://websrv.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nginx-proxy-manager.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://websrv.teche.ai/"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "83ba7cbd-990a-4b64-9acf-0415aaec9698",
-      "name": "*PiHole",
-      "url": "http://192.168.2.250",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "http://192.168.2.250"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "467fe748-bf26-4950-9b60-8f59574a6b4b"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 3,
             "y": 0
           },
           "size": {
@@ -1665,72 +1674,11 @@
       }
     },
     {
-      "id": "da0174be-3367-499f-b3ce-3c2f2e88b1ec",
-      "name": "focalboard",
-      "url": "https://board.teche.ai",
+      "id": "19d8b7cb-5ca3-4f11-b969-7129af422820",
+      "name": "Shinobi",
+      "url": "https://shinobi.your.domain",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/focalboard.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401",
-          "403"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://board.teche.ai/"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 9,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "074415aa-fff8-44b9-9f6b-953e530aec3e",
-      "name": "Odoo",
-      "url": "https://odoo.teche.ai/web",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/odoo.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/shinobi.png",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1749,19 +1697,29 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://odoo.teche.ai/web"
+        "externalUrl": "https://shinobi.your.domain/"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "5a26ab05-5ea6-4560-91ff-ba5fa15d77b7"
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
         }
       },
       "shape": {
         "lg": {
           "location": {
-            "x": 5,
-            "y": 0
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 3
           },
           "size": {
             "width": 1,
@@ -1776,7 +1734,7 @@
     },
     {
       "id": "5b109522-7333-4bcc-bbda-5a64459c2d30",
-      "name": "Apps",
+      "name": "Monitor-Apps",
       "url": "https://monitor2.teche.ai",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/zabbix.svg",
@@ -1834,11 +1792,11 @@
       }
     },
     {
-      "id": "d4c180b3-036c-4c14-8f31-a8a193ca57a2",
-      "name": "*pfsense",
-      "url": "http://192.168.2.253",
+      "id": "83ba7cbd-990a-4b64-9acf-0415aaec9698",
+      "name": "PiHole",
+      "url": "http://192.168.2.250",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pfsense.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pihole.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1857,7 +1815,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://192.168.2.253"
+        "externalUrl": "http://192.168.2.250"
       },
       "area": {
         "type": "category",
@@ -1868,7 +1826,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
+            "x": 4,
             "y": 0
           },
           "size": {
@@ -1878,7 +1836,7 @@
         },
         "md": {
           "location": {
-            "x": 0,
+            "x": 3,
             "y": 0
           },
           "size": {
@@ -1952,11 +1910,11 @@
       }
     },
     {
-      "id": "c7accf1a-8341-49a2-87d0-f0ea87738c27",
-      "name": "Apps",
-      "url": "https://apps.teche.ai",
+      "id": "9a46a7e2-24a0-4557-b625-4170afc4f4ba",
+      "name": "MySpeed",
+      "url": "https://speed.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/myspeed.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -1975,7 +1933,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://apps.teche.ai"
+        "externalUrl": "https://speed.teche.ai/"
       },
       "area": {
         "type": "category",
@@ -1986,7 +1944,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 6,
+            "x": 7,
             "y": 0
           },
           "size": {
@@ -1996,7 +1954,7 @@
         },
         "md": {
           "location": {
-            "x": 3,
+            "x": 1,
             "y": 0
           },
           "size": {
@@ -2011,71 +1969,11 @@
       }
     },
     {
-      "id": "da6b5c11-91e3-48ae-9790-675aa2c08697",
-      "name": "Projects",
-      "url": "https://projects.teche.ai",
+      "id": "61c46be3-9ee1-4dd9-b53a-cf9b217647bb",
+      "name": "FORMS",
+      "url": "https://forms.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openproject.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://projects.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "2e80f299-e46e-4547-b66c-e97ee91a6767",
-      "name": "mySite",
-      "url": "https://teche.ai",
-      "appearance": {
-        "iconUrl": "/imgs/logo/openteche.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/opnform.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2094,7 +1992,80 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://teche.ai/"
+        "externalUrl": "https://forms.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "4dbf6e49-3648-4d4c-b298-c5228826768c",
+      "name": "Cloud",
+      "url": "https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/aws-light.svg",
+        "appNameStatus": "normal",
+        "appNameFontSize": 16,
+        "positionAppName": "column",
+        "lineClampAppName": 1
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308",
+          "401",
+          "202",
+          "204",
+          "400",
+          "403",
+          "404",
+          "405",
+          "408",
+          "410",
+          "429",
+          "500",
+          "502",
+          "503",
+          "504"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1"
       },
       "area": {
         "type": "category",
@@ -2105,7 +2076,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 1,
+            "x": 3,
             "y": 0
           },
           "size": {
@@ -2115,8 +2086,8 @@
         },
         "md": {
           "location": {
-            "x": 2,
-            "y": 0
+            "x": 1,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -2131,7 +2102,7 @@
     },
     {
       "id": "8d2f1cb1-7ce3-4a08-8999-d4580f2c9ab8",
-      "name": "*Storage",
+      "name": "Storage",
       "url": "https://teche.ai",
       "appearance": {
         "iconUrl": "/icons/Storage.png",
@@ -2190,7 +2161,7 @@
     },
     {
       "id": "0a4d2430-0368-40c6-8a52-0be7e721bc6d",
-      "name": "*OpenWRT",
+      "name": "OpenWRT",
       "url": "http://192.168.2.252",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openwrt.svg",
@@ -2307,11 +2278,11 @@
       }
     },
     {
-      "id": "cad02433-8961-461c-a89f-20a696035e1f",
-      "name": "H-MDM",
-      "url": "https://mdm.teche.ai",
+      "id": "8d046091-3bb2-422b-b9c6-fee3ae26f430",
+      "name": "Mesh",
+      "url": "https://mesh.teche.ai",
       "appearance": {
-        "iconUrl": "https://h-mdm.com/wp-content/uploads/2019/07/neew-logo.png",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/meshcentral.png",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2330,7 +2301,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mdm.teche.ai"
+        "externalUrl": "https://mesh.teche.ai"
       },
       "area": {
         "type": "category",
@@ -2341,139 +2312,6 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "52019584-89f2-4cc0-9d5a-75bdedc60598",
-      "name": "Flow",
-      "url": "https://flow.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/n8n.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://flow.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 2
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "95dc91dc-aa16-4312-a176-33d21e8b621b",
-      "name": "AntiVirus",
-      "url": "https://antivirus.teche.ai",
-      "appearance": {
-        "iconUrl": "/imgs/logo/openteche.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401",
-          "204",
-          "400",
-          "403",
-          "404",
-          "405",
-          "408",
-          "410",
-          "429",
-          "202",
-          "502",
-          "500",
-          "503",
-          "504"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://antivirus.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
             "x": 4,
             "y": 0
           },
@@ -2484,11 +2322,11 @@
         },
         "md": {
           "location": {
-            "x": 4,
+            "x": 2,
             "y": 0
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         }
@@ -2499,11 +2337,11 @@
       }
     },
     {
-      "id": "2265ad4e-dddd-4a46-be71-7565060c8ece",
-      "name": "Domain",
-      "url": "https://ap.www.namecheap.com",
+      "id": "79501754-07dd-4c1b-9360-b83b58ca4265",
+      "name": "Passwords",
+      "url": "https://pass.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-domains.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vaultwarden.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2522,7 +2360,66 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://ap.www.namecheap.com/"
+        "externalUrl": "https://pass.teche.ai"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "fac31843-7569-4f2d-9735-27cb40e66b2d",
+      "name": "Firewall",
+      "url": "https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#SecurityGroup:groupId=sg-015d3f91a34d904c0",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/firewalla.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#SecurityGroup:groupId=sg-015d3f91a34d904c0"
       },
       "area": {
         "type": "category",
@@ -2533,7 +2430,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
+            "x": 7,
             "y": 0
           },
           "size": {
@@ -2543,8 +2440,8 @@
         },
         "md": {
           "location": {
-            "x": 0,
-            "y": 1
+            "x": 3,
+            "y": 0
           },
           "size": {
             "width": 1,
@@ -2617,11 +2514,11 @@
       }
     },
     {
-      "id": "f3c99225-94c8-4d83-bf1b-192829601783",
-      "name": "*Disaster Recovery",
+      "id": "cbadfbed-93b4-4c4b-b8e4-4f6c8118a771",
+      "name": "Backup",
       "url": "https://teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/system_recovery.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docker-volume-backup.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2651,21 +2548,21 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 7,
+            "x": 3,
             "y": 0
           },
           "size": {
-            "width": 3,
+            "width": 4,
             "height": 1
           }
         },
         "md": {
           "location": {
             "x": 0,
-            "y": 0
+            "y": 1
           },
           "size": {
-            "width": 3,
+            "width": 4,
             "height": 1
           }
         }
@@ -2676,11 +2573,11 @@
       }
     },
     {
-      "id": "efd93534-b062-4503-bfd9-bc18f0f36e96",
-      "name": "Tunnel",
-      "url": "https://proxy.teche.ai",
+      "id": "92ee8c18-b3fd-46d1-acf2-1ce675be9d25",
+      "name": "Headscale",
+      "url": "https://login.tailscale.com",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pangolin.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tailscale.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2694,12 +2591,13 @@
           "302",
           "304",
           "307",
-          "308"
+          "308",
+          "401"
         ]
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://proxy.teche.ai"
+        "externalUrl": "https://login.tailscale.com/"
       },
       "area": {
         "type": "category",
@@ -2710,7 +2608,17 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 6,
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 5,
             "y": 0
           },
           "size": {
@@ -2784,11 +2692,11 @@
       }
     },
     {
-      "id": "9a46a7e2-24a0-4557-b625-4170afc4f4ba",
-      "name": "MySpeed",
-      "url": "https://speed.teche.ai",
+      "id": "c7accf1a-8341-49a2-87d0-f0ea87738c27",
+      "name": "Apps",
+      "url": "https://apps.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/myspeed.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2807,7 +2715,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://speed.teche.ai/"
+        "externalUrl": "https://apps.teche.ai"
       },
       "area": {
         "type": "category",
@@ -2818,7 +2726,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 7,
+            "x": 6,
             "y": 0
           },
           "size": {
@@ -2828,7 +2736,7 @@
         },
         "md": {
           "location": {
-            "x": 1,
+            "x": 3,
             "y": 0
           },
           "size": {
@@ -2843,71 +2751,11 @@
       }
     },
     {
-      "id": "61b13c2c-8ac3-43d6-a18b-c24527f60f8e",
-      "name": "Mattermost",
-      "url": "https://mattermost.teche.ai",
+      "id": "c1a0ea9d-1840-4e76-b159-6bc03842932a",
+      "name": "NoCoDB",
+      "url": "https://tables.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mattermost.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308",
-          "401"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://mattermost.teche.ai"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 9,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 3
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "1d320d9c-a537-457b-af8d-84ea462510c6",
-      "name": "Grafana",
-      "url": "https://grafana.teche.ai",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/grafana.svg",
+        "iconUrl": "https://avatars.githubusercontent.com/u/50206778?s=200&v=4",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -2926,18 +2774,28 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://grafana.teche.ai"
+        "externalUrl": "https://tables.teche.ai/"
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "8c11529e-62de-4275-8a4e-32f9ddb91cc3"
+          "id": "45007893-010e-41d7-84f8-5811fcfca1c8"
         }
       },
       "shape": {
         "lg": {
           "location": {
-            "x": 5,
+            "x": 3,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -2952,15 +2810,15 @@
       }
     },
     {
-      "id": "4dbf6e49-3648-4d4c-b298-c5228826768c",
-      "name": "Cloud",
-      "url": "https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1",
+      "id": "0674c1b0-ab4d-4d84-88d8-32fc677e2326",
+      "name": "Sites",
+      "url": "https://websrv.teche.ai/#/sites/list",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/aws-light.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-sites.svg",
         "appNameStatus": "normal",
-        "appNameFontSize": 16,
         "positionAppName": "column",
-        "lineClampAppName": 1
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
       },
       "network": {
         "enabledStatusChecker": true,
@@ -2970,26 +2828,12 @@
           "302",
           "304",
           "307",
-          "308",
-          "401",
-          "202",
-          "204",
-          "400",
-          "403",
-          "404",
-          "405",
-          "408",
-          "410",
-          "429",
-          "500",
-          "502",
-          "503",
-          "504"
+          "308"
         ]
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1"
+        "externalUrl": "https://websrv.teche.ai/#/sites/list"
       },
       "area": {
         "type": "category",
@@ -3000,18 +2844,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 3,
+            "x": 8,
             "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 1,
-            "y": 1
           },
           "size": {
             "width": 1,
@@ -3084,11 +2918,11 @@
       }
     },
     {
-      "id": "cbadfbed-93b4-4c4b-b8e4-4f6c8118a771",
-      "name": "*Backup",
+      "id": "f3c99225-94c8-4d83-bf1b-192829601783",
+      "name": "Disaster Recovery",
       "url": "https://teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docker-volume-backup.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/system_recovery.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -3118,21 +2952,21 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 3,
+            "x": 7,
             "y": 0
           },
           "size": {
-            "width": 4,
+            "width": 3,
             "height": 1
           }
         },
         "md": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 0
           },
           "size": {
-            "width": 4,
+            "width": 3,
             "height": 1
           }
         }
@@ -3216,11 +3050,11 @@
       }
     },
     {
-      "id": "92ee8c18-b3fd-46d1-acf2-1ce675be9d25",
-      "name": "Headscale",
-      "url": "https://login.tailscale.com",
+      "id": "d4c180b3-036c-4c14-8f31-a8a193ca57a2",
+      "name": "pfsense",
+      "url": "http://192.168.2.253",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tailscale.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pfsense.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -3234,13 +3068,12 @@
           "302",
           "304",
           "307",
-          "308",
-          "401"
+          "308"
         ]
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://login.tailscale.com/"
+        "externalUrl": "http://192.168.2.253"
       },
       "area": {
         "type": "category",
@@ -3251,7 +3084,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 5,
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -3261,7 +3094,7 @@
         },
         "md": {
           "location": {
-            "x": 5,
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -3277,7 +3110,7 @@
     },
     {
       "id": "5db13d98-8884-4940-8a0b-40fe20929849",
-      "name": "*MyNAS",
+      "name": "MyNAS",
       "url": "http://192.168.0.251",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/truenas-core.png",
@@ -3455,11 +3288,11 @@
       }
     },
     {
-      "id": "8d046091-3bb2-422b-b9c6-fee3ae26f430",
-      "name": "Mesh",
-      "url": "https://mesh.teche.ai",
+      "id": "cad02433-8961-461c-a89f-20a696035e1f",
+      "name": "H-MDM",
+      "url": "https://mdm.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/meshcentral.png",
+        "iconUrl": "https://h-mdm.com/wp-content/uploads/2019/07/neew-logo.png",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -3478,7 +3311,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mesh.teche.ai"
+        "externalUrl": "https://mdm.teche.ai"
       },
       "area": {
         "type": "category",
@@ -3489,7 +3322,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 4,
+            "x": 5,
             "y": 0
           },
           "size": {
@@ -3499,7 +3332,7 @@
         },
         "md": {
           "location": {
-            "x": 2,
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -3514,11 +3347,11 @@
       }
     },
     {
-      "id": "cb536700-d8b2-4719-80af-0668231298ff",
-      "name": "Matrix",
-      "url": "https://teche.ai/comingsoon.html",
+      "id": "1374b5a3-a09f-41a7-a1ee-e089c5706114",
+      "name": "Mind",
+      "url": "https://mind.teche.ai",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/matrix-synapse.svg",
+        "iconUrl": "https://www.wisemapping.com/_next/static/media/logo-small.3e04aac9.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -3537,7 +3370,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://teche.ai/comingsoon.html"
+        "externalUrl": "https://mind.teche.ai"
       },
       "area": {
         "type": "category",
@@ -3548,8 +3381,8 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 0,
-            "y": 2
+            "x": 4,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -3558,7 +3391,7 @@
         },
         "md": {
           "location": {
-            "x": 2,
+            "x": 1,
             "y": 0
           },
           "size": {
@@ -3693,96 +3526,6 @@
   ],
   "widgets": [
     {
-      "id": "c753075a-3d70-4581-bc63-2a87842bbab6",
-      "type": "dashdot",
-      "properties": {
-        "dashName": "Vitals-AI",
-        "url": "https://vital.teche.ai",
-        "usePercentages": true,
-        "columns": 4,
-        "graphHeight": 117,
-        "graphsOrder": [
-          {
-            "key": "cpu",
-            "subValues": {
-              "enabled": true,
-              "multiView": true,
-              "span": 1
-            }
-          },
-          {
-            "key": "ram",
-            "subValues": {
-              "enabled": true,
-              "span": 1
-            }
-          },
-          {
-            "key": "network",
-            "subValues": {
-              "enabled": true,
-              "compactView": false,
-              "span": 1
-            }
-          },
-          {
-            "key": "storage",
-            "subValues": {
-              "enabled": true,
-              "compactView": false,
-              "span": 1,
-              "multiView": true
-            }
-          },
-          {
-            "key": "gpu",
-            "subValues": {
-              "enabled": false,
-              "span": 1
-            }
-          }
-        ]
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 2
-          },
-          "size": {
-            "width": 10,
-            "height": 2
-          }
-        }
-      }
-    },
-    {
       "id": "0dcd2ffb-f207-4fbd-b7ba-12b5c6c19002",
       "type": "dashdot",
       "properties": {
@@ -3873,6 +3616,57 @@
       }
     },
     {
+      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
+      "type": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": {
+          "name": "Calcutta",
+          "latitude": 22.56263,
+          "longitude": 88.36304
+        },
+        "displayCityName": true
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
       "id": "430e2fc9-c5ef-4c5f-819b-103b22d8a242",
       "type": "date",
       "properties": {
@@ -3926,18 +3720,55 @@
       }
     },
     {
-      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
-      "type": "weather",
+      "id": "c753075a-3d70-4581-bc63-2a87842bbab6",
+      "type": "dashdot",
       "properties": {
-        "displayInFahrenheit": false,
-        "location": {
-          "name": "Miami",
-          "latitude": 25.77427,
-          "longitude": -80.19366
-        },
-        "displayCityName": false,
-        "displayWeekly": false,
-        "forecastDays": 5
+        "dashName": "Vitals-AI",
+        "url": "https://vitalsai.teche.ai",
+        "usePercentages": true,
+        "columns": 4,
+        "graphHeight": 117,
+        "graphsOrder": [
+          {
+            "key": "cpu",
+            "subValues": {
+              "enabled": true,
+              "multiView": true,
+              "span": 1
+            }
+          },
+          {
+            "key": "ram",
+            "subValues": {
+              "enabled": true,
+              "span": 1
+            }
+          },
+          {
+            "key": "network",
+            "subValues": {
+              "enabled": true,
+              "compactView": false,
+              "span": 1
+            }
+          },
+          {
+            "key": "storage",
+            "subValues": {
+              "enabled": true,
+              "compactView": false,
+              "span": 1,
+              "multiView": true
+            }
+          },
+          {
+            "key": "gpu",
+            "subValues": {
+              "enabled": false,
+              "span": 1
+            }
+          }
+        ]
       },
       "area": {
         "type": "wrapper",
@@ -3946,34 +3777,34 @@
         }
       },
       "shape": {
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
         "sm": {
           "location": {
-            "x": 2,
+            "x": 0,
             "y": 0
           },
           "size": {
-            "width": 1,
-            "height": 1
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
           }
         },
         "lg": {
           "location": {
-            "x": 4,
-            "y": 1
+            "x": 0,
+            "y": 2
           },
           "size": {
-            "width": 2,
-            "height": 1
+            "width": 10,
+            "height": 2
           }
         }
       }
