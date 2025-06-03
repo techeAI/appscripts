@@ -26,6 +26,7 @@ awk -v access="/var/log/nginx/access.log" -v error="/var/log/nginx/error.log" '
     { print }
 ' "$INI_FILE" > "${INI_FILE}.tmp" && mv "${INI_FILE}.tmp" "$INI_FILE"
 
+systemctl restart nginx-ui
 
 #http://your-server-ip:9000
 #
