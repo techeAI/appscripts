@@ -246,7 +246,7 @@
     {
       "id": "0a9a8d4c-1623-446f-914c-6607663123c3",
       "name": "IT-Tools",
-      "url": "https://ittools.teche.ai",
+      "url": "https://ittools",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/ittools.svg",
         "appNameStatus": "normal",
@@ -267,7 +267,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://ittools.teche.ai/"
+        "externalUrl": "https://ittools/"
       },
       "area": {
         "type": "category",
@@ -305,7 +305,7 @@
     {
       "id": "f1e5ad92-2d80-419a-a3af-ff7c7c85845c",
       "name": "TecheBT",
-      "url": "https://tickets.teche.ai",
+      "url": "https://tickets",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mantisbt.png",
         "appNameStatus": "normal",
@@ -326,7 +326,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://tickets.teche.ai"
+        "externalUrl": "https://tickets"
       },
       "area": {
         "type": "category",
@@ -364,7 +364,7 @@
     {
       "id": "45ed0193-062f-4968-8f04-f875c010d802",
       "name": "SearchEngine",
-      "url": "https://search.teche.ai",
+      "url": "https://search",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whoogle.png",
         "appNameStatus": "normal",
@@ -386,7 +386,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://search.teche.ai/"
+        "externalUrl": "https://search/"
       },
       "area": {
         "type": "category",
@@ -424,7 +424,7 @@
     {
       "id": "a9649784-26de-4c80-8417-d56eee94999e",
       "name": "Bookstack",
-      "url": "https://books.teche.ai",
+      "url": "https://books",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/bookstack.svg",
         "appNameStatus": "normal",
@@ -445,7 +445,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://books.teche.ai/"
+        "externalUrl": "https://books/"
       },
       "area": {
         "type": "category",
@@ -483,7 +483,7 @@
     {
       "id": "6eebbd0c-bde2-4ec8-9183-944836b3a712",
       "name": "Docs",
-      "url": "https://docs.teche.ai",
+      "url": "https://docs",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/paperless-ng.svg",
         "appNameStatus": "normal",
@@ -504,7 +504,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://docs.teche.ai"
+        "externalUrl": "https://docs"
       },
       "area": {
         "type": "category",
@@ -542,7 +542,7 @@
     {
       "id": "280a5bd2-9a0d-4978-aaae-f52646a388b6",
       "name": "eSign",
-      "url": "https://esign.teche.ai",
+      "url": "https://esign",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/docuseal.svg",
         "appNameStatus": "normal",
@@ -563,7 +563,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://esign.teche.ai"
+        "externalUrl": "https://esign"
       },
       "area": {
         "type": "category",
@@ -601,7 +601,7 @@
     {
       "id": "61c46be3-9ee1-4dd9-b53a-cf9b217647bb",
       "name": "FORMS",
-      "url": "https://forms.teche.ai",
+      "url": "https://forms",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/opnform.svg",
         "appNameStatus": "normal",
@@ -622,7 +622,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://forms.teche.ai"
+        "externalUrl": "https://forms"
       },
       "area": {
         "type": "category",
@@ -660,7 +660,7 @@
     {
       "id": "79501754-07dd-4c1b-9360-b83b58ca4265",
       "name": "Passwords",
-      "url": "https://pass.teche.ai",
+      "url": "https://pass",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vaultwarden.svg",
         "appNameStatus": "normal",
@@ -681,7 +681,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://pass.teche.ai"
+        "externalUrl": "https://pass"
       },
       "area": {
         "type": "category",
@@ -719,7 +719,7 @@
     {
       "id": "c1a0ea9d-1840-4e76-b159-6bc03842932a",
       "name": "NoCoDB",
-      "url": "https://tables.teche.ai",
+      "url": "https://tables",
       "appearance": {
         "iconUrl": "https://avatars.githubusercontent.com/u/50206778?s=200&v=4",
         "appNameStatus": "normal",
@@ -740,7 +740,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://tables.teche.ai/"
+        "externalUrl": "https://tables/"
       },
       "area": {
         "type": "category",
@@ -778,7 +778,7 @@
     {
       "id": "1374b5a3-a09f-41a7-a1ee-e089c5706114",
       "name": "Mind",
-      "url": "https://mind.teche.ai",
+      "url": "https://mind",
       "appearance": {
         "iconUrl": "https://www.wisemapping.com/_next/static/media/logo-small.3e04aac9.svg",
         "appNameStatus": "normal",
@@ -799,7 +799,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mind.teche.ai"
+        "externalUrl": "https://mind"
       },
       "area": {
         "type": "category",
@@ -837,7 +837,7 @@
     {
       "id": "6ec5d2fa-dc6f-4a3b-9d9f-3ab923047b5d",
       "name": "File-Drawer",
-      "url": "https://vault.teche.ai",
+      "url": "https://vault",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/filegator.svg",
         "appNameStatus": "normal",
@@ -859,7 +859,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://vault.teche.ai"
+        "externalUrl": "https://vault"
       },
       "area": {
         "type": "category",
@@ -897,7 +897,7 @@
     {
       "id": "0e0084f1-c290-41d3-b4f2-a6f171473973",
       "name": "PDF-Editor",
-      "url": "https://pdf.teche.ai",
+      "url": "https://pdf",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/stirling-pdf.svg",
         "appNameStatus": "normal",
@@ -918,7 +918,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://pdf.teche.ai"
+        "externalUrl": "https://pdf"
       },
       "area": {
         "type": "category",
@@ -1015,7 +1015,7 @@
     {
       "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
       "name": "Cloud",
-      "url": "https://cloud.teche.ai",
+      "url": "https://cloud",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
         "appNameStatus": "normal",
@@ -1037,7 +1037,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://cloud.teche.ai"
+        "externalUrl": "https://cloud"
       },
       "area": {
         "type": "category",
@@ -1075,7 +1075,7 @@
     {
       "id": "0674c1b0-ab4d-4d84-88d8-32fc677e2326",
       "name": "Sites",
-      "url": "https://websrv.teche.ai/#/sites/list",
+      "url": "https://websrv/#/sites/list",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-sites.svg",
         "appNameStatus": "normal",
@@ -1096,7 +1096,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://websrv.teche.ai/#/sites/list"
+        "externalUrl": "https://websrv/#/sites/list"
       },
       "area": {
         "type": "category",
@@ -1134,7 +1134,7 @@
     {
       "id": "e9ebf465-d64f-4976-a923-f158c90f5261",
       "name": "Photos",
-      "url": "https://photos.teche.ai",
+      "url": "https://photos",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/google-photos.svg",
         "appNameStatus": "normal",
@@ -1155,7 +1155,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://photos.teche.ai"
+        "externalUrl": "https://photos"
       },
       "area": {
         "type": "category",
@@ -1252,7 +1252,7 @@
     {
       "id": "fb5d22cf-6e74-482f-a2c9-1d29e8bd8143",
       "name": "Wiki",
-      "url": "https://wiki.teche.ai",
+      "url": "https://wiki",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/dokuwiki.svg",
         "appNameStatus": "normal",
@@ -1273,7 +1273,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://wiki.teche.ai"
+        "externalUrl": "https://wiki"
       },
       "area": {
         "type": "category",
@@ -1311,7 +1311,7 @@
     {
       "id": "61b5eea8-1d20-4455-bc48-3c5c10589ba8",
       "name": "Maestro",
-      "url": "https://monitor.teche.ai",
+      "url": "https://monitor",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/zabbix.svg",
         "appNameStatus": "normal",
@@ -1332,7 +1332,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://monitor.teche.ai"
+        "externalUrl": "https://monitor"
       },
       "area": {
         "type": "category",
@@ -1429,7 +1429,7 @@
     {
       "id": "34ee2b00-4536-43c3-b660-8c29d3951ce1",
       "name": "Vault",
-      "url": "https://cloud.teche.ai/index.php/apps/files/files",
+      "url": "https://cloud/index.php/apps/files/files",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/vault.svg",
         "appNameStatus": "normal",
@@ -1452,7 +1452,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://cloud.teche.ai/index.php/apps/files/files"
+        "externalUrl": "https://cloud/index.php/apps/files/files"
       },
       "area": {
         "type": "category",
@@ -1490,7 +1490,7 @@
     {
       "id": "82f3d8bd-c6ac-45ed-a940-cf63b3b8c419",
       "name": "Nginx",
-      "url": "https://websrv.teche.ai",
+      "url": "https://websrv",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nginx-proxy-manager.svg",
         "appNameStatus": "normal",
@@ -1511,7 +1511,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://websrv.teche.ai/"
+        "externalUrl": "https://websrv/"
       },
       "area": {
         "type": "category",
@@ -1608,7 +1608,7 @@
     {
       "id": "de2d8fea-5c24-4868-aa17-c51c02af9e8f",
       "name": "Chat",
-      "url": "https://chat.teche.ai",
+      "url": "https://chat",
       "appearance": {
         "iconUrl": "https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/message-chatbot.png",
         "appNameStatus": "normal",
@@ -1629,7 +1629,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://chat.teche.ai"
+        "externalUrl": "https://chat"
       },
       "area": {
         "type": "category",
@@ -1667,7 +1667,7 @@
     {
       "id": "da0174be-3367-499f-b3ce-3c2f2e88b1ec",
       "name": "focalboard",
-      "url": "https://board.teche.ai",
+      "url": "https://board",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/focalboard.svg",
         "appNameStatus": "normal",
@@ -1690,7 +1690,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://board.teche.ai/"
+        "externalUrl": "https://board/"
       },
       "area": {
         "type": "category",
@@ -1728,7 +1728,7 @@
     {
       "id": "074415aa-fff8-44b9-9f6b-953e530aec3e",
       "name": "Odoo",
-      "url": "https://odoo.teche.ai/web",
+      "url": "https://odoo/web",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/odoo.svg",
         "appNameStatus": "normal",
@@ -1749,7 +1749,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://odoo.teche.ai/web"
+        "externalUrl": "https://odoo/web"
       },
       "area": {
         "type": "category",
@@ -1777,7 +1777,7 @@
     {
       "id": "5b109522-7333-4bcc-bbda-5a64459c2d30",
       "name": "Apps",
-      "url": "https://monitor2.teche.ai",
+      "url": "https://monitor2",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/zabbix.svg",
         "appNameStatus": "normal",
@@ -1798,7 +1798,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://monitor2.teche.ai"
+        "externalUrl": "https://monitor2"
       },
       "area": {
         "type": "category",
@@ -1895,7 +1895,7 @@
     {
       "id": "a64d0e3f-53db-40ce-89fb-2287f0790e67",
       "name": "CRM",
-      "url": "https://crm.teche.ai",
+      "url": "https://crm",
       "appearance": {
         "iconUrl": "https://docs.suitecrm.com/images/logo-square.png",
         "appNameStatus": "normal",
@@ -1916,7 +1916,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://crm.teche.ai"
+        "externalUrl": "https://crm"
       },
       "area": {
         "type": "category",
@@ -1954,7 +1954,7 @@
     {
       "id": "c7accf1a-8341-49a2-87d0-f0ea87738c27",
       "name": "Apps",
-      "url": "https://apps.teche.ai",
+      "url": "https://apps",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/portainer.svg",
         "appNameStatus": "normal",
@@ -1975,7 +1975,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://apps.teche.ai"
+        "externalUrl": "https://apps"
       },
       "area": {
         "type": "category",
@@ -2013,7 +2013,7 @@
     {
       "id": "da6b5c11-91e3-48ae-9790-675aa2c08697",
       "name": "Projects",
-      "url": "https://projects.teche.ai",
+      "url": "https://projects",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/openproject.svg",
         "appNameStatus": "normal",
@@ -2035,7 +2035,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://projects.teche.ai"
+        "externalUrl": "https://projects"
       },
       "area": {
         "type": "category",
@@ -2250,7 +2250,7 @@
     {
       "id": "aef2ef9c-6490-4d1c-947b-efdf1b336052",
       "name": "HRMS",
-      "url": "https://hr.teche.ai",
+      "url": "https://hr",
       "appearance": {
         "iconUrl": "https://www.horilla.com/wp-content/themes/horilla-wp-theme-main/assets/images/brand/horilla-logo.png",
         "appNameStatus": "normal",
@@ -2271,7 +2271,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://hr.teche.ai"
+        "externalUrl": "https://hr"
       },
       "area": {
         "type": "category",
@@ -2309,7 +2309,7 @@
     {
       "id": "cad02433-8961-461c-a89f-20a696035e1f",
       "name": "H-MDM",
-      "url": "https://mdm.teche.ai",
+      "url": "https://mdm",
       "appearance": {
         "iconUrl": "https://h-mdm.com/wp-content/uploads/2019/07/neew-logo.png",
         "appNameStatus": "normal",
@@ -2330,7 +2330,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mdm.teche.ai"
+        "externalUrl": "https://mdm"
       },
       "area": {
         "type": "category",
@@ -2368,7 +2368,7 @@
     {
       "id": "52019584-89f2-4cc0-9d5a-75bdedc60598",
       "name": "Flow",
-      "url": "https://flow.teche.ai",
+      "url": "https://flow",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/n8n.svg",
         "appNameStatus": "normal",
@@ -2390,7 +2390,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://flow.teche.ai"
+        "externalUrl": "https://flow"
       },
       "area": {
         "type": "category",
@@ -2428,7 +2428,7 @@
     {
       "id": "95dc91dc-aa16-4312-a176-33d21e8b621b",
       "name": "AntiVirus",
-      "url": "https://antivirus.teche.ai",
+      "url": "https://antivirus",
       "appearance": {
         "iconUrl": "/imgs/logo/openteche.svg",
         "appNameStatus": "normal",
@@ -2463,7 +2463,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://antivirus.teche.ai"
+        "externalUrl": "https://antivirus"
       },
       "area": {
         "type": "category",
@@ -2678,7 +2678,7 @@
     {
       "id": "efd93534-b062-4503-bfd9-bc18f0f36e96",
       "name": "Tunnel",
-      "url": "https://proxy.teche.ai",
+      "url": "https://proxy",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/pangolin.svg",
         "appNameStatus": "normal",
@@ -2699,7 +2699,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://proxy.teche.ai"
+        "externalUrl": "https://proxy"
       },
       "area": {
         "type": "category",
@@ -2727,7 +2727,7 @@
     {
       "id": "b675da6f-0bc8-41d6-837b-a36ad6bc71d6",
       "name": "Mautic",
-      "url": "https://mautic.teche.ai",
+      "url": "https://mautic",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mautic.svg",
         "appNameStatus": "normal",
@@ -2748,7 +2748,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mautic.teche.ai"
+        "externalUrl": "https://mautic"
       },
       "area": {
         "type": "category",
@@ -2786,7 +2786,7 @@
     {
       "id": "9a46a7e2-24a0-4557-b625-4170afc4f4ba",
       "name": "MySpeed",
-      "url": "https://speed.teche.ai",
+      "url": "https://speed",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/myspeed.svg",
         "appNameStatus": "normal",
@@ -2807,7 +2807,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://speed.teche.ai/"
+        "externalUrl": "https://speed/"
       },
       "area": {
         "type": "category",
@@ -2845,7 +2845,7 @@
     {
       "id": "61b13c2c-8ac3-43d6-a18b-c24527f60f8e",
       "name": "Mattermost",
-      "url": "https://mattermost.teche.ai",
+      "url": "https://mattermost",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/mattermost.svg",
         "appNameStatus": "normal",
@@ -2867,7 +2867,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mattermost.teche.ai"
+        "externalUrl": "https://mattermost"
       },
       "area": {
         "type": "category",
@@ -2905,7 +2905,7 @@
     {
       "id": "1d320d9c-a537-457b-af8d-84ea462510c6",
       "name": "Grafana",
-      "url": "https://grafana.teche.ai",
+      "url": "https://grafana",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/grafana.svg",
         "appNameStatus": "normal",
@@ -2926,7 +2926,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://grafana.teche.ai"
+        "externalUrl": "https://grafana"
       },
       "area": {
         "type": "category",
@@ -3337,7 +3337,7 @@
     {
       "id": "eaca6e18-ff5c-4236-a043-55622375d4fc",
       "name": "DigiAssets",
-      "url": "https://digiassets.teche.ai",
+      "url": "https://digiassets",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/snipe-it.png",
         "appNameStatus": "normal",
@@ -3360,7 +3360,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://digiassets.teche.ai/"
+        "externalUrl": "https://digiassets/"
       },
       "area": {
         "type": "category",
@@ -3398,7 +3398,7 @@
     {
       "id": "24ba2ade-f065-4dbb-89ed-9b3905642e50",
       "name": "Akaunting",
-      "url": "https://accounts.teche.ai",
+      "url": "https://accounts",
       "appearance": {
         "iconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAllBMVEX///9tolJBQUI7Ozw2Njf39/c+Pj9nn0oyMjMvLzArKyyQkJCVlZWjw5ZjY2P09PTn5+fe3t4TExUlJSZxcXFMTE2np6fX19eAgIFpaWq1tbXAwMALCw2hoaHHx8cfHyFhnEJZWVqNtHrx9u9+rGgAAADl7eLZ5dRbmDmyzKbO3sdWljGIiInF2b2qxp2avIt2p11OkiRGdoViAAAJvklEQVR4nO2bCXerKBvHDaBRk7rELdGqWWy2mib3+3+590FFNLWxvdPe6nn5zTkzCSLwB54F0pEkgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFgSOz2B2C/++1x/Gf2l7frdpsB2+317bL/7fH8PbvLNbtNCybFv2/Z9fzbg/pLThlImLSA79npt8f1FxzeKWGCJoffHttX2f7plkLV/Hn67dF9if1t/ZEUyvE2Ik8AW+yRllFttfOtRwuouY1EzSFra5lO18CdO5hmo1Czb2s5rrPr0+n0dM3WLTuabkdgN7trc8zH2wkSmZ0s7yCpOU2OjUfr6/ATnEtDy3py2cv8kby/TJtPL783ys+xay7L+5203zbU3Ia+NG98sOuu2NjcheuBZza7P9zC37qrPHH/8DrspeELM71+UEXeTkeyNNxdfWwQuxvfaP9uZF/nXIt55Kq4w3sdcuS8sh00zR5Vq9OdTh8xFGprOD48UV7YAk5v/2pkX2dX77Lj44qv9W4crj87MGP40JVV1A5tPVyjubAxHnsylRNTPeCUpo4yfV6q9nrT4Yo5bSuynvR+z4zmozRhAOxqeipyMT3G9YucsorJp1dmwGLW5f3l9LXn4pLbzHCjZu3N+jLI2psNWAyPMw+zGUmqrwkGLGbHM0j5UT25zgAGLEZiY+yJmnVuNmgxtS1M1o+q8ZPzkMXseQb5wAWcpqMQIzWG+WFGc2hcEg5azIlbQ/ZBGrDLxiJm11ia7hvL3bV5eztoMU1Hte36gXm/bd1ED1tMvYmm2f6wvXfQu8v9LwSDFiOdK7873e+y9W3bStIOu+txMiYxcukDXg/FGk1v2duh2G2781uWHc73Pz8PW0x5m/znws75xY9Mt1vxCXzCdj0qMdTGjydp2/ET7fR2vzSDFyMdsqt0en2vhf7AJD+NyJsV7KVzpxbYb+dzseNGJIbe03b/4Ly+QtAE2xnBeabBKfvgzxrOh0l24XcAoxAjHZ4mXXLW2/35II1NjLQ7vE2O92HlOHmjUWd0YuifAF6269c1u7KBj9tLma/tX6uy8YiR6LXg+XTd3iBqZtfTub4c3NdZzZjECAQCgUAgEAgEAoHg70jCMIzaRWGe5/G/6j+A/oNvassyEEKbdmszQtTNN7XfS0wQnn9TWz7CikJmrbIZVrDxTe33MtcV7ZvEyK4KK0NWVrNwhtGPignyF97fPCXO7EHlL5B4MHCkoLBZ+LMrY7kv2jMXk/i+n3xPy3MN4Q1GWt78e5GfXRnLJejZ6q/3ZewVQU7ggKDm5IxUTIgVspIMgnS/UfrDYpY/I8bMNbRIpDBFxLV5cVOMFVDM6pschH7sR1ZZbtU16rHRL2VLJv0E71kRvBGy1qEsgd2QJjZ7q92QDdvdjuKyjyZFx6HV7OGOAPyyakqWpihqI3A2xAQGsPEri0qWBlI1zXNDKdxAcTHoeGN4tf+IoXZevrkxDDcwfddTNRUZcTk4KNyAv8Fls8UbrKGiydy05itP0wj0wWaQNpYbSINmVr40h1pd3k/29cL05aUK/+XvcjH2RsPEWVaP5h6BoIQxJsj3U5wW4cGcOXhRb9KZSrRV+aoOkTeaYYKxghRCloWaha5rGIKBquv6c/H+PMV6ObhwgfVl5JLiDUxIXDul0FMJFGFamGtQq0OMBcayoME/WUB3fO1qMbSCoi2rRmcwDLLQkbJIsbdRkF4MRgaH6PiNV4lbfDI1pHgGxqnjkWfw/k6xesbKNejKrACjeGuuI7UMmkmKlM0GQxeelkIdneUlISIIaQuM9JQonoLUvEMMvI03dMIsiDWOX08EizMmjai6y2o/wxej6CDUYe76xSBF0VBErQDaJ0Y1W9SDNhwAFxMs6BtpkVtFGkxWFS+CDWhJi+2RIFghRDrE0LGWEuRYR9irO6hWxnR1ui6sFCZLZRuOqu8RI2t0Ny0r29YVlAY9YmwqRquaShxYzLJWnCLkVImvBUERkQ6bsVOw+7IHCDXUrbXEmLnT1BI5MLl1QhrpfdtMAjHErQZtglU64SfEaLNqumwDo+eA1Sd13hvSVLIjl4PlYDNng3GobD8V22wlzSGWanxBVzBM3giNfL1iFIWVU1ejz+VeMdhjM2qB/LSQn2C+qgDYTIcYEwxRYz7Vh65T1gOIUYzQAb/VWE8o87j7phuzVwzmL4RO7S8fiSEr5obMGWs2pBuEu1qYxQ4xEbgwNI9CSjQjzAZKMYjaosedo2TDajWPPeHXxEQp0pZfEsOalX3Y3xsuBso7xFAfgWjUoCD6WWuIUXDl6SoCKqYReUPtX4mh1uDyWfW7xFgLVCgoKT4vIi6GntmUJZ+QQPktMWBupCEm7hIzo97G4cA6MZ9RxJmI+rraJ0iW0t5mPttmfHP/jBhqM9jjs7rsshmISsQNOS4N9jYbEbjmmKrhyTOsFOKpNZXQWJk6N8u/X0zkKGjBxXR5M9gmuHW+jOiZM2+IkWJoRasdPIhVeU4UQPBiYmCNaq+3+oQY92tiaALAl5466ndiNrTXRl4qyTBh1XKy3GwOq6extQnSZtyIndr7wYbDmFXy+sXQEJVyJ98rhs6WsmDRF8b9LmgGMLK7G56YmrzfFGPOIBNSmeSNCkYVFV8s36lzs+IawYlpuUzH2SuGHqLAUZqy/DkxxdJgLbFM0woMleZmd2Jgb2OvfVtm17NaZ81mrsI8sCwBMn/I5KMkCd0UeSydKVIVlLpQ7m80r1+MFMIUEZzH8+RzYsACwJ4dz10amkY7vsvNaL6GXamNi6t0gp9nzFznaiKPHuKcNHVUkoNMFmQDWDNEy/V0mSvNdKYlhmepSx32iqY9F1kxDPojMfVZPnF1VcEEzkrEf+/NfN3Rndb1UtGhrqfUBeSOnlaGby4XupNW+WLiajocz7Cmzez4RX9hbSYrkIex6qysGBRtyv0DL2Kezrzoizpq2XMvdeBwVoiZwZNypu0XPa29vzl71l/qO2IbDqx66ihwxF0SRWnfHcMpO45NqY1MC0O5fMqUWrQwrrqwIjjTok2emFICpXWabYfLjee5vlUUV6/CJ7+OssE8jqM68plB5LP3eUMW1AmZm5NbHdCjfxJFCTxdkbtbPkmmSPew0tZTufXNtGzbNt+3YEG51S5uV3jXYUe9Vp3OEUo0zvDUeuxAnCHGw//DbeDwmyzquTrPZuNh/uKWG8v0CY3sY14YOddIukArA4M/gwg1aouBuEQwvUiDDIWo3n1EGRdmlK88ounwDzLyzqvZUWEnvh/PY//bfv0UCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEPz/8T+ZLtAV/ggz0wAAAABJRU5ErkJggg==",
         "appNameStatus": "normal",
@@ -3419,7 +3419,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://accounts.teche.ai"
+        "externalUrl": "https://accounts"
       },
       "area": {
         "type": "category",
@@ -3457,7 +3457,7 @@
     {
       "id": "8d046091-3bb2-422b-b9c6-fee3ae26f430",
       "name": "Mesh",
-      "url": "https://mesh.teche.ai",
+      "url": "https://mesh",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/meshcentral.png",
         "appNameStatus": "normal",
@@ -3478,7 +3478,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://mesh.teche.ai"
+        "externalUrl": "https://mesh"
       },
       "area": {
         "type": "category",
@@ -3575,7 +3575,7 @@
     {
       "id": "d6c2b7c1-61cb-4492-a4c1-aba68f207220",
       "name": "AI-LLM",
-      "url": "https://llm.teche.ai",
+      "url": "https://llm",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/anything-llm-light.svg",
         "appNameStatus": "normal",
@@ -3596,7 +3596,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://llm.teche.ai"
+        "externalUrl": "https://llm"
       },
       "area": {
         "type": "category",
@@ -3697,7 +3697,7 @@
       "type": "dashdot",
       "properties": {
         "dashName": "Vitals-AI",
-        "url": "https://vital.teche.ai",
+        "url": "https://vital",
         "usePercentages": true,
         "columns": 4,
         "graphHeight": 117,
@@ -3787,7 +3787,7 @@
       "type": "dashdot",
       "properties": {
         "dashName": "Vitals-Apps",
-        "url": "https://vital2.teche.ai",
+        "url": "https://vital2",
         "usePercentages": true,
         "columns": 4,
         "graphHeight": 170,
@@ -3983,7 +3983,7 @@
       "type": "dashdot",
       "properties": {
         "dashName": "Vitals-Maestro",
-        "url": "https://vital.teche.ai",
+        "url": "https://vital",
         "usePercentages": true,
         "columns": 4,
         "graphHeight": 117,
