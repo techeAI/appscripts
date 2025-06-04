@@ -1,5 +1,5 @@
 #!/bin/bash
-url=$(grep "^Nextcloud-OO=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+url=$(grep "^Nextcloud_OO=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install docker-compose sudo curl wget  -y 2> /dev/null
 
 if [ ! -x /usr/bin/docker ]; then
