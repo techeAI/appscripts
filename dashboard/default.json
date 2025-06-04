@@ -3218,7 +3218,7 @@
     {
       "id": "92ee8c18-b3fd-46d1-acf2-1ce675be9d25",
       "name": "Headscale",
-      "url": "https://login.tailscale.com",
+      "url": "https://net",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/tailscale.svg",
         "appNameStatus": "normal",
@@ -3240,7 +3240,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://login.tailscale.com/"
+        "externalUrl": "https://net/web"
       },
       "area": {
         "type": "category",
