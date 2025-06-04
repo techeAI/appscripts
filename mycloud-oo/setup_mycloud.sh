@@ -24,7 +24,7 @@ curl -L -o mycloud-oo-nginx.conf https://raw.githubusercontent.com/techeAI/appsc
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/document_data
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/document_log
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/app_data
-sed -i "s|prefixcloud.domainname|$url|g" ./mycloud-00-nginx.conf
+sed -i "s|prefixcloud.domainname|$url|g" ./mycloud-oo-nginx.conf
 sudo mv nginx.conf /mnt/DriveDATA/nextcloud-oo/
 sudo mv mycloud-oo-nginx.conf /etc/nginx/sites-enabled/mycloud-oo
 chown -R www-data:www-data /mnt/DriveDATA/nextcloud-oo/
