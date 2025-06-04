@@ -1015,7 +1015,7 @@
     {
       "id": "6beb3e88-e484-45da-9eb4-80da4946e0ec",
       "name": "Cloud",
-      "url": "https://cloud",
+      "url": "https://mycloud_biztech",
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/nextcloud-blue.svg",
         "appNameStatus": "normal",
@@ -1037,7 +1037,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "https://cloud"
+        "externalUrl": "https://mycloud_biztech"
       },
       "area": {
         "type": "category",
