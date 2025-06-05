@@ -1,5 +1,7 @@
 #!/bin/bash
 local_ip=$(ip route get 1 | awk '{print $7}')
+app_url=$(grep "^mattermost_URL=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+PUBLIC_DEPLOY=$(grep "^mattermost_public_deploy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -25,11 +27,11 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/do
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost-nginx.conf -o mattermost-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/mattermost.env -o mattermost.env
 
-read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+#read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
-read -p "Enter the URL(Do not add http or https):" app_url
+#read -p "Enter the URL(Do not add http or https):" app_url
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost.env
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./mattermost-nginx.conf
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
@@ -42,7 +44,8 @@ else
     echo "Invalid response. Please enter 'yes' or 'no'."
     exit 1
 fi
-mv mattermost-nginx.conf /etc/nginx/sites-enabled/mattermost
+mv mattermost-nginx.conf /etc/nginx/sites-available/mattermost
+ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost
 mv mattermost.env .env
 
 sleep 2
