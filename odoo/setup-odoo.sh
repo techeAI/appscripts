@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^odoo_CRM=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/odoo
 mkdir -p $BASE_DIR/{odoo-web-data,config,addons,odoo-db-data}
@@ -18,8 +19,7 @@ fi
 #read -p "Enter URL to access on browser (without http/https)(ex. erpnext.teche.ai): " url
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/odoo/odoo-nginx.conf -o odoo-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/odoo/docker-compose.yaml -o docker-compose.yaml
-#sed -i "s|changeme-url|$url|g" docker-compose.yaml
-#sed -i "s|Changeme-url|$url|g" erpnext-nginx.conf
+sed -i "s|changemeurl|$url|g" ./odoo-nginx.conf
 mv odoo-nginx.conf /etc/nginx/sites-available/odoo
 ln -s /etc/nginx/sites-available/odoo /etc/nginx/sites-enabled/odoo
 docker compose up -d
