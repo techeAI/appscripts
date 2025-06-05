@@ -17,22 +17,34 @@ sleep 2
 fi
 apt install docker-compose -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/crm-nginx.conf -o crm-nginx.conf
-sed -i "s|prefixcrm.domainname|$url|g" ./crm-nginx.conf
+sed -i "s|prefixcrm.domainname|$url|g" ./headscale-nginx.conf
 mv crm-nginx.conf /etc/nginx/sites-available/crm
 ln -s /etc/nginx/sites-available/crm /etc/nginx/sites-enabled/crm
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/docker-compose.yaml -o docker-compose.yaml
+# Function to get user input with a default value
+get_user_input() {
+    local prompt="$1"
+    local default="$2"
+    local input
 
-MARIADB_ROOT_PASSWORD="aPUo56ZCWR"
-MARIADB_USER="bn_suitecrm"
-MARIADB_PASSWORD="aPUo56ZCWR"
-MARIADB_DATABASE="bitnami_suitecrm"
-MARIADB_VOLUME="$BASE_DIR/suitecrm/suitecrm_db"
-SUITECRM_PORT_HTTP="5010"
-SUITECRM_PORT_HTTPS="5011"
-SUITECRM_DATABASE_USER="bn_suitecrm"
-SUITECRM_DATABASE_PASSWORD="aPUo56ZCWR"
-SUITECRM_DATABASE_NAME="bitnami_suitecrm"
-SUITECRM_VOLUME="$BASE_DIR/suitecrm/suitecrm_data"
+    read -p "$prompt [$default]: " input
+    echo "${input:-$default}"
+}
+
+# Get user inputs
+MARIADB_ROOT_PASSWORD=$(get_user_input "Enter MariaDB root password" "aPUo56ZCWR")
+MARIADB_USER=$(get_user_input "Enter MariaDB user" "bn_suitecrm")
+MARIADB_PASSWORD=$(get_user_input "Enter MariaDB password" "aPUo56ZCWR")
+MARIADB_DATABASE=$(get_user_input "Enter MariaDB database" "bitnami_suitecrm")
+MARIADB_VOLUME=$(get_user_input "Enter absolute path for MariaDB volume" "$BASE_DIR/suitecrm/suitecrm_db")
+#SUITECRM_PORT_HTTP=$(get_user_input "Enter SuiteCRM HTTP port" "5010")
+SUITECRM_PORT_HTTP=5010
+#SUITECRM_PORT_HTTPS=$(get_user_input "Enter SuiteCRM HTTPS port" "5011")
+SUITECRM_PORT_HTTPS=5011
+SUITECRM_DATABASE_USER=$(get_user_input "Enter SuiteCRM database user" "bn_suitecrm")
+SUITECRM_DATABASE_PASSWORD=$(get_user_input "Enter SuiteCRM database password" "aPUo56ZCWR")
+SUITECRM_DATABASE_NAME=$(get_user_input "Enter SuiteCRM database name" "bitnami_suitecrm")
+SUITECRM_VOLUME=$(get_user_input "Enter absolute path for SuiteCRM volume" "$BASE_DIR/suitecrm/suitecrm_data")
 
 # Create directories if they do not exist with appropriate permissions
 mkdir -p "$MARIADB_VOLUME"
