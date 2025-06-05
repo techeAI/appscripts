@@ -1,5 +1,6 @@
 #!/bin/bash
 apt install wget curl sudo -y 2> /dev/null
+url=$(grep "^suite_CRM=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d"=" -f2)
 BASE_DIR=/mnt/DriveDATA
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -16,7 +17,9 @@ sleep 2
 fi
 apt install docker-compose -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/crm-nginx.conf -o crm-nginx.conf
-mv crm-nginx.conf /etc/nginx/sites-enabled/crm
+sed -i "s|prefixcrm.domainname|$url|g" ./headscale-nginx.conf
+mv crm-nginx.conf /etc/nginx/sites-available/crm
+ln -s /etc/nginx/sites-available/crm /etc/nginx/sites-enabled/crm
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/docker-compose.yaml -o docker-compose.yaml
 # Function to get user input with a default value
 get_user_input() {
