@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^paperless_ngx_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/paperless-ngx
 mkdir -p $BASE_DIR/data
@@ -20,12 +21,14 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter Full URL with (http or https) for paperless nginx: " url
+#read -p "Enter Full URL with (http or https) for paperless nginx: " url
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/ngx-nginx.conf -o ngx-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/docker-compose.env -o docker-compose.env
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/docker-compose.yaml -o docker-compose.yaml
-mv ngx-nginx.conf /etc/nginx/sites-enabled/ngx
 sed -i "s|PLACEHOLDER_URL|$url|g" docker-compose.env
+sed -i "s|prefixdocs.domainname|$url|g" ./ngx-nginx.conf
+mv ngx-nginx.conf /etc/nginx/sites-available/ngx
+ln -s /etc/nginx/sites-available/ngx /etc/nginx/sites-enabled/ngx
 docker compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "Now you can access papperless through URL: $url"
