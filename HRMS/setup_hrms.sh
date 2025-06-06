@@ -25,7 +25,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/docker-c
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
 #read -p "Enter the URL(Do not add http or https):" app_url
-app_url=$(grep "^hrms_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f
+app_url=$(grep "^hrms_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f)
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./hrms-nginx.conf
 mv hrms-nginx.conf /etc/nginx/sites-available/hrms
