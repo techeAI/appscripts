@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^focalboard_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA
 PORT=7089
 apt install wget curl sudo -y 2> /dev/null
@@ -21,7 +22,9 @@ if sudo docker ps --format '{{.Names}}' | grep -q "focalboard"; then
                                 sleep 2
                         else
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/focalboard/focal-nginx.conf -o focal-nginx.conf
-mv focal-nginx.conf /etc/nginx/sites-enabled/focal
+sed -i "s|prefixboard.domainname|$url|g" focal-nginx.conf
+mv focal-nginx.conf /etc/nginx/sites-available/focal
+ln -s /etc/nginx/sites-available/focal /etc/nginx/sites-enabled/focal
                                 echo "Setting up focalboard.."
 
 sudo docker run -dt --name focalboard --restart unless-stopped -v $BASE_DIR/focalboard:/opt/focalboard/data -p $PORT:8000 mattermost/focalboard:7.8.9
