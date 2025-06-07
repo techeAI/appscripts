@@ -1,5 +1,5 @@
 #!/bin/bash				
-				
+url=$(grep "^opnform_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)				
 				apt install sudo curl wget  -y 2> /dev/null
 				BASE_DIR=/mnt/DriveDATA/opnform/
 			if [ ! -x /usr/bin/docker ]; then
@@ -16,6 +16,8 @@
 				sleep 2
 			fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/opnform/opnform-nginx.conf -o opnform-nginx.conf
-mv opnform-nginx.conf /etc/nginx/sites-enabled/opnform
+sed -i "s|forms.domainname|$url|g" ./opnform-nginx.conf
+mv opnform-nginx.conf /etc/nginx/sites-available/opnform
+ln -s /etc/nginx/sites-available/opnform /etc/nginx/sites-enabled/opnform
 
 docker run -dt --name opnform --restart=unless-stopped -p 35551:80 -eDISABLE_SIGNUP=true -v $BASE_DIR:/persist jhumanj/opnform:1.2.6
