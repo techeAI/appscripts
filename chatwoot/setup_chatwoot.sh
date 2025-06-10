@@ -1,5 +1,6 @@
 #!/bin/bash
-read -p "Enter the URL(Do not add http or https): https://" app_url
+#read -p "Enter the URL(Do not add http or https): https://" app_url
+app_url=$(grep "^chatwoot_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -24,7 +25,8 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/chatwoot/env 
 sleep 2
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./env
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./chatwoot-nginx.conf
-mv chatwoot-nginx.conf /etc/nginx/sites-enabled/chatwoot
+mv chatwoot-nginx.conf /etc/nginx/sites-available/chatwoot
+ln -s /etc/nginx/sites-available/chatwoot /etc/nginx/sites-enabled/chatwoot
 mv env .env
 sleep 2
 docker compose run --rm rails bundle exec rails db:chatwoot_prepare
