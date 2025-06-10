@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^mantisBT_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl sudo -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/mantis
 port_http=3001
@@ -21,7 +22,9 @@ mkdir -p $BASE_DIR/db
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-nginx.conf -o techebt-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/techebt-2.26.3.zip -o techebt-2.26.3.zip
-mv techebt-nginx.conf /etc/nginx/sites-enabled/techebt
+sed -i "s|prefixbugs.domainname|$url|g" ./techebt-nginx.conf
+mv techebt-nginx.conf /etc/nginx/sites-available/techebt
+ln -s /etc/nginx/sites-available/techebt /etc/nginx/sites-enabled/techebt
 docker-compose -f ./docker-compose.yaml up -d
 mv techebt-2.26.3.zip $BASE_DIR/html/
 cd $BASE_DIR/html/ && unzip techebt-2.26.3.zip
