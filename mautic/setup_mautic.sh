@@ -1,5 +1,6 @@
 #!/bin/bash
 apt install wget curl docker-compose sudo -y 2> /dev/null
+url=$(grep "^mautic_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 sleep 2
@@ -17,7 +18,9 @@ sudo mkdir /mnt/DriveDATA/mautic
 sudo chmod 777 /mnt/DriveDATA/mautic
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/mautic-nginx.conf -o mautic-nginx.conf
-mv mautic-nginx.conf /etc/nginx/sites-enabled/mautic
+sed -i "s|prefixmautic.domainname|$url|g" ./mautic-nginx.conf
+mv mautic-nginx.conf /etc/nginx/sites-available/mautic
+ln -s /etc/nginx/sites-available/mautic /etc/nginx/sites-enabled/mautic
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
