@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^docuseal_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA
 apt install wget curl sudo -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
@@ -20,7 +21,9 @@ if sudo docker ps --format '{{.Names}}' | grep -q "docuseal"; then
                         else
                                 echo "Setting up Docuseal.."
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/docuseal-nginx.conf -o docuseal-nginx.conf
-mv docuseal-nginx.conf /etc/nginx/sites-enabled/docuseal
+sed -i "s|prefixdocuseal.domainname|$url|g" ./docuseal-nginx.conf
+mv docuseal-nginx.conf /etc/nginx/sites-available/docuseal
+ln -s /etc/nginx/sites-available/docuseal /etc/nginx/sites-enabled/docuseal
 sudo docker run -d --name docuseal --restart unless-stopped  -p 3000:3000 -v $BASE_DIR/docuseal:/data docuseal/docuseal:1.7.5
 local_ip=$(ip route get 1 | awk '{print $7}')
 echo "#########################################################"
