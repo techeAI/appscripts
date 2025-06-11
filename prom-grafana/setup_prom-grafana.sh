@@ -27,7 +27,7 @@ sed -i "s|changeme-url|$url|g" grafana-nginx.conf
 sed -i "s|changeme-url|$promurl|g" prom-nginx.conf
 mv prom-nginx.conf /etc/nginx/sites-available/prom
 mv grafana-nginx.conf /etc/nginx/sites-available/grafana
-ln -s /etc/nginx/sites-available/prom /etc/nginx/sites-enabled/prom
+#ln -s /etc/nginx/sites-available/prom /etc/nginx/sites-enabled/prom
 ln -s /etc/nginx/sites-available/grafana /etc/nginx/sites-enabled/grafana
 mv prometheus.yml /mnt/DriveDATA/prometheus/prometheus.yml
 
