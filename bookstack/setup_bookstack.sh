@@ -1,4 +1,6 @@
 #!/bin/bash
+app_url=$(grep "^bookstack_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+PUBLIC_DEPLOY=$(grep "^bookstack_public_deploy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 local_ip=$(ip route get 1 | awk '{print $7}')
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
@@ -20,7 +22,9 @@ random_key=$(openssl rand -hex 16)
 echo "Generated key: $random_key"
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/bs-nginx.conf -o bs-nginx.conf
-mv bs-nginx.conf /etc/nginx/sites-enabled/bs
+sed -i "s|prefixbook.domainname|$app_url|g" ./bs-nginx.conf
+mv bs-nginx.conf /etc/nginx/sites-available/bs
+ln -s /etc/nginx/sites-available/bs /etc/nginx/sites-enabled/bs
 sed -i "s|SomeRandomStringWith32Characters|$random_key|g" ./docker-compose.yaml
 sleep 2
 

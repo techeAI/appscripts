@@ -1,6 +1,7 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/stirling
+url=$(grep "^sterlingpdf_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 
@@ -15,7 +16,9 @@ echo "Docker is already installed."
 sleep 2
 fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-nginx.conf -o stirling-nginx.conf
-mv stirling-nginx.conf /etc/nginx/sites-enabled/stirling
+sed -i "s|prefixpdfeditor.domainname|$url|g" ./stirling-nginx.conf
+mv stirling-nginx.conf /etc/nginx/sites-available/stirling
+ln -s /etc/nginx/sites-available/stirling /etc/nginx/sites-enabled/stirling
 #sudo mkdir -p $BASE_DIR
 # Default values
 PORT="7074"
