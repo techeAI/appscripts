@@ -1,5 +1,5 @@
 #!/bin/bash
-url=$(grep "^headscale_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+url=$(grep "^akaunting_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git docker-compose sudo curl wget  unzip   -y 2> /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
