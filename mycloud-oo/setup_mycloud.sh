@@ -26,7 +26,8 @@ sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/document_log
 sudo mkdir -p /mnt/DriveDATA/nextcloud-oo/app_data
 sed -i "s|prefixcloud.domainname|$url|g" ./mycloud-oo-nginx.conf
 sudo mv nginx.conf /mnt/DriveDATA/nextcloud-oo/
-sudo mv mycloud-oo-nginx.conf /etc/nginx/sites-enabled/mycloud-oo
+sudo mv mycloud-oo-nginx.conf /etc/nginx/sites-available/mycloud-oo
+ln -s /etc/nginx/sites-available/mycloud-oo /etc/nginx/sites-enabled/mycloud-oo
 chown -R www-data:www-data /mnt/DriveDATA/nextcloud-oo/
 docker-compose up -d
 sleep 20
