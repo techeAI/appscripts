@@ -1,5 +1,6 @@
 #!/bin/bash
-read -p "Enter the URL(Do not add http or https): https://" app_url
+#read -p "Enter the URL(Do not add http or https): https://" app_url
+app_url=$(grep "^meshcentral_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -22,7 +23,8 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mesh-central/
 sleep 2
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./meshcentral-nginx.conf
-mv meshcentral-nginx.conf /etc/nginx/sites-enabled/meshcentral
+mv meshcentral-nginx.conf /etc/nginx/sites-available/meshcentral
+ln -s /etc/nginx/sites-available/meshcentral /etc/nginx/sites-enabled/meshcentral
 sleep 2
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
