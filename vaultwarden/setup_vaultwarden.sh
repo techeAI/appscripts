@@ -1,4 +1,7 @@
 #!/bin/bash
+#read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+PUBLIC_DEPLOY=$(grep "^vaultwarden_public_deploy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+url=$(grep "^vaultwarden_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA
 mkdir -p $BASE_DIR/vaultwarden/ssl
@@ -16,9 +19,10 @@ echo "Docker is already installed."
 sleep 2
 fi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/vw-nginc.conf -o vw-nginc.conf
-mv vw-nginc.conf /etc/nginx/sites-enabled/vw
+sed -i "s|prefixpass.domainname|$url|g" ./vw-nginc.conf
+mv vw-nginc.conf /etc/nginx/sites-available/vw
+ln -s /etc/nginx/sites-available/vw /etc/nginx/sites-enabled/vw
 
-read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
 docker run -dt --name vaultwarden --restart=unless-stopped -v $BASE_DIR/vaultwarden/:/data/ -p 7077:80 vaultwarden/server:1.32.1
