@@ -1,4 +1,6 @@
 #!/bin/bash
+#read -p "Enter Full URL (without http or https) for docmost:- https://" url
+url=$(grep "^docmost_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install git sudo curl wget  unzip   -y 2> /dev/null
 BASE_DIR=/mnt/DriveDATA/docmost
 mkdir -p $BASE_DIR/db
@@ -18,9 +20,8 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter Full URL (without http or https) for docmost:- https://" url
-read -p "Do you want to set up SMTP? (yes/no): " response
-
+#read -p "Do you want to set up SMTP? (yes/no): " response
+response=no
 if [[ "$response" == "yes" || "$response" == "y" ]]; then
 read -p "Enter SMTP_HOST: " smtphost
 read -p "Enter SMTP_PORT: " smtpport
@@ -40,7 +41,8 @@ sed -i "s|ChangeMePORT|$smtpport|g" docker-compose.yaml
 sed -i "s|ChangeMeUserNAME|$smtpuname|g" docker-compose.yaml
 sed -i "s|ChangeMeMailFrom|$smtpname|g" docker-compose.yaml
 sed -i "s|ChangeMePWD|$smtppwd|g" docker-compose.yaml
-mv docmost-nginx.conf /etc/nginx/sites-enabled/docmost
+mv docmost-nginx.conf /etc/nginx/sites-available/docmost
+ln -s /etc/nginx/sites-available/docmost /etc/nginx/sites-enabled/docmost
 docker compose up -d
 sleep 5
 echo "To Run Behind nginx proxy please install SSL by certbot --nginx and open URL : $url"
