@@ -1,4 +1,5 @@
 #!/bin/bash
+url=$(grep "^filegator_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA
 PORT=7090
 apt install wget curl sudo -y 2> /dev/null
@@ -25,7 +26,9 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/doc
 #curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/configuration.php -o configuration.php
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/user.json -o users.json
 sudo mkdir -p $BASE_DIR/filegator/files &&  sudo mkdir -p $BASE_DIR/filegator/users/ && mkdir -p $BASE_DIR/filegator/config
-mv filegator-nginx.conf /etc/nginx/sites-enabled/filegator
+sed -i "s|prefixvault.domainname|$url|g" ./filegator-nginx.conf
+mv filegator-nginx.conf /etc/nginx/sites-available/filegator
+ln -s /etc/nginx/sites-available/filegator /etc/nginx/sites-enabled/filegator
 #mv configuration.php $BASE_DIR/filegator/config/configuration.php
 mv users.json $BASE_DIR/filegator/users/users.json
 sudo chown -R www-data:www-data $BASE_DIR/filegator/
