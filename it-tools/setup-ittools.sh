@@ -1,5 +1,6 @@
 #!/bin/bash
 #read -p "Enter the URL(Do not add http or https): https://" app_url
+app_url=$(grep "^ittools_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -18,9 +19,9 @@ mkdir -p /mnt/DriveDATA/ittools/data
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/nginx-ittools.conf -o nginx-ittools.conf
-
-mv nginx-ittools.conf /etc/nginx/sites-enabled/ittools
-
+sed -i "s|prefixittools.domainname|$app_url|g" ./nginx-ittools.conf
+mv nginx-ittools.conf /etc/nginx/sites-available/ittools
+ln -s /etc/nginx/sites-available/ittools /etc/nginx/sites-enabled/ittools
 sleep 2
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
