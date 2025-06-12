@@ -62,3 +62,6 @@ override.tf.json
 
 ## SSH Keys
 *.ppk
+
+## Urls File
+urls.conf
