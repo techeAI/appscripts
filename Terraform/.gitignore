@@ -1,0 +1,64 @@
+# === Terraform Core ===
+
+# Local .terraform directories (plugins, modules, etc.)
+**/.terraform/
+
+# Terraform state and plan files
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+# Crash logs
+crash.log
+*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+secrets.auto.tfvars
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock file (optional to ignore)
+# Uncomment below if you do NOT want to track provider versions
+.terraform.lock.hcl
+
+# === AWS-specific (optional) ===
+
+# AWS credentials file (NEVER commit this)
+.aws/credentials
+.aws/config
+
+# Session tokens or temporary credentials if generated locally
+*.pem
+*.key
+
+# Outputs dumped for automation
+*.out
+*.json
+
+# === IDE/Editor files ===
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+*.bak
+
+# === Misc (optional) ===
+
+# Ignore backup or temp files
+*~
+*.tmp
+*.backup
+
+# Ignore shell history/scripts cache (if present)
+.sh_history
+.terraform.tfstate.d/
+
+## SSH Keys
+*.ppk
