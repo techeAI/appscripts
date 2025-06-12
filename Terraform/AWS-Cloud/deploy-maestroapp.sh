@@ -173,7 +173,7 @@ opnform_url=$(grep "^opnform_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut 
 n8n_url=$(grep "^n8n_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 openproject_url=$(grep "^openproject_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 mautic_url=$(grep "^mautic_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
-mantisBT_url=$(grep "^mantisBT_url=" /mnt/DriveDATA/Deploy-7u8jkktutmk9njhujuzjuuwjuyhu[juAHM/urls.conf | cut -d'=' -f2)
+mantisBT_url=$(grep "^mantisBT_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 chatwoot_url=$(grep "^chatwoot_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 docuseal_url=$(grep "^docuseal_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 bookstack_url=$(grep "^bookstack_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
