@@ -119,9 +119,7 @@ user_data = <<-EOF
             EODEPLOY1
              
             # Save the deploy-maestroapp.sh script
-            cat << 'EODEPLOY2' > /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
-            ${templatefile("${path.module}/deploy-maestroapp.sh", {})}
-            EODEPLOY2
+            curl -o /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh https://raw.githubusercontent.com/techeAI/appscripts/main/Terraform/AWS-Cloud/deploy-maestroapp.sh
 
               chmod +x /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
               /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
@@ -132,13 +130,16 @@ user_data = <<-EOF
   }
 }
 
+#Cretae IP Block start (incase want to create new IP and attach to instance)
 /*
 resource "aws_eip" "maestro_ip" {
   instance = aws_instance.example.id
   domain = "vpc"
 }
 */
+#Cretae IP Block end
 
+# Use Existing IP Block start (incase want to use existing/reserved IP)
 resource "aws_eip_association" "maestro_ip_assoc" {
   instance_id   = aws_instance.example.id
   allocation_id = var.existing_eip_allocation_id
@@ -146,3 +147,4 @@ resource "aws_eip_association" "maestro_ip_assoc" {
 data "aws_eip" "existing" {
   id = var.existing_eip_allocation_id
 }
+# Use Existing IP BLock end
