@@ -1,5 +1,11 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
+#read -p "Enter Full URL (without http or https):- " url
+url=$(grep "^snipeit_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+#read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+PUBLIC_DEPLOY=$(grep "^snipeit_public_deploy=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
+#read -p "Do you want to set up SMTP? (yes/no): " response
+response=no
 BASE_DIR=/mnt/DriveDATA/snipeit
 mkdir -p $BASE_DIR/db
 mkdir -p $BASE_DIR/storage
@@ -17,9 +23,6 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter Full URL (without http or https):- " url
-read -p "Do you want to set up SMTP? (yes/no): " response
-
 if [[ "$response" == "yes" || "$response" == "y" ]]; then
 read -p "Enter SMTP_HOST: " smtphost
 read -p "Enter SMTP_PORT: " smtpport
@@ -29,12 +32,10 @@ read -p "Enter Passowrd: " smtppwd
 else
   echo "Skipping SMTP setup."
 fi
-
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snipe-nginx.conf -o snipe-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/snipe.env -o snipe.env
 #sed -i "s|ChangeMeAppURL|$url|g" docker-compose.yaml
-read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
 sed -i "s|ChangeMeAppURL|$url|g" snipe-nginx.conf
@@ -60,9 +61,9 @@ else
     echo "Invalid response. Please enter 'yes' or 'no'."
     exit 1
 fi
-
 mv snipe.env .env
-mv snipe-nginx.conf /etc/nginx/sites-enabled/snipe
+mv snipe-nginx.conf /etc/nginx/sites-available/snipe
+ln -s /etc/nginx/sites-available/snipe /etc/nginx/sites-enabled/snipe
 docker compose up -d
 sleep 5
 echo "To Run Behind nginx proxy please install SSL by certbot --nginx and open URL https://$url"
