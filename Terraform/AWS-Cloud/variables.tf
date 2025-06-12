@@ -10,7 +10,7 @@ variable "ami_id" {
 
 variable "biztechami_id" {
   description = "BizTech AMI (included Container Image) ID for the EC2 instance"
-  default     = "ami-0ed7892d928b39fa0"
+  default     = "ami-060d8dd2f09f541e9"
 }
 
 variable "instance_type" {
