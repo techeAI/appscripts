@@ -1,5 +1,6 @@
 #!/bin/bash
 #read -p "Enter the URL(Do not add http or https): https://" app_url
+url=$(grep "^nocodedb_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 apt install wget curl docker-compose sudo -y > /dev/null
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
@@ -18,9 +19,9 @@ mkdir -p /mnt/DriveDATA/nocodb/{data,database}
 
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/docker-compose.yaml -o docker-compose.yaml
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/nocodb-nginx.conf -o nocodb-nginx.conf
-
-mv nocodb-nginx.conf /etc/nginx/sites-enabled/nocodb
-
+sed -i "s|prefixtables.domainname|$url|g" ./nocodb-nginx.conf
+mv nocodb-nginx.conf /etc/nginx/sites-available/nocodb
+ln -s /etc/nginx/sites-available/nocodb /etc/nginx/sites-enabled/nocodb
 sleep 2
 docker-compose up -d
 local_ip=$(ip route get 1 | awk '{print $7}')
