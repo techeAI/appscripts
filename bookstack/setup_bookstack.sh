@@ -28,7 +28,7 @@ ln -s /etc/nginx/sites-available/bs /etc/nginx/sites-enabled/bs
 sed -i "s|SomeRandomStringWith32Characters|$random_key|g" ./docker-compose.yaml
 sleep 2
 
-read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
+#read -p "Will this deployment be publicly accessible? (yes/no): " PUBLIC_DEPLOY
 
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
