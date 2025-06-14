@@ -141,6 +141,10 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/setup-
 mkdir /mnt/DriveDATA/Deploy-config/docmost && cd /mnt/DriveDATA/Deploy-config/docmost
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docmost/setup_docmost.sh -o setup_docmost.sh && bash setup_docmost.sh
 
+## Install Vaultwarden
+mkdir /mnt/DriveDATA/Deploy-config/vaultwarden && cd /mnt/DriveDATA/Deploy-config/vaultwarden
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/setup_vaultwarden.sh -o setup_vaultwarden.sh && bash setup_vaultwarden.sh
+
 ## Install ITtools
 mkdir /mnt/DriveDATA/Deploy-config/ittools && cd /mnt/DriveDATA/Deploy-config/ittools
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/setup-ittools.sh -o setup-ittools.sh && bash setup-ittools.sh
