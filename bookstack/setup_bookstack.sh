@@ -32,7 +32,7 @@ sleep 2
 
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
-read -p "Enter the URL(Do not add http or https):" app_url
+#read -p "Enter the URL(Do not add http or https):" app_url
 sed -i "s|ChangeMe-APP_URL|$app_url|g" ./docker-compose.yaml
 sed -i "s|changemeurlscheme|https|g" ./docker-compose.yaml
 
