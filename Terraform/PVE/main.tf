@@ -1,3 +1,17 @@
+terraform {
+  required_providers {
+    proxmox = {
+      source  = "Telmate/proxmox"
+      version = ">= 2.9.11"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+    }
+    local = {
+      source  = "hashicorp/local"
+    }
+  }
+}
 provider "proxmox" {
   pm_api_url      = var.pm_api_url
   pm_user         = var.pm_user
