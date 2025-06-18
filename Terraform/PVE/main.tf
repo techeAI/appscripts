@@ -1,22 +1,23 @@
 terraform {
   required_providers {
     proxmox = {
-      source  = "Telmate/proxmox"
-      version = ">= 2.9.11"
+      source  = "bpg/proxmox"
+      version = ">= 0.47.0"
     }
     tls = {
-      source  = "hashicorp/tls"
+      source = "hashicorp/tls"
     }
     local = {
-      source  = "hashicorp/local"
+      source = "hashicorp/local"
     }
   }
 }
+
 provider "proxmox" {
-  pm_api_url      = var.pm_api_url
-  pm_user         = var.pm_user
-  pm_password     = var.pm_password
-  pm_tls_insecure = true
+  endpoint = var.pm_api_url
+  username = var.pm_user
+  password = var.pm_password
+  insecure = true
 }
 
 resource "tls_private_key" "ssh" {
@@ -34,29 +35,57 @@ locals {
   ssh_public_key = tls_private_key.ssh.public_key_openssh
 }
 
-resource "proxmox_vm_qemu" "maestro" {
-  name        = "maestro-vm"
-  target_node = var.pm_target_node
-  clone       = var.template_vm_name
+resource "proxmox_virtual_environment_vm" "maestro" {
+  name      = "biztechapps-vm"
+  node_name = var.pm_target_node
 
-  os_type     = "cloud-init"
-  cores       = 2
-  sockets     = 1
-  memory      = 4096
-  disk {
-    size     = "60G"
-    type     = "scsi"
-    storage  = var.pm_storage
+  clone {
+    vm_id = var.template_vm_id
   }
 
-  ipconfig0   = "ip=dhcp"
+  cpu {
+    cores = 2
+  }
 
-  sshkeys     = local.ssh_public_key
+  memory {
+    dedicated = 4096
+  }
 
-  ciuser      = "ubuntu"
-  cipassword  = var.vm_password
+  disk {
+    datastore_id = var.pm_storage
+    size         = 60
+  }
 
-  cloudinit_cdrom_storage = var.pm_storage
+  network_device {
+    model    = "virtio"
+    bridge   = "vmbr0"
+    ipv4     = {
+      mode = "dhcp"
+    }
+  }
+
+  agent {
+    enabled = true
+  }
+
+  initialization {
+    user_account {
+      username = "ubuntu"
+      password = var.vm_password
+      keys     = [local.ssh_public_key]
+    }
+
+    dns {
+      domain  = "local"
+      servers = ["8.8.8.8"]
+    }
+
+    ip_config {
+      ipv4 {
+        mode = "dhcp"
+      }
+    }
+  }
 
   provisioner "remote-exec" {
     inline = [
@@ -74,7 +103,7 @@ resource "proxmox_vm_qemu" "maestro" {
       type        = "ssh"
       user        = "ubuntu"
       private_key = tls_private_key.ssh.private_key_pem
-      host        = self.ssh_host
+      host        = self.ipv4_addresses[0]
     }
   }
 }
