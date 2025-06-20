@@ -5,3 +5,9 @@ variable "pm_target_node" {}
 variable "pm_storage" {}
 variable "template_vm_id" {}
 variable "vm_password" {}
+variable "vm_node_id" {}
+variable "vm_node_name" {}
+variable "vm_cpu_code" {}
+variable "vm_cpu_memory" {}
+variable "vm_root_disksize" {}
+variable "vm_root_disksize_interface" {}

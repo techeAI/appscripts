@@ -27,7 +27,7 @@ resource "tls_private_key" "ssh" {
 
 resource "local_file" "private_key" {
   content         = tls_private_key.ssh.private_key_pem
-  filename        = "${path.module}/maestro.key"
+  filename        = "${path.module}/apps.key"
   file_permission = "0400"
 }
 
@@ -35,8 +35,9 @@ locals {
   ssh_public_key = tls_private_key.ssh.public_key_openssh
 }
 
-resource "proxmox_virtual_environment_vm" "maestro" {
-  name      = "biztechapps-vm"
+resource "proxmox_virtual_environment_vm" "biztechzpps" {
+  name      = var.vm_node_name
+  vm_id     = var.vm_node_id
   node_name = var.pm_target_node
 
   clone {
@@ -44,24 +45,22 @@ resource "proxmox_virtual_environment_vm" "maestro" {
   }
 
   cpu {
-    cores = 2
+    cores = var.vm_cpu_code
   }
 
   memory {
-    dedicated = 4096
+    dedicated = var.vm_cpu_memory
   }
 
   disk {
     datastore_id = var.pm_storage
-    size         = 60
+    size         = var.vm_root_disksize
+    interface    = var.vm_root_disksize_interface
   }
 
   network_device {
-    model    = "virtio"
-    bridge   = "vmbr0"
-    ipv4     = {
-      mode = "dhcp"
-    }
+    model   = "virtio"
+    bridge  = "vmbr0"
   }
 
   agent {
@@ -82,10 +81,30 @@ resource "proxmox_virtual_environment_vm" "maestro" {
 
     ip_config {
       ipv4 {
-        mode = "dhcp"
+        address = "dhcp"
       }
     }
   }
+}
+
+resource "null_resource" "wait_for_ssh" {
+  depends_on = [proxmox_virtual_environment_vm.biztechzpps]
+
+  provisioner "remote-exec" {
+    inline = ["echo '✅ SSH is available on VM'"]
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = tls_private_key.ssh.private_key_pem
+      host        = proxmox_virtual_environment_vm.biztechzpps.ipv4_addresses[0][0]
+      timeout     = "5m"
+    }
+  }
+}
+
+resource "null_resource" "provision_vm" {
+  depends_on = [null_resource.wait_for_ssh]
 
   provisioner "remote-exec" {
     inline = [
@@ -103,7 +122,7 @@ resource "proxmox_virtual_environment_vm" "maestro" {
       type        = "ssh"
       user        = "ubuntu"
       private_key = tls_private_key.ssh.private_key_pem
-      host        = self.ipv4_addresses[0]
+      host        = proxmox_virtual_environment_vm.biztechzpps.ipv4_addresses[0][0]
     }
   }
 }
