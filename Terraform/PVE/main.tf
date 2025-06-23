@@ -86,43 +86,26 @@ resource "proxmox_virtual_environment_vm" "biztechzpps" {
     }
   }
 }
+resource "null_resource" "run_script_via_proxmox" {
+  depends_on = [proxmox_virtual_environment_vm.biztechzpps, local_file.private_key]
 
-resource "null_resource" "wait_for_ssh" {
-  depends_on = [proxmox_virtual_environment_vm.biztechzpps]
-
-  provisioner "remote-exec" {
-    inline = ["echo '✅ SSH is available on VM'"]
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = tls_private_key.ssh.private_key_pem
-      host        = proxmox_virtual_environment_vm.biztechzpps.ipv4_addresses[0][0]
-      timeout     = "5m"
-    }
-  }
-}
-
-resource "null_resource" "provision_vm" {
-  depends_on = [null_resource.wait_for_ssh]
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo mkdir -p /mnt/DriveDATA",
-      "sudo mkfs.ext4 /dev/sdb",
-      "echo '/dev/sdb /mnt/DriveDATA ext4 defaults 0 0' | sudo tee -a /etc/fstab",
-      "sudo mount -a",
-      "mkdir -p /mnt/DriveDATA/Deploy-config",
-      "curl -o /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh https://raw.githubusercontent.com/techeAI/appscripts/main/Terraform/AWS-Cloud/deploy-maestroapp.sh",
-      "chmod +x /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh",
-      "/mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh"
-    ]
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = tls_private_key.ssh.private_key_pem
-      host        = proxmox_virtual_environment_vm.biztechzpps.ipv4_addresses[0][0]
-    }
+  provisioner "local-exec" {
+    command = <<EOT
+ssh -i ${local_file.private_key.filename} -o StrictHostKeyChecking=no ${var.pm_user}@${var.pm_ip} '
+  echo "${tls_private_key.ssh.private_key_pem}" > /root/.ssh/apps.key && chmod 400 /root/.ssh/apps.key &&
+  VM_IP=$(qm guest cmd ${var.vm_node_id} network-get-interfaces | jq -r ".[] | select(.name == \"ens18\") | .\"ip-addresses\"[] | select(.\"ip-address\" | test(\"^[0-9]+\\.\")) | .\"ip-address\"") &&
+  echo "VM IP: $VM_IP" &&
+  ssh -o StrictHostKeyChecking=no -i /root/.ssh/apps.key ubuntu@$VM_IP '
+    sudo mkdir -p /mnt/DriveDATA &&
+    sudo mkfs.ext4 /dev/sdb || true &&
+    echo "/dev/sdb /mnt/DriveDATA ext4 defaults 0 0" | sudo tee -a /etc/fstab &&
+    sudo mount -a &&
+    sudo mkdir -p /mnt/DriveDATA/Deploy-config &&
+    curl -o /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh https://raw.githubusercontent.com/techeAI/appscripts/main/Terraform/AWS-Cloud/deploy-maestroapp.sh &&
+    sudo chmod +x /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh &&
+    sudo /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
+  '
+'
+EOT
   }
 }
