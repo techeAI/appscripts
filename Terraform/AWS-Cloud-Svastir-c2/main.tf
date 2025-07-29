@@ -119,14 +119,14 @@ user_data = <<-EOF
             EODEPLOY1
              
             # Save the deploy-maestroapp.sh script
-            curl -o /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh https://raw.githubusercontent.com/techeAI/appscripts/main/Terraform/AWS-Cloud/deploy-maestroapp.sh
+            curl -o /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh https://raw.githubusercontent.com/techeAI/appscripts/main/Terraform/AWS-Cloud-Svastir-c2/deploy-maestroapp.sh
 
               chmod +x /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
               /mnt/DriveDATA/Deploy-config/deploy-maestroapp.sh
             EOF
 
   tags = {
-    Name = "Maestro-EC2"
+    Name = "BizApps-EC2"
   }
 }
 

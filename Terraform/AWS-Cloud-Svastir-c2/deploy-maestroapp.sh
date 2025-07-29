@@ -13,10 +13,10 @@ systemctl start clamav-freshclam
 systemctl enable --now clamav-daemon
 
 #Deploy Nginx and nginx-UI
-mkdir -p /mnt/DriveDATA/Deploy-config/nginx && cd /mnt/DriveDATA/Deploy-config/nginx
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/nginx-ui/setup-nginxui.sh -o setup-nginxui.sh && bash setup-nginxui.sh
+#mkdir -p /mnt/DriveDATA/Deploy-config/nginx && cd /mnt/DriveDATA/Deploy-config/nginx
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/nginx-ui/setup-nginxui.sh -o setup-nginxui.sh && bash setup-nginxui.sh
 
-# Deploy DASHBOARD
+Deploy DASHBOARD
 mkdir -p /mnt/DriveDATA/Deploy-config/DASHBOARD && cd /mnt/DriveDATA/Deploy-config/DASHBOARD
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/setup_dashboard.sh -o setup_dashboard.sh && bash setup_dashboard.sh
 
@@ -25,12 +25,12 @@ mkdir /mnt/DriveDATA/Deploy-config/portainer && cd /mnt/DriveDATA/Deploy-config/
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/setup_portainer.sh -o setup_portainer.sh && bash setup_portainer.sh
 
 ## Install Headscale
-mkdir /mnt/DriveDATA/Deploy-config/headscale && cd /mnt/DriveDATA/Deploy-config/headscale
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headscale/setup_headscale.sh -o setup_headscale.sh && bash setup_headscale.sh
+#mkdir /mnt/DriveDATA/Deploy-config/headscale && cd /mnt/DriveDATA/Deploy-config/headscale
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headscale/setup_headscale.sh -o setup_headscale.sh && bash setup_headscale.sh
 
 ## Install Keycloak
-mkdir /mnt/DriveDATA/Deploy-config/keyclock && cd /mnt/DriveDATA/Deploy-config/keyclock
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/setup_keyclock.sh -o  setup_keyclock.sh && bash setup_keyclock.sh
+#mkdir /mnt/DriveDATA/Deploy-config/keyclock && cd /mnt/DriveDATA/Deploy-config/keyclock
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/keyclock-oauth/setup_keyclock.sh -o  setup_keyclock.sh && bash setup_keyclock.sh
 
 ## Install Zabbix
 mkdir /mnt/DriveDATA/Deploy-config/zabbix && cd /mnt/DriveDATA/Deploy-config/zabbix
@@ -41,8 +41,8 @@ mkdir /mnt/DriveDATA/Deploy-config/myspeed && cd /mnt/DriveDATA/Deploy-config/my
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/myspeed/setup-myspeed.sh -o setup-myspeed.sh && bash setup-myspeed.sh
 
 ## Install Prom+grafana
-mkdir /mnt/DriveDATA/Deploy-config/prom-grafana && cd /mnt/DriveDATA/Deploy-config/prom-grafana
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/setup_prom-grafana.sh -o  setup_prom-grafana.sh && bash setup_prom-grafana.sh
+#mkdir /mnt/DriveDATA/Deploy-config/prom-grafana && cd /mnt/DriveDATA/Deploy-config/prom-grafana
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/setup_prom-grafana.sh -o  setup_prom-grafana.sh && bash setup_prom-grafana.sh
 
 ###################### Other Apps ################
 ## Install Nextcloud with onlyoffice
