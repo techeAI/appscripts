@@ -43,8 +43,8 @@ data "aws_subnet" "default" {
 }
 
 resource "aws_security_group" "maestro_sg" {
-  name        = "maestro-sg"
-  description = "maestro-sg"
+  name        = "bizapps-sg"
+  description = "bizapps-sg"
   vpc_id      = data.aws_vpc.default.id
 
   ingress {
