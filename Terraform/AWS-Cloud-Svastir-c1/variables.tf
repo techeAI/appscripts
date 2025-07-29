@@ -15,7 +15,7 @@ variable "biztechami_id" {
 
 variable "instance_type" {
   description = "EC2 instance type"
-  default     = "t3.large"
+  default     = "t3.medium"
 }
 variable "aws_access_key" {
   description = "AWS access key"
