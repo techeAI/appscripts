@@ -17,9 +17,10 @@ sudo clamscan -ri /home/admin/apps --bell --log="$LOG_FILE"
 chmod 644 $LOG_FILE
 
 
-# Transfer report to remote server
+# Transfer report to remote server (comment this incase save locally)
 echo "Transferring scan report to remote server..."
 scp -i "$REMOTE_KEY" -o StrictHostKeyChecking=no "$LOG_FILE" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
+
 
 # Verify transfer success
 if [ $? -eq 0 ]; then
