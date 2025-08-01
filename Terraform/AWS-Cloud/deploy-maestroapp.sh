@@ -1,6 +1,6 @@
 ## Install common packages
 sudo apt update -y
-apt install htop curl snapd -y
+apt install htop curl snapd zabbix-agent -y
 apt-get remove certbot
 snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
