@@ -26,9 +26,9 @@ ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/n8n
 
 if [[ "$PUBLIC_DEPLOY" == "yes" ]]; then
 echo "Setting up for public deployment..."
-docker run -dt  --name n8n  -p 7088:5678 -e GENERIC_TIMEZONE="Asia/Kolkata"  -e TZ="Asia/Kolkata" -e WEBHOOK_URL="https://$app_url" -v /mnt/DriveDATA/n8n:/home/node n8nio/n8n:1.78.0
+docker run -dt  --name n8n --restart=unless-stopped -p 7088:5678 -e GENERIC_TIMEZONE="Asia/Kolkata"  -e TZ="Asia/Kolkata" -e WEBHOOK_URL="https://$app_url" -v /mnt/DriveDATA/n8n:/home/node n8nio/n8n:1.78.0
 elif [[ "$PUBLIC_DEPLOY" == "no" ]]; then
-docker run -dt  --name n8n  -p 7088:5678 -e GENERIC_TIMEZONE="Asia/Kolkata"  -e TZ="Asia/Kolkata" -e WEBHOOK_URL="http://$app_url" -e N8N_SECURE_COOKIE="false" -v /mnt/DriveDATA/n8n:/home/node n8nio/n8n:1.78.0
+docker run -dt  --name n8n --restart=unless-stopped -p 7088:5678 -e GENERIC_TIMEZONE="Asia/Kolkata"  -e TZ="Asia/Kolkata" -e WEBHOOK_URL="http://$app_url" -e N8N_SECURE_COOKIE="false" -v /mnt/DriveDATA/n8n:/home/node n8nio/n8n:1.78.0
 else
     echo "Invalid response. Please enter 'yes' or 'no'."
     exit 1
