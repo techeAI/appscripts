@@ -44,6 +44,10 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/myspeed/setup
 mkdir /mnt/DriveDATA/Deploy-config/prom-grafana && cd /mnt/DriveDATA/Deploy-config/prom-grafana
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/setup_prom-grafana.sh -o  setup_prom-grafana.sh && bash setup_prom-grafana.sh
 
+## Install uptime-kuma
+mkdir /mnt/DriveDATA/Deploy-config/uptime-kuma && cd /mnt/DriveDATA/Deploy-config/uptime-kuma
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/uptime-kuma/setup_uptime.sh -o  setup_uptime.sh && bash setup_uptime.sh
+
 ###################### Other Apps ################
 ## Install Nextcloud with onlyoffice
 mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
