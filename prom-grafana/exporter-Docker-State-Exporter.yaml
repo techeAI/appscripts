@@ -1,0 +1,9 @@
+services:
+  docker_state_exporter:
+    image: karugaru/docker_state_exporter:latest
+    container_name: prom-docker_state_exporter
+    restart: unless-stopped
+    ports:
+      - "9102:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
