@@ -1,11 +1,14 @@
+version: "3.8"
 services:
-  # Prometheus Exporter for ClamAV metrics
   clamav-exporter:
-    image: r3kzi/clamav-prometheus-exporter:latest
+    image: rekzi/clamav-prometheus-exporter
     container_name: clamav-exporter
     restart: unless-stopped
-    network_mode: "host" # Allows connection to host services
-    command: ["--clamav-address=tcp://127.0.0.1:3310"]
+    command: ["--clamav-address=127.0.0.1"]
+    # This setting connects the container directly to the host's network.
+    # It allows the exporter to access the ClamAV daemon on localhost.
+    network_mode: "host"
+
 
     # The command points to the host's localhost (127.0.0.1)
 
