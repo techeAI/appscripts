@@ -3,7 +3,62 @@ services:
   clamav-exporter:
     image: r3kzi/clamav-prometheus-exporter:latest
     container_name: clamav-exporter
-    restart: always
+    restart: unless-stopped
     network_mode: "host" # Allows connection to host services
     command: ["--clamav-address=tcp://127.0.0.1:3310"]
+
     # The command points to the host's localhost (127.0.0.1)
+
+# in order to get matrics from clamav, we need to modiyfy clamav (steps are mentioned below) 
+
+# vim /etc/clamav/clamd.conf and add below lines
+
+# TCPSocket 3310      ## Add this
+# TCPAddr 127.0.0.1   ## Add this - (127.0.01 if exported running on the same host)
+# LocalSocket /var/run/clamav/clamd.ctl ## comment out this line
+
+###### Run below scripts  ##
+
+#!/bin/bash
+set -e
+
+echo "Stopping and disabling Debian clamav-daemon services..."
+systemctl stop clamav-daemon || true
+systemctl stop clamav-daemon.socket || true
+systemctl disable clamav-daemon || true
+systemctl disable clamav-daemon.socket || true
+
+echo "Killing any leftover clamd processes..."
+pkill -f clamd || true
+
+echo "Updating ClamAV virus database..."
+freshclam
+
+echo "Creating new systemd unit for TCP-only clamd..."
+cat << 'EOF' > /etc/systemd/system/clamd-tcp.service
+[Unit]
+Description=ClamAV TCP-only daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/clamd -c /etc/clamav/clamd.conf -F
+Restart=on-failure
+User=clamav
+Group=clamav
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo "Reloading systemd and enabling the new service..."
+systemctl daemon-reload
+systemctl enable clamd-tcp
+systemctl start clamd-tcp
+
+echo "Status of the new service:"
+systemctl status clamd-tcp --no-pager
+
+echo "Verify TCP socket is listening on 3310:"
+netstat -tunlp | grep 3310 || echo "No socket found. Make sure clamd.conf has TCPSocket 3310 and TCPAddr 127.0.0.1"
