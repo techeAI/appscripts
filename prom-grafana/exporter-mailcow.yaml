@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  mailcow-exporter:
+    image: ghcr.io/mailcow/prometheus-exporter:2
+    container_name: mailcow-exporter
+    ports:
+      - "9103:9099"
+    environment:
+      MAILCOW_EXPORTER_HOST: "mail.myserver.com"
+      MAILCOW_EXPORTER_API_KEY: "YOUR-APIKEY-HERE"
+    restart: unless-stopped
