@@ -1,0 +1,29 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push # this will change based on server/client
+
+scrape_configs:
+  - job_name: varlogs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: varlogs
+          host: Maestro
+          service_name: syslog  
+          __path__: /var/log/*log
+  - job_name: clamav_scans
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: clamav
+          host: Maestro    # this will differentiate per host
+          service_name: clamav
+          __path__: /var/log/clamav_scan_*.txt
