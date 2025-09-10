@@ -26,4 +26,4 @@ scrape_configs:
           job: clamav
           host: Maestro    # this will differentiate per host
           service_name: clamav
-          __path__: /var/log/clamav_scan_*.txt
+          __path__: /var/log/clamav/clamav_scan_*.txt

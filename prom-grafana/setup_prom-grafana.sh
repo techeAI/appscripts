@@ -5,7 +5,7 @@ apt install git sudo curl wget  unzip   -y 2> /dev/null
 url=$(grep "^grafana_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 promurl=$(grep "^prometheus_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA/
-mkdir -p $BASE_DIR/{grafana,grafana/alerting,prometheus,loki,promtail}
+mkdir -p $BASE_DIR/{grafana,grafana/alerting,prometheus,loki,loki/rules,loki/chunks,loki/index,loki/compactor,loki/wal,promtail}
 chown -R 10001:10001 $BASE_DIR/loki
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."

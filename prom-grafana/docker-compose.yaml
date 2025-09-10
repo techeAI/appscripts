@@ -70,11 +70,16 @@ services:
       - "9104:3100"   # expose Loki on host port 9104
     command: -config.file=/etc/loki/local-config.yaml
     volumes:
-      - /mnt/DriveDATA/loki:/loki
-      - /mnt/DriveDATA/loki/loki-config.yml:/etc/loki/loki-config.yml
+        - /mnt/DriveDATA/loki/chunks:/loki/chunks
+        - /mnt/DriveDATA/loki/index:/loki/index
+        - /mnt/DriveDATA/loki/rules:/loki/rules
+        - /mnt/DriveDATA/loki/compactor:/loki/compactor
+        - /mnt/DriveDATA/loki/wal:/loki/wal
+        - /mnt/DriveDATA/loki/loki-config.yml:/etc/loki/local-config.yaml
     restart: unless-stopped
     networks:
       - monitoring
+
 
   promtail:
     image: grafana/promtail:2.9.0
