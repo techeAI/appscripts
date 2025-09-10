@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-LOG_FILE="/var/log/clamav_scan_$(date +%F_%H-%M-%S).txt"
+LOG_FILE="/var/log/clamav/clamav_scan_$(date +%F_%H-%M-%S).txt"
 #REMOTE_USER="root"  # Remote server username
 #REMOTE_HOST="dash.teche.ai"  # Remote server hostname or IP
 #REMOTE_PATH="/var/www/html/scans"  # Destination path on remote server
@@ -39,5 +39,5 @@ chmod 644 $LOG_FILE
 #fi
 
 # Cleanup: Remove old logs (optional)
-find /var/log -name "clamav_scan_*.log" -mtime +365 -delete
-echo "ClamAV scan and report transfer completed."
+find /var/log/clamav -name "clamav_scan_*.log" -mtime +365 -delete
+#echo "ClamAV scan and report transfer completed."
