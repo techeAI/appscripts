@@ -5,5 +5,3 @@
 5. reserve elestic IP and place alocation ID in terraform.tfvars
 6. setup URLs in urls.conf file
 7. if some apps are not required just place #
-
-
