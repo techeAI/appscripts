@@ -7,7 +7,7 @@ apt install curl -y
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/dashboard/setup_dashboard.sh -o setup_dashboard.sh && bash setup_dashboard.sh
 
 
-
+check me
 
 
 
