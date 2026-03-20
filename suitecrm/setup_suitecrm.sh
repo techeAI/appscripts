@@ -1,3 +1,5 @@
+### NOT AVAILABLE On DOCKER HUB - Depricated
+
 #!/bin/bash
 apt install wget curl sudo -y 2> /dev/null
 url=$(grep "^suite_CRM=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d"=" -f2)
