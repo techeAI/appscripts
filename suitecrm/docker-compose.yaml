@@ -1,7 +1,7 @@
 version: '2'
 services:
   mariadb:
-    image: docker.io/bitnami/mariadb:11.3
+    image: docker.io/bitnami/mariadb:11.2
     container_name: suitecrm-mariadb
     restart: unless-stopped
     environment:
