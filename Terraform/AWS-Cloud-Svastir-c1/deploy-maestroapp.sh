@@ -50,7 +50,7 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/
 #mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
 #curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
 
-## Install SuiteCRM
+## Install SuiteCRM (no longer available - https://hub.docker.com/r/bitnami/suitecrm)
 #mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
 #curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
