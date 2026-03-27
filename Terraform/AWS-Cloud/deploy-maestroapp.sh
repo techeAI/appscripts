@@ -49,13 +49,13 @@ mkdir /mnt/DriveDATA/Deploy-config/uptime-kuma && cd /mnt/DriveDATA/Deploy-confi
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/uptime-kuma/setup_uptime.sh -o  setup_uptime.sh && bash setup_uptime.sh
 
 ###################### Other Apps ################
-## Install Nextcloud with onlyoffice
-mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
+## Install Nextcloud with onlyoffice (Depricated - VM based)
+#mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
 
-## Install SuiteCRM
-mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
+## Install SuiteCRM (Depricated -VM based)
+#mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
 ## Install Odoo CRM
 mkdir /mnt/DriveDATA/Deploy-config/odoo  && cd /mnt/DriveDATA/Deploy-config/odoo
