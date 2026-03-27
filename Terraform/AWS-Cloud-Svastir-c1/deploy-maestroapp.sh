@@ -1,7 +1,19 @@
 ## Install common packages
 sudo apt update -y
-apt install htop curl snapd zabbix-agent -y
-apt install docker-ce docker-ce-cli containerd.io -y
+apt install sudo htop curl snapd zabbix-agent -y
+if [ ! -x /usr/bin/docker ]; then
+echo "Installing docker.."
+sleep 2
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
+else
+echo "Docker is already installed."
+sleep 2
+apt install docker-ce docker-ce-cli containerd.io docker-compose -y
 apt-get remove certbot
 snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
@@ -47,115 +59,115 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/
 
 ###################### Other Apps ################
 ## Install Nextcloud with onlyoffice
-#mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
+mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
 
 ## Install SuiteCRM (no longer available - https://hub.docker.com/r/bitnami/suitecrm)
-#mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
+mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
 ## Install Odoo CRM
-#mkdir /mnt/DriveDATA/Deploy-config/odoo  && cd /mnt/DriveDATA/Deploy-config/odoo
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/odoo/setup-odoo.sh -o setup-odoo.sh && bash setup-odoo.sh
+mkdir /mnt/DriveDATA/Deploy-config/odoo  && cd /mnt/DriveDATA/Deploy-config/odoo
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/odoo/setup-odoo.sh -o setup-odoo.sh && bash setup-odoo.sh
 
 ## Insatll Paperless NGX
-#mkdir /mnt/DriveDATA/Deploy-config/paperless-ngx && cd /mnt/DriveDATA/Deploy-config/paperless-ngx
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/setup_ngx.sh -o setup_ngx.sh && bash setup_ngx.sh
+mkdir /mnt/DriveDATA/Deploy-config/paperless-ngx && cd /mnt/DriveDATA/Deploy-config/paperless-ngx
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/paperless-ngx/setup_ngx.sh -o setup_ngx.sh && bash setup_ngx.sh
 
 ## Insatll Mattermost
-#mkdir /mnt/DriveDATA/Deploy-config/mattermost && cd /mnt/DriveDATA/Deploy-config/mattermost
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/setup-mattermost.sh -o setup-mattermost.sh && bash setup-mattermost.sh
+mkdir /mnt/DriveDATA/Deploy-config/mattermost && cd /mnt/DriveDATA/Deploy-config/mattermost
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mattermost/setup-mattermost.sh -o setup-mattermost.sh && bash setup-mattermost.sh
 
 ## Insatll HRMS
-#mkdir /mnt/DriveDATA/Deploy-config/HRMS && cd /mnt/DriveDATA/Deploy-config/HRMS
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/setup_hrms.sh -o setup_hrms.sh && bash setup_hrms.sh
+mkdir /mnt/DriveDATA/Deploy-config/HRMS && cd /mnt/DriveDATA/Deploy-config/HRMS
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/HRMS/setup_hrms.sh -o setup_hrms.sh && bash setup_hrms.sh
 
 ## Insatll Focalboard
-#mkdir /mnt/DriveDATA/Deploy-config/focalboard && cd /mnt/DriveDATA/Deploy-config/focalboard
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/focalboard/setup_focalboard.sh -o setup_focalboard.sh && bash setup_focalboard.sh
+mkdir /mnt/DriveDATA/Deploy-config/focalboard && cd /mnt/DriveDATA/Deploy-config/focalboard
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/focalboard/setup_focalboard.sh -o setup_focalboard.sh && bash setup_focalboard.sh
 
 ## Install Opnform
-#mkdir /mnt/DriveDATA/Deploy-config/opnform && cd /mnt/DriveDATA/Deploy-config/opnform
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/opnform/setup_opnform.sh -o setup_opnform.sh && bash setup_opnform.sh
+mkdir /mnt/DriveDATA/Deploy-config/opnform && cd /mnt/DriveDATA/Deploy-config/opnform
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/opnform/setup_opnform.sh -o setup_opnform.sh && bash setup_opnform.sh
 
 ## Install n8n
-#mkdir /mnt/DriveDATA/Deploy-config/n8n && cd /mnt/DriveDATA/Deploy-config/n8n
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/n8n/setup_n8n.sh -o setup_n8n.sh && bash setup_n8n.sh
+mkdir /mnt/DriveDATA/Deploy-config/n8n && cd /mnt/DriveDATA/Deploy-config/n8n
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/n8n/setup_n8n.sh -o setup_n8n.sh && bash setup_n8n.sh
 
 ## Install OpenProject
-#mkdir /mnt/DriveDATA/Deploy-config/openproject && cd /mnt/DriveDATA/Deploy-config/openproject
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/openproject/setup_openproject.sh -o setup_openproject.sh && bash setup_openproject.sh
+mkdir /mnt/DriveDATA/Deploy-config/openproject && cd /mnt/DriveDATA/Deploy-config/openproject
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/openproject/setup_openproject.sh -o setup_openproject.sh && bash setup_openproject.sh
 
 ## Install Mautic
-#mkdir /mnt/DriveDATA/Deploy-config/mautic && cd /mnt/DriveDATA/Deploy-config/mautic
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
+mkdir /mnt/DriveDATA/Deploy-config/mautic && cd /mnt/DriveDATA/Deploy-config/mautic
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
 
 ## Install Mantis BT
-#mkdir /mnt/DriveDATA/Deploy-config/techeBT && cd /mnt/DriveDATA/Deploy-config/techeBT
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/setup_bugtracker.sh -o setup_bugtracker.sh && bash setup_bugtracker.sh
+mkdir /mnt/DriveDATA/Deploy-config/techeBT && cd /mnt/DriveDATA/Deploy-config/techeBT
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/setup_bugtracker.sh -o setup_bugtracker.sh && bash setup_bugtracker.sh
 
 ## Install chatwoot
-#mkdir /mnt/DriveDATA/Deploy-config/chatwoot && cd /mnt/DriveDATA/Deploy-config/chatwoot
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/chatwoot/setup_chatwoot.sh -o setup_chatwoot.sh && bash setup_chatwoot.sh
+mkdir /mnt/DriveDATA/Deploy-config/chatwoot && cd /mnt/DriveDATA/Deploy-config/chatwoot
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/chatwoot/setup_chatwoot.sh -o setup_chatwoot.sh && bash setup_chatwoot.sh
 
 ## Install docuseal
-#mkdir /mnt/DriveDATA/Deploy-config/docuseal && cd /mnt/DriveDATA/Deploy-config/docuseal
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/setup_docuseal.sh -o setup_docuseal.sh && bash setup_docuseal.sh
+mkdir /mnt/DriveDATA/Deploy-config/docuseal && cd /mnt/DriveDATA/Deploy-config/docuseal
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docuseal/setup_docuseal.sh -o setup_docuseal.sh && bash setup_docuseal.sh
 
 ## Install Bookstack
-#mkdir /mnt/DriveDATA/Deploy-config/bookstack && cd /mnt/DriveDATA/Deploy-config/bookstack
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/setup_bookstack.sh -o setup_bookstack.sh && bash setup_bookstack.sh
+mkdir /mnt/DriveDATA/Deploy-config/bookstack && cd /mnt/DriveDATA/Deploy-config/bookstack
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/bookstack/setup_bookstack.sh -o setup_bookstack.sh && bash setup_bookstack.sh
 
 ## Install Akaunting
-#mkdir /mnt/DriveDATA/Deploy-config/akaunting && cd /mnt/DriveDATA/Deploy-config/akaunting
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/setup_akaunting.sh -o setup_akaunting.sh && bash setup_akaunting.sh
+mkdir /mnt/DriveDATA/Deploy-config/akaunting && cd /mnt/DriveDATA/Deploy-config/akaunting
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/akaunting/setup_akaunting.sh -o setup_akaunting.sh && bash setup_akaunting.sh
 
 ## Install Sterling PDF
-#mkdir /mnt/DriveDATA/Deploy-config/pdfeditor && cd /mnt/DriveDATA/Deploy-config/pdfeditor
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-pdf.sh -o stirling-pdf.sh && bash stirling-pdf.sh 
+mkdir /mnt/DriveDATA/Deploy-config/pdfeditor && cd /mnt/DriveDATA/Deploy-config/pdfeditor
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/stirling-pdf/stirling-pdf.sh -o stirling-pdf.sh && bash stirling-pdf.sh
 
 ## Install Mesh Central
-#mkdir /mnt/DriveDATA/Deploy-config/meshcentral && cd /mnt/DriveDATA/Deploy-config/meshcentral
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mesh-central/setup-meshcentral.sh -o setup-meshcentral.sh && bash setup-meshcentral.sh
+mkdir /mnt/DriveDATA/Deploy-config/meshcentral && cd /mnt/DriveDATA/Deploy-config/meshcentral
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mesh-central/setup-meshcentral.sh -o setup-meshcentral.sh && bash setup-meshcentral.sh
 
 ## InsInstall Snipe-IT
-#mkdir /mnt/DriveDATA/Deploy-config/snipe-it && cd /mnt/DriveDATA/Deploy-config/snipe-it
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/setup_snipe.sh -o setup_snipe.sh && bash setup_snipe.sh
+mkdir /mnt/DriveDATA/Deploy-config/snipe-it && cd /mnt/DriveDATA/Deploy-config/snipe-it
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/snipe-it/setup_snipe.sh -o setup_snipe.sh && bash setup_snipe.sh
 
 ## Install Filegator
-#mkdir /mnt/DriveDATA/Deploy-config/filegator && cd /mnt/DriveDATA/Deploy-config/filegator
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/setup-filegator.sh -o setup_filegator.sh && bash setup_filegator.sh
+mkdir /mnt/DriveDATA/Deploy-config/filegator && cd /mnt/DriveDATA/Deploy-config/filegator
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/filegator/setup-filegator.sh -o setup_filegator.sh && bash setup_filegator.sh
 
 ## Install Search
-#mkdir /mnt/DriveDATA/Deploy-config/search && cd /mnt/DriveDATA/Deploy-config/search
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/whoogle/setup_whoogle.sh -o setup_whoogle.sh && bash setup_whoogle.sh
+mkdir /mnt/DriveDATA/Deploy-config/search && cd /mnt/DriveDATA/Deploy-config/search
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/whoogle/setup_whoogle.sh -o setup_whoogle.sh && bash setup_whoogle.sh
 
 ## Install Immich
-#mkdir /mnt/DriveDATA/Deploy-config/immich && cd /mnt/DriveDATA/Deploy-config/immich
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
+mkdir /mnt/DriveDATA/Deploy-config/immich && cd /mnt/DriveDATA/Deploy-config/immich
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/immich/setup_immich.sh -o setup_immich.sh && bash setup_immich.sh
 
 ## Install Nocodedb
-#mkdir /mnt/DriveDATA/Deploy-config/nocodb && cd /mnt/DriveDATA/Deploy-config/nocodb
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/setup-nocodb.sh -o setup-nocodb.sh && bash setup-nocodb.sh
+mkdir /mnt/DriveDATA/Deploy-config/nocodb && cd /mnt/DriveDATA/Deploy-config/nocodb
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/NoCoDB/setup-nocodb.sh -o setup-nocodb.sh && bash setup-nocodb.sh
 
 ## Install Docmost
-#mkdir /mnt/DriveDATA/Deploy-config/docmost && cd /mnt/DriveDATA/Deploy-config/docmost
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docmost/setup_docmost.sh -o setup_docmost.sh && bash setup_docmost.sh
+mkdir /mnt/DriveDATA/Deploy-config/docmost && cd /mnt/DriveDATA/Deploy-config/docmost
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/docmost/setup_docmost.sh -o setup_docmost.sh && bash setup_docmost.sh
 
 ## Install Vaultwarden
-#mkdir /mnt/DriveDATA/Deploy-config/vaultwarden && cd /mnt/DriveDATA/Deploy-config/vaultwarden
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/setup_vaultwarden.sh -o setup_vaultwarden.sh && bash setup_vaultwarden.sh
+mkdir /mnt/DriveDATA/Deploy-config/vaultwarden && cd /mnt/DriveDATA/Deploy-config/vaultwarden
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/vaultwarden/setup_vaultwarden.sh -o setup_vaultwarden.sh && bash setup_vaultwarden.sh
 
 ## Install ITtools
-#mkdir /mnt/DriveDATA/Deploy-config/ittools && cd /mnt/DriveDATA/Deploy-config/ittools
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/setup-ittools.sh -o setup-ittools.sh && bash setup-ittools.sh
+mkdir /mnt/DriveDATA/Deploy-config/ittools && cd /mnt/DriveDATA/Deploy-config/ittools
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/it-tools/setup-ittools.sh -o setup-ittools.sh && bash setup-ittools.sh
 
 ## Install Mindmap
-#mkdir /mnt/DriveDATA/Deploy-config/mindmap && cd /mnt/DriveDATA/Deploy-config/mindmap
-#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mindmap-wisemap/setup-mindmap.sh -o setup-mindmap.sh && bash setup-mindmap.sh
+mkdir /mnt/DriveDATA/Deploy-config/mindmap && cd /mnt/DriveDATA/Deploy-config/mindmap
+curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mindmap-wisemap/setup-mindmap.sh -o setup-mindmap.sh && bash setup-mindmap.sh
 
 ## Replace URLs in Dashboard
-# Maestro Get URLS from urls.conf   
+# Maestro Get URLS from urls.conf
 nginx_url=$(grep "^nginxui_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d"=" -f2)
 dashboard_url=$(grep "^dashboard_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d"=" -f2)
 vitals_url=$(grep "^vitals_url=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d"=" -f2)
