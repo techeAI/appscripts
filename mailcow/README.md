@@ -44,3 +44,28 @@ cd mailcow-dockerized
 
 docker compose pull
 docker compose up -d
+
+## SMTP via mailgun
+create mailgun account and add domain
+create mailgun username and password
+cd /mnt/DriveDATA/Deploy-config/mailcow/mailcow-dockerized/
+-----------------------------------------------------------------
+nano data/conf/postfix/extra.cf (and add below mentioned lines)
+
+relayhost = [smtp.mailgun.org]:587
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = texthash:/opt/postfix/conf/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_tls_security_level = encrypt
+smtp_tls_note_starttls_offer = yes
+-----------------------------------------------------------------
+nano data/conf/postfix/sasl_passwd (create authentication file)
+[smtp.mailgun.org]:587 postmaster@your-domain.com:your-password
+------------------------------------------------------------------
+chmod 600 data/conf/postfix/sasl_passwd
+docker compose exec postfix-mailcow postmap /opt/postfix/conf/sasl_passwd
+-------------------------------------------------------------------
+restart postfix container
+docker compose restart postfix-mailcow
+
+
