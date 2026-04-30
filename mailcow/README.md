@@ -28,12 +28,17 @@ apt install docker-ce docker-ce-cli containerd.io docker-compose -y
 
 ## clone the code
 umask 0022
-cd /opt
+mkdir -p /mnt/DriveDATA/Deploy-config/mailcow && cd /mnt/DriveDATA/Deploy-config/mailcow
 git clone https://github.com/mailcow/mailcow-dockerized
 cd mailcow-dockerized
 
+
+
 ## Generate config for first run 
 ./generate_config.sh
+
+## replace docker compose yaml with attached one
+
 
 ## then nano mailcow.conf if needed.
 
