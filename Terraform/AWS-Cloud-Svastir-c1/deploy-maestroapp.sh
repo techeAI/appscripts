@@ -1,3 +1,5 @@
+## /mnt/DriveDATA/Deploy-config/urls.conf  -- should be there
+## copy this deploy file in the same directory as urls.conf
 ## Install common packages
 sudo apt update -y
 apt install sudo htop curl snapd zabbix-agent -y
@@ -13,11 +15,11 @@ sudo setfacl --modify user:$USER:rw /var/run/docker.sock 2> /dev/null
 else
 echo "Docker is already installed."
 sleep 2
+fi
 apt install docker-ce docker-ce-cli containerd.io docker-compose -y
 apt-get remove certbot
-snap install --classic certbot
+snap install --classic certbot -y
 ln -s /snap/bin/certbot /usr/bin/certbot
-
 ## install antivirus
 apt install clamav clamav-daemon -y
 systemctl stop clamav-freshclam
@@ -38,8 +40,8 @@ mkdir /mnt/DriveDATA/Deploy-config/portainer && cd /mnt/DriveDATA/Deploy-config/
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/portainer/setup_portainer.sh -o setup_portainer.sh && bash setup_portainer.sh
 
 ## Install Headscale
-mkdir /mnt/DriveDATA/Deploy-config/headscale && cd /mnt/DriveDATA/Deploy-config/headscale
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headscale/setup_headscale.sh -o setup_headscale.sh && bash setup_headscale.sh
+#mkdir /mnt/DriveDATA/Deploy-config/headscale && cd /mnt/DriveDATA/Deploy-config/headscale
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/headscale/setup_headscale.sh -o setup_headscale.sh && bash setup_headscale.sh
 
 ## Install Keycloak
 mkdir /mnt/DriveDATA/Deploy-config/keyclock && cd /mnt/DriveDATA/Deploy-config/keyclock
@@ -59,12 +61,12 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/
 
 ###################### Other Apps ################
 ## Install Nextcloud with onlyoffice
-mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
+#mkdir /mnt/DriveDATA/Deploy-config/nextcloud-oo && cd /mnt/DriveDATA/Deploy-config/nextcloud-oo
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mycloud-oo/setup_mycloud.sh -o setup_mycloud.sh && bash setup_mycloud.sh
 
 ## Install SuiteCRM (no longer available - https://hub.docker.com/r/bitnami/suitecrm)
-mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
+#mkdir /mnt/DriveDATA/Deploy-config/suitecrm && cd /mnt/DriveDATA/Deploy-config/suitecrm
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
 ## Install Odoo CRM
 mkdir /mnt/DriveDATA/Deploy-config/odoo  && cd /mnt/DriveDATA/Deploy-config/odoo
@@ -103,8 +105,8 @@ mkdir /mnt/DriveDATA/Deploy-config/mautic && cd /mnt/DriveDATA/Deploy-config/mau
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/mautic/setup_mautic.sh -o setup_mautic.sh && bash setup_mautic.sh
 
 ## Install Mantis BT
-mkdir /mnt/DriveDATA/Deploy-config/techeBT && cd /mnt/DriveDATA/Deploy-config/techeBT
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/setup_bugtracker.sh -o setup_bugtracker.sh && bash setup_bugtracker.sh
+#mkdir /mnt/DriveDATA/Deploy-config/techeBT && cd /mnt/DriveDATA/Deploy-config/techeBT
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/MantisBT/setup_bugtracker.sh -o setup_bugtracker.sh && bash setup_bugtracker.sh
 
 ## Install chatwoot
 mkdir /mnt/DriveDATA/Deploy-config/chatwoot && cd /mnt/DriveDATA/Deploy-config/chatwoot
