@@ -10,7 +10,7 @@ services:
       MARIADB_PASSWORD: aPUo56EsPOZCWR
     volumes:
       - /mnt/DriveDATA/espocrm/db:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 20s
@@ -28,10 +28,9 @@ services:
       ESPOCRM_DATABASE_PASSWORD: aPUo56EsPOZCWR
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: admin
-      ESPOCRM_SITE_URL: "http://changeme-url:8080"
     volumes:
       - /mnt/DriveDATA/espocrm/data:/var/www/html
-    restart: always
+    restart: unless-stopped
     depends_on:
       espocrm-db:
         condition: service_healthy
@@ -43,7 +42,7 @@ services:
     container_name: espocrm-daemon
     volumes:
       - /mnt/DriveDATA/espocrm/data:/var/www/html
-    restart: always
+    restart: unless-stopped
     entrypoint: docker-daemon.sh
     depends_on:
       - espocrm
@@ -58,7 +57,7 @@ services:
       ESPOCRM_CONFIG_WEB_SOCKET_ZERO_M_Q_SUBMISSION_DSN: "tcp://espocrm-websocket:7777"
     volumes:
       - /mnt/DriveDATA/espocrm/data:/var/www/html
-    restart: always
+    restart: unless-stopped
     entrypoint: docker-websocket.sh
     ports:
       - "8081:8080"
