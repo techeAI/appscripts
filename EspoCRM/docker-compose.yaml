@@ -35,7 +35,7 @@ services:
       espocrm-db:
         condition: service_healthy
     ports:
-      - "8080:80"
+      - "8241:80"
 
   espocrm-daemon:
     image: espocrm/espocrm:9.3.8-apache
@@ -52,7 +52,7 @@ services:
     container_name: espocrm-websocket
     environment:
       ESPOCRM_CONFIG_USE_WEB_SOCKET: "true"
-      ESPOCRM_CONFIG_WEB_SOCKET_URL: "ws://localhost:8081"
+      ESPOCRM_CONFIG_WEB_SOCKET_URL: "ws://localhost:8242"
       ESPOCRM_CONFIG_WEB_SOCKET_ZERO_M_Q_SUBSCRIBER_DSN: "tcp://*:7777"
       ESPOCRM_CONFIG_WEB_SOCKET_ZERO_M_Q_SUBMISSION_DSN: "tcp://espocrm-websocket:7777"
     volumes:
@@ -60,6 +60,6 @@ services:
     restart: unless-stopped
     entrypoint: docker-websocket.sh
     ports:
-      - "8081:8080"
+      - "8242:8080"
     depends_on:
       - espocrm
