@@ -1,7 +1,9 @@
 #!/bin/bash
 apt install git sudo curl wget  unzip   -y 2> /dev/null
+url=$(grep "^erpnext_crm=" /mnt/DriveDATA/Deploy-config/urls.conf | cut -d'=' -f2)
 BASE_DIR=/mnt/DriveDATA/erpnext
-mkdir -p $BASE_DIR/erpnext/{mariadb,sites}
+mkdir -p $BASE_DIR/erpnext/{db-data,redis-queue-data,sites,logs}
+sudo chown -R 1000:1000 /mnt/DriveDATA/erpnext
 if [ ! -x /usr/bin/docker ]; then
 echo "Installing docker.."
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -14,7 +16,7 @@ else
 echo "Docker is already installed."
 sleep 2
 fi
-read -p "Enter URL to access on browser (without http/https)(ex. erpnext.teche.ai): " url
+#read -p "Enter URL to access on browser (without http/https)(ex. erpnext.teche.ai): " url
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/erpnext/erpnext-nginx.conf -o erpnext-nginx.conf
 curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/erpnext/docker-compose.yaml -o docker-compose.yaml
 sed -i "s|changeme-url|$url|g" docker-compose.yaml
