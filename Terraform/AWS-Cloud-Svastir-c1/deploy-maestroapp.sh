@@ -71,8 +71,8 @@ curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/prom-grafana/
 #curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/suitecrm/setup_suitecrm.sh -o setup_suitecrm.sh && bash setup_suitecrm.sh
 
 ## Install ESPO CRM
-mkdir /mnt/DriveDATA/Deploy-config/espo-crm  && cd /mnt/DriveDATA/Deploy-config/espo-crm
-curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/EspoCRM/setup-espocrm.sh -o setup-espocrm.sh && bash setup-espocrm.sh
+#mkdir /mnt/DriveDATA/Deploy-config/espo-crm  && cd /mnt/DriveDATA/Deploy-config/espo-crm
+#curl -sL https://raw.githubusercontent.com/techeAI/appscripts/main/EspoCRM/setup-espocrm.sh -o setup-espocrm.sh && bash setup-espocrm.sh
 
 
 ## Install Odoo CRM
